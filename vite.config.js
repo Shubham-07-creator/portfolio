@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.BASE_URL || (process.env.GITHUB_ACTIONS === 'true' || process.env.GITHUB_PAGES === 'true' ? '/portfolio/' : '/'),
   plugins: [
     react(),
     tailwindcss(),

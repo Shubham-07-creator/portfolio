@@ -28,7 +28,7 @@ export default function App() {
   ]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/25 selection:text-text relative">
         <Navbar
           activeSection={activeSection}
