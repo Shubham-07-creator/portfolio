@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shubham Kumar · Full Stack Developer (MERN + Java)</title>
+    <meta
+      name="description"
+      content="Portfolio of Shubham Kumar — Full Stack Developer building real-time, data-driven web applications with MERN stack and strong foundations in Java and DSA."
+    />
+    <meta name="author" content="Shubham Kumar" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shubham Kumar · Full Stack Developer (MERN + Java)" />
+    <meta
+      property="og:description"
+      content="I build real-time, data-driven web apps with the MERN stack, and I'm building strong foundations in Java and DSA."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shubham Kumar · Full Stack Developer (MERN + Java)" />
+    <meta
+      name="twitter:description"
+      content="I build real-time, data-driven web apps with the MERN stack, and I'm building strong foundations in Java and DSA."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#080B16" id="theme-color-meta" />
+
+    <!-- Favicon (SVG SK Monogram) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Space Grotesk 700, Inter 400/500, JetBrains Mono 500 (display=swap, exactly three) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD Person Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shubham Kumar",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://www.linkedin.com/in/shubhamkumardev",
+        "sameAs": [
+          "https://github.com/Shubham-07-creator",
+          "https://www.linkedin.com/in/shubhamkumardev"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Muzaffarpur",
+          "addressRegion": "Bihar",
+          "addressCountry": "India"
+        }
+      }
+    </script>
+
+    <!-- Theme initialization: dark default, prefers-color-scheme fallback, localStorage save -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var isLight = saved === 'light' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches);
+          if (isLight) {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+            var meta = document.getElementById('theme-color-meta');
+            if (meta) meta.setAttribute('content', '#F7F8FC');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-bg text-text font-sans antialiased min-h-screen relative overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ───────────── Indigo Night Design Tokens ───────────── */
+/* Dark is default */
+:root {
+  --color-bg: #080B16;
+  --color-surface: #10152A;
+  --color-border: #1F2742;
+  --color-text: #EAEEFB;
+  --color-muted: #9AA5C2;
+  --color-accent: #8B93FF;
+  --color-accent-hover: #757EFF;
+  --color-spark: #22D3EE;
+  --color-on-accent: #080B16;
+  --color-chip: #161D38;
+  --color-success: #4ADE80;
+  --color-error: #F87171;
+
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(139, 147, 255, 0.18);
+  --shadow-btn-glow: 0 4px 18px rgba(139, 147, 255, 0.35);
+
+  --mesh-color-1: rgba(139, 147, 255, 0.13);
+  --mesh-color-2: rgba(34, 211, 238, 0.11);
+
+  color-scheme: dark;
+}
+
+/* Light mode overrides */
+:root[data-theme="light"] {
+  --color-bg: #F7F8FC;
+  --color-surface: #FFFFFF;
+  --color-border: #CBD5E1;
+  --color-text: #0E1226;
+  --color-muted: #4B5563;
+  --color-accent: #4F46E5;
+  --color-accent-hover: #4338CA;
+  --color-spark: #0891B2;
+  --color-on-accent: #FFFFFF;
+  --color-chip: #EEF0FF;
+  --color-success: #15803D;
+  --color-error: #DC2626;
+
+  --shadow-card: 0 1px 2px rgba(14, 18, 38, 0.04), 0 12px 32px rgba(14, 18, 38, 0.07);
+  --shadow-card-hover: 0 4px 12px rgba(14, 18, 38, 0.06), 0 18px 40px rgba(79, 70, 229, 0.14);
+  --shadow-btn-glow: 0 4px 16px rgba(79, 70, 229, 0.28);
+
+  --mesh-color-1: rgba(79, 70, 229, 0.12);
+  --mesh-color-2: rgba(8, 145, 178, 0.10);
+
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-spark: var(--color-spark);
+  --color-on-accent: var(--color-on-accent);
+  --color-chip: var(--color-chip);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-sans: Inter, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ───────────── Base Styles ───────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 72px;
+    }
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: Inter, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+
+  code, pre, .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  ::selection {
+    background: rgba(139, 147, 255, 0.3);
+    color: var(--color-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent) !important;
+    outline-offset: 3px !important;
+    border-radius: 6px;
+  }
+}
+
+/* ───────────── Gradient Mesh (slow CSS only behind hero) ───────────── */
+.hero-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle 600px at 15% 20%, var(--mesh-color-1) 0%, transparent 70%),
+    radial-gradient(circle 500px at 85% 30%, var(--mesh-color-2) 0%, transparent 65%),
+    radial-gradient(circle 700px at 50% 85%, var(--mesh-color-1) 0%, transparent 70%);
+  animation: meshDrift 30s ease-in-out infinite alternate;
+}
+
+@keyframes meshDrift {
+  0% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.04) translateY(-16px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+/* ───────────── Accent-to-Spark Gradient (Hero name only) ───────────── */
+.name-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-spark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ───────────── Buttons & Links ───────────── */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-btn-glow);
+  background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.link-accent {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+.link-accent:hover {
+  opacity: 0.85;
+}
+
+/* ───────────── Cards ───────────── */
+.indigo-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.indigo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ───────────── Chips (Pills) ───────────── */
+.chip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--color-chip);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* ───────────── Pure CSS Marquee ───────────── */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ───────────── Reduced Motion ───────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-gradient-mesh {
+    animation: none !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
