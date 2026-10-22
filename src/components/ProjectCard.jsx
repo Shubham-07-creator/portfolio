@@ -68,9 +68,9 @@ function MetricBox({ value, label, countUp }) {
   return (
     <div
       ref={ref}
-      className="p-3 rounded-xl bg-chip/60 border border-border text-center flex flex-col justify-center"
+      className="px-3 py-1.5 first:pl-0 text-left"
     >
-      <div className="font-mono text-xl sm:text-2xl font-bold text-accent">
+      <div className="font-mono text-lg sm:text-xl font-bold text-accent">
         {countUp && isNumeric ? `${displayNum}${suffix}` : value}
       </div>
       <div className="text-[11px] font-mono text-muted truncate mt-0.5" title={label}>
@@ -177,8 +177,16 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.2, 0, 0, 1] }}
-      className="p-6 sm:p-8 lg:p-9 rounded-[16px] bg-surface border border-border shadow-card hover:border-accent hover:shadow-card-hover transition-all duration-200 group"
+      className="relative p-6 sm:p-8 lg:p-10 rounded-[20px] editorial-card transition-all duration-200 group"
     >
+      {/* Corner Outlined Serif Number */}
+      <span
+        className="absolute top-5 right-7 font-serif text-5xl sm:text-6xl text-border select-none pointer-events-none font-normal"
+        aria-hidden="true"
+      >
+        0{index + 1}
+      </span>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
         {/* Screenshot area: Browser frame (5 cols on lg) */}
         <div
@@ -186,13 +194,13 @@ export default function ProjectCard({ project, index }) {
             isImageRight ? 'lg:order-2' : 'lg:order-1'
           }`}
         >
-          <div className="w-full rounded-xl bg-chip/40 border border-border shadow-sm overflow-hidden flex flex-col">
-            {/* Browser Window Header */}
-            <div className="px-3.5 py-2.5 bg-chip/80 border-b border-border flex items-center justify-between gap-2">
+          <div className="w-full rounded-xl bg-surface border border-border shadow-xs overflow-hidden flex flex-col">
+            {/* Browser Window Header (muted dots) */}
+            <div className="px-3.5 py-2.5 bg-surface border-b border-border flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5 shrink-0">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#EF4444]/80" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]/80" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#10B981]/80" />
+                <div className="w-2.5 h-2.5 rounded-full bg-border" />
+                <div className="w-2.5 h-2.5 rounded-full bg-border" />
+                <div className="w-2.5 h-2.5 rounded-full bg-border" />
               </div>
               <div className="px-3 py-0.5 rounded-md bg-surface/90 border border-border/70 text-[11px] font-mono text-muted/90 truncate max-w-[220px]">
                 {displayHost}
@@ -300,9 +308,9 @@ export default function ProjectCard({ project, index }) {
               {project.oneLiner}
             </p>
 
-            {/* Metrics Row (countUp animates once on view; static renders immediately) */}
+            {/* Metrics Row (mono numbers with thin divider lines instead of heavy boxes) */}
             {project.metrics && project.metrics.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-border border-y border-border py-2.5 mb-6">
                 {project.metrics.map((m, idx) => (
                   <MetricBox
                     key={idx}

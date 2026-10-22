@@ -60,7 +60,7 @@ function TradeXpertDiagram() {
             stroke="var(--color-border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="28" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="16" y="28" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Client Applications
           </text>
           <text x="16" y="54" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
@@ -87,7 +87,7 @@ function TradeXpertDiagram() {
             stroke="var(--color-border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-spark)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="16" y="30" fill="var(--color-spark)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Yahoo Finance Feed
           </text>
           <text x="16" y="56" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
@@ -162,7 +162,7 @@ function TradeXpertDiagram() {
             stroke="var(--color-accent)"
             strokeWidth="1"
           />
-          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Express API Server
           </text>
 
@@ -253,7 +253,7 @@ function TradeXpertDiagram() {
             stroke="var(--color-border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="32" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="16" y="32" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             MongoDB Atlas
           </text>
           <text x="16" y="62" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
@@ -319,7 +319,7 @@ function StayHubDiagram() {
         {/* External Satellite: Razorpay (Top Left) */}
         <g transform="translate(40, 20)">
           <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Space Grotesk, sans-serif">
+          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Razorpay (test mode)
           </text>
           <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
@@ -330,7 +330,7 @@ function StayHubDiagram() {
         {/* External Satellite: Mapbox (Top Right) */}
         <g transform="translate(720, 20)">
           <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Space Grotesk, sans-serif">
+          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Mapbox Geocoding
           </text>
           <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
@@ -348,7 +348,7 @@ function StayHubDiagram() {
             stroke="var(--color-border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="16" y="30" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Browser Client
           </text>
           <text x="16" y="58" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
@@ -368,7 +368,7 @@ function StayHubDiagram() {
         {/* External Satellite: Cloudinary (Bottom Left) */}
         <g transform="translate(40, 315)">
           <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Space Grotesk, sans-serif">
+          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Cloudinary CDN
           </text>
           <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
@@ -379,7 +379,7 @@ function StayHubDiagram() {
         {/* External Satellite: Brevo / Nodemailer (Bottom Right) */}
         <g transform="translate(720, 315)">
           <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Space Grotesk, sans-serif">
+          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Brevo &amp; Nodemailer
           </text>
           <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
@@ -429,7 +429,7 @@ function StayHubDiagram() {
             stroke="var(--color-accent)"
             strokeWidth="1"
           />
-          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Express.js App Server
           </text>
 
@@ -533,7 +533,7 @@ function StayHubDiagram() {
             stroke="var(--color-border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">
+          <text x="16" y="30" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             MongoDB Atlas
           </text>
           <text x="16" y="58" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
@@ -637,6 +637,7 @@ export default function EngineeringNotes() {
     <section id="engineering" className="py-20 md:py-28 bg-surface/40 border-y border-border">
       <div className="max-w-[1120px] mx-auto px-6">
         <SectionHeading
+          number="02"
           title={engineeringData.heading || 'Engineering notes'}
           intro={
             engineeringData.intro ||
@@ -688,7 +689,7 @@ export default function EngineeringNotes() {
             className="space-y-12"
           >
             {/* 1. Architecture diagram: inline SVG on a surface card */}
-            <div className="rounded-2xl bg-surface border border-border shadow-card p-6 sm:p-8">
+            <div className="rounded-[20px] bg-surface border border-border editorial-card p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-border">
                 <div>
                   <h3 className="text-lg font-bold font-heading text-text">
@@ -722,13 +723,13 @@ export default function EngineeringNotes() {
                   {activeTab.flow.map((stepItem, sIdx) => (
                     <div
                       key={sIdx}
-                      className="p-5 rounded-xl bg-surface border border-border shadow-card hover:border-accent/60 transition-colors flex flex-col justify-between"
+                      className="p-5 rounded-[16px] bg-surface border border-border editorial-card hover:border-accent transition-colors flex flex-col justify-between"
                     >
                       <div>
                         <div className="inline-block px-2.5 py-0.5 rounded-md bg-chip border border-border font-mono text-xs font-bold text-accent mb-3">
                           0{stepItem.step || sIdx + 1}
                         </div>
-                        <h4 className="text-sm font-bold font-heading text-text mb-1.5">
+                        <h4 className="text-base font-bold font-serif text-text mb-1.5">
                           {stepItem.title}
                         </h4>
                         <p className="text-xs text-muted leading-relaxed">

@@ -34,6 +34,7 @@ export default function About() {
     <section id="about" className="py-20 md:py-28">
       <div className="max-w-[1120px] mx-auto px-6">
         <SectionHeading
+          number="03"
           title="About me"
           intro="Background, engineering foundations, and focus areas across full-stack development and system reliability."
         />
@@ -46,7 +47,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="md:col-span-7 lg:col-span-8 p-6 sm:p-8 rounded-card bg-surface border border-border shadow-card flex flex-col justify-between"
+            className="md:col-span-7 lg:col-span-8 p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
           >
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-5">
@@ -70,7 +71,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="md:col-span-5 lg:col-span-4 p-6 sm:p-8 rounded-card bg-surface border border-border shadow-card flex flex-col items-center justify-center text-center relative overflow-hidden"
+            className="md:col-span-5 lg:col-span-4 p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col items-center justify-center text-center relative overflow-hidden"
           >
             {identity.profileImage ? (
               <img
@@ -117,7 +118,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.15 + idx * 0.05 }}
-              className="md:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-card bg-surface border border-border shadow-card hover:border-accent transition-colors flex flex-col justify-between"
+              className="md:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-[20px] editorial-card hover:border-accent transition-colors flex flex-col justify-between"
             >
               <div>
                 <div className="p-2.5 rounded-xl bg-chip border border-border inline-flex items-center justify-center mb-3.5">
@@ -139,7 +140,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="md:col-span-6 p-6 rounded-card bg-surface border border-border shadow-card flex flex-col justify-between"
+            className="md:col-span-6 p-6 rounded-[20px] editorial-card flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2.5 mb-3">
@@ -170,7 +171,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="md:col-span-6 p-6 rounded-card bg-surface border border-border shadow-card flex flex-col justify-between"
+            className="md:col-span-6 p-6 rounded-[20px] editorial-card flex flex-col justify-between"
           >
             <div>
               <h4 className="text-base font-bold font-heading text-text mb-3.5">

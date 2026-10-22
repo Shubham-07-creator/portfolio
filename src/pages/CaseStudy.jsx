@@ -45,18 +45,18 @@ function TradeXpertArchitectureSvg() {
 
         {/* 1. Client Layer */}
         <rect x="30" y="40" width="200" height="80" rx="14" fill="var(--color-chip)" stroke="var(--color-spark)" strokeWidth="1.5" />
-        <text x="130" y="75" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">Landing Site</text>
+        <text x="130" y="75" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Landing Site</text>
         <text x="130" y="95" textAnchor="middle" fill="var(--color-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Marketing &amp; Auth</text>
 
         <rect x="30" y="180" width="200" height="90" rx="14" fill="var(--color-chip)" stroke="var(--color-spark)" strokeWidth="1.5" />
-        <text x="130" y="215" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">Trading Terminal</text>
+        <text x="130" y="215" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Trading Terminal</text>
         <text x="130" y="235" textAnchor="middle" fill="var(--color-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Chart.js · Orders</text>
         <text x="130" y="252" textAnchor="middle" fill="var(--color-accent)" fontSize="10">Socket.IO Client</text>
 
         {/* 2. Express API Layer (Core) */}
         <rect x="330" y="30" width="280" height="260" rx="18" fill="var(--color-surface)" stroke="var(--color-accent)" strokeWidth="2" />
         <rect x="330" y="30" width="280" height="34" rx="18" fill="var(--color-chip)" />
-        <text x="470" y="52" textAnchor="middle" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Space Grotesk, sans-serif">Express API Server</text>
+        <text x="470" y="52" textAnchor="middle" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Express API Server</text>
         
         {/* Middleware & Modules */}
         <rect x="350" y="80" width="240" height="32" rx="8" fill="var(--color-chip)" stroke="var(--color-border)" />
@@ -74,12 +74,12 @@ function TradeXpertArchitectureSvg() {
         {/* 3. External & Database Layer */}
         {/* Yahoo Finance */}
         <rect x="690" y="50" width="190" height="70" rx="12" fill="var(--color-chip)" stroke="var(--color-accent)" strokeWidth="1.5" />
-        <text x="785" y="80" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Space Grotesk, sans-serif">Yahoo Finance</text>
+        <text x="785" y="80" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">Yahoo Finance</text>
         <text x="785" y="100" textAnchor="middle" fill="var(--color-muted)" fontSize="10">Live NSE Ticks</text>
 
         {/* MongoDB Atlas */}
         <rect x="690" y="180" width="190" height="85" rx="12" fill="var(--color-chip)" stroke="var(--color-success)" strokeWidth="1.5" />
-        <text x="785" y="212" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Space Grotesk, sans-serif">MongoDB Atlas</text>
+        <text x="785" y="212" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">MongoDB Atlas</text>
         <text x="785" y="232" textAnchor="middle" fill="var(--color-muted)" fontSize="10">Users · Orders · Portfolios</text>
         <text x="785" y="248" textAnchor="middle" fill="var(--color-success)" fontSize="10">Mongoose Schemas</text>
 

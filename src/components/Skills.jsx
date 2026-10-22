@@ -120,6 +120,7 @@ export default function Skills() {
     <section id="skills" className="py-20 md:py-28 bg-surface/40 border-y border-border">
       <div className="max-w-[1120px] mx-auto px-6">
         <SectionHeading
+          number="04"
           title="Skills & technologies"
           intro="Technologies, frameworks, and foundational computer science principles applied in project architectures."
         />
@@ -133,7 +134,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="p-6 rounded-card bg-surface border border-border shadow-card hover:border-accent transition-all flex flex-col justify-between"
+              className="p-6 rounded-[20px] editorial-card flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border">

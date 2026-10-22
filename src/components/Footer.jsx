@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
@@ -17,39 +18,33 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-surface/60 text-muted text-sm py-12">
+    <footer className="border-t border-border bg-surface text-muted text-sm pt-16 pb-12">
       <div className="max-w-[1120px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-border">
-          {/* Logo & Identity */}
-          <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
-            <a
-              href="#hero"
-              className="inline-flex items-center gap-2.5 min-h-[44px] group"
-            >
-              <div
-                aria-hidden="true"
-                className="w-8 h-8 rounded-lg bg-chip border border-border flex items-center justify-center font-heading font-bold text-sm text-accent group-hover:border-accent transition-colors"
-              >
-                SK
-              </div>
-              <span className="font-heading font-bold text-base text-text">
-                {identity.name}
-              </span>
-            </a>
-            <span className="hidden sm:inline text-border">|</span>
-            <span className="text-xs font-mono text-muted">
-              {identity.role}
+        {/* Large Editorial CTA Header: "Let's talk." */}
+        <div className="pb-14 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-wider text-accent block mb-3 font-medium">
+              Start a conversation
             </span>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-normal text-text tracking-tight mb-4">
+              Let’s talk.
+            </h2>
+            <a
+              href={`mailto:${identity.email}`}
+              className="inline-flex items-center gap-2 font-mono text-lg sm:text-xl text-accent hover:text-accent-hover underline underline-offset-8 transition-colors group"
+            >
+              <span>{identity.email}</span>
+              <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
           </div>
 
-          {/* Social Profiles */}
           <div className="flex items-center gap-3">
             <a
               href={identity.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
             >
               <SiGithub className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -58,15 +53,29 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
             >
               <FaLinkedin className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
         </div>
 
-        {/* Links & Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs font-mono text-muted">
+        {/* Lower Row: Logo, Links & Copyright */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-mono text-muted">
+          <div className="flex items-center gap-3">
+            <div
+              aria-hidden="true"
+              className="w-7 h-7 rounded-lg bg-accent text-on-accent flex items-center justify-center font-mono font-bold text-xs"
+            >
+              SK
+            </div>
+            <span className="font-serif text-base text-text">
+              {identity.name}
+            </span>
+            <span className="text-border">|</span>
+            <span>{identity.role}</span>
+          </div>
+
           <nav aria-label="Footer Navigation" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             {navLinks.map((link) => (
               <a

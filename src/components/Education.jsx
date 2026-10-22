@@ -12,6 +12,7 @@ export default function Education() {
     <section id="education" className="py-20 md:py-28 bg-surface/40 border-y border-border">
       <div className="max-w-[1120px] mx-auto px-6">
         <SectionHeading
+          number="06"
           title="Education & certification"
           intro="Academic degree in computer applications, foundational schooling, and certified full-stack engineering training."
         />
@@ -25,7 +26,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="p-6 sm:p-8 rounded-card bg-surface border border-border shadow-card hover:border-accent transition-colors"
+              className="p-6 sm:p-8 rounded-[20px] editorial-card"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-3 border-b border-border">
                 <div className="flex items-center gap-2.5">
@@ -96,7 +97,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.15 }}
-              className="p-6 sm:p-8 rounded-card bg-surface border border-border shadow-card hover:border-accent transition-colors flex flex-col justify-between"
+              className="p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-border">
