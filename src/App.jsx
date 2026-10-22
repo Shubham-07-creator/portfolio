@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CommandPalette from './components/CommandPalette';
+import ScrollRuler from './components/ScrollRuler';
 
 import Home from './pages/Home';
 
@@ -30,6 +31,22 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, []);
 
+  // Apple-style specular card sheen: tracks mouse relative to hovered editorial-card
+  useEffect(() => {
+    const handlePointerMove = (e) => {
+      const card = e.target.closest('.editorial-card');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    };
+
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    return () => window.removeEventListener('pointermove', handlePointerMove);
+  }, []);
+
   const activeSection = useActiveSection([
     'hero',
     'projects',
@@ -44,6 +61,8 @@ export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/25 selection:text-text relative">
+        <ScrollRuler activeSection={activeSection} />
+
         <Navbar
           activeSection={activeSection}
           theme={theme}

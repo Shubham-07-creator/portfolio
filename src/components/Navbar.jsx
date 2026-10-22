@@ -2,9 +2,11 @@ import React from 'react';
 import { FileText } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { portfolioData } from '../data/portfolio';
+import { useStudioClock } from '../hooks/useStudioClock';
 
 export default function Navbar({ activeSection, theme, toggleTheme, onOpenCommand }) {
   const { identity } = portfolioData;
+  const studioTime = useStudioClock();
 
   const navLinks = [
     { name: 'Projects', href: '#projects', id: 'projects' },
@@ -42,9 +44,17 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
               >
                 SK
               </div>
-              <span className="font-serif text-xl tracking-tight text-text">
-                Shubham Kumar
-              </span>
+              <div className="flex flex-col">
+                <span className="font-serif text-xl tracking-tight text-text leading-tight">
+                  Shubham Kumar
+                </span>
+                {studioTime && (
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono text-muted tracking-tight">
+                    <span className="w-1.5 h-1.5 rounded-full bg-success inline-block animate-pulse" />
+                    <span>NEW DELHI · {studioTime} IST</span>
+                  </span>
+                )}
+              </div>
             </a>
 
             {/* Mobile Actions: Command palette, Theme toggle & Resume */}

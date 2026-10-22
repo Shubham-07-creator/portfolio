@@ -236,8 +236,9 @@
   opacity: 0.85;
 }
 
-/* ───────────── Editorial Cards (20px radius, 1px border) ───────────── */
+/* ───────────── Editorial Cards (20px radius, 1px border + Specular Spotlight) ───────────── */
 .editorial-card {
+  position: relative;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 20px;
@@ -245,11 +246,71 @@
   transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
               border-color 0.25s ease,
               box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+/* Subtle mouse-follow specular spotlight sheen */
+.editorial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(255, 176, 32, 0.08),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+:root[data-theme="light"] .editorial-card::before {
+  background: radial-gradient(
+    420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(180, 83, 9, 0.06),
+    transparent 65%
+  );
+}
+
+/* Fine specular border glow along mouse movement */
+.editorial-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(255, 176, 32, 0.45),
+    transparent 60%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+
+:root[data-theme="light"] .editorial-card::after {
+  background: radial-gradient(
+    300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(180, 83, 9, 0.35),
+    transparent 60%
+  );
 }
 
 .editorial-card:hover {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-card-hover);
+}
+
+.editorial-card:hover::before,
+.editorial-card:hover::after {
+  opacity: 1;
 }
 
 /* ───────────── Chips (Mono Thin Pills) ───────────── */

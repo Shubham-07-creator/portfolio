@@ -4,9 +4,11 @@ import { Mail, MapPin, FileText, ArrowRight, Copy, Check, Terminal, Code2 } from
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
+import { useStudioClock } from '../hooks/useStudioClock';
 
 export default function Hero() {
   const { identity } = portfolioData;
+  const studioTime = useStudioClock();
   const [activeTab, setActiveTab] = useState('js');
   const [copied, setCopied] = useState(false);
 
@@ -64,13 +66,25 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
           >
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface border border-border text-xs font-mono text-text shadow-xs mb-3.5 sm:mb-5">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              <span>{identity.status}</span>
+            {/* Telemetry & Status Bar */}
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-3.5 sm:mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
+                </span>
+                <span className="text-accent font-medium">{identity.status}</span>
+              </div>
+
+              {studioTime && (
+                <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip/70 border border-border text-muted text-[11px]">
+                  <span className="text-text font-medium">NEW DELHI, IN</span>
+                  <span className="text-border">·</span>
+                  <span className="text-accent font-semibold">{studioTime} IST</span>
+                  <span className="text-border">·</span>
+                  <span>LAT 28.61° N</span>
+                </div>
+              )}
             </div>
 
             {/* Hero Name: Instrument Serif, "Shubham" straight, "Kumar" italic saffron */}
