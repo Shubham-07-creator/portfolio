@@ -123,8 +123,10 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="p-5 sm:p-6 rounded-[20px] editorial-card"
+              className="p-5 sm:p-6 rounded-[20px] editorial-card relative group"
             >
+              {/* Architectural registration marks */}
+              <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono text-muted uppercase tracking-wider">
                   Direct Email
@@ -230,8 +232,12 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="lg:col-span-7 p-5 sm:p-8 rounded-[20px] editorial-card"
+            className="lg:col-span-7 p-5 sm:p-8 rounded-[20px] editorial-card relative group"
           >
+            {/* Architectural registration marks */}
+            <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+            <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+
             <h3 className="text-xl font-bold font-heading text-text mb-1">
               Send a message
             </h3>

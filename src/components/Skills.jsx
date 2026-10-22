@@ -143,8 +143,11 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="p-5 sm:p-6 rounded-[20px] editorial-card flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-[20px] editorial-card flex flex-col justify-between relative group"
             >
+              {/* Architectural registration marks */}
+              <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+              <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border">
                   <div className="p-2 rounded-lg bg-chip border border-border">

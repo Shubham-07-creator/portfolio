@@ -689,7 +689,10 @@ export default function EngineeringNotes() {
             className="space-y-12"
           >
             {/* 1. Architecture diagram: inline SVG on a surface card */}
-            <div className="rounded-[20px] bg-surface border border-border editorial-card p-6 sm:p-8">
+            <div className="rounded-[20px] bg-surface border border-border editorial-card p-6 sm:p-8 relative group">
+              {/* Architectural registration marks */}
+              <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+              <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-border">
                 <div>
                   <h3 className="text-lg font-bold font-heading text-text">

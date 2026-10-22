@@ -31,7 +31,10 @@ export default function Experience() {
               </div>
 
               {/* Single Experience Card */}
-              <div className="p-5 sm:p-8 rounded-[20px] editorial-card">
+              <div className="p-5 sm:p-8 rounded-[20px] editorial-card relative group">
+                {/* Architectural registration marks */}
+                <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+                <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-border">
                   <div>
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-chip border border-border text-[11px] font-mono text-accent mb-2">

@@ -47,8 +47,14 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="md:col-span-7 lg:col-span-8 p-5 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
+            className="md:col-span-7 lg:col-span-8 p-5 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between relative group"
           >
+            {/* Architectural registration marks */}
+            <span className="absolute top-2.5 left-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+            <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+            <span className="absolute bottom-2.5 left-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+            <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-4 sm:mb-5">
                 <Sparkles className="w-3.5 h-3.5" />
@@ -71,8 +77,11 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="md:col-span-5 lg:col-span-4 p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col items-center justify-center text-center relative overflow-hidden"
+            className="md:col-span-5 lg:col-span-4 p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col items-center justify-center text-center relative overflow-hidden group"
           >
+            {/* Architectural registration marks */}
+            <span className="absolute top-2.5 left-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
+            <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
             {identity.profileImage ? (
               <img
                 src={identity.profileImage}
