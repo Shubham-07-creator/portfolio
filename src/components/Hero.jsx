@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, FileText, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, FileText, ArrowRight, Copy, Check, Terminal, Code2 } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
 
 export default function Hero() {
   const { identity } = portfolioData;
+  const [activeTab, setActiveTab] = useState('js');
+  const [copied, setCopied] = useState(false);
 
   const codeLines = [
     { num: 1, text: <><span className="text-accent font-medium">const</span> <span className="text-text font-medium">shubham</span> = {'{'}</> },
@@ -19,6 +21,26 @@ export default function Hero() {
     { num: 8, text: <>{'}'};</> },
   ];
 
+  const cliOutput = [
+    { text: '$ node check-availability.js', color: 'text-muted' },
+    { text: '✔ SDE Intern / Full Stack: AVAILABLE', color: 'text-success' },
+    { text: '✔ Primary Stack: MERN + Java & DSA', color: 'text-text' },
+    { text: '✔ Location: India · Remote / On-site', color: 'text-text' },
+    { text: `✔ Direct: ${identity.email}`, color: 'text-accent' },
+    { text: '$ echo "Ready to engineer production software."', color: 'text-muted' },
+  ];
+
+  const handleCopy = () => {
+    const rawJs = `const shubham = {\n  role: "Full Stack Developer",\n  stack: ["React", "Node.js", "Express", "MongoDB"],\n  foundations: ["Java", "DSA"],\n  status: "open to internships",\n  location: "India"\n};`;
+    const rawCli = `$ node check-availability.js\n✔ SDE Intern / Full Stack: AVAILABLE\n✔ Primary Stack: MERN + Java & DSA\n✔ Location: India · Remote / On-site\n✔ Direct: ${identity.email}\n$ echo "Ready to engineer production software."`;
+    
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(activeTab === 'js' ? rawJs : rawCli);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -29,7 +51,11 @@ export default function Hero() {
       <div className="hero-grain" aria-hidden="true" />
       <div className="hero-ambient-glow hidden lg:block" aria-hidden="true" />
 
+      {/* Architectural Corner Registration Marks (+) */}
       <div className="max-w-[1120px] mx-auto px-4 sm:px-6 w-full relative z-10">
+        <span className="absolute -top-3 left-4 sm:left-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
+        <span className="absolute -top-3 right-4 sm:right-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column (Asymmetric: 7 cols on desktop) */}
           <motion.div
@@ -118,44 +144,103 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Editorial Code Card with Line Numbers (5 cols on desktop) */}
+          {/* Right Column: Editorial Code Card with Interactive Tabs & Registration Marks */}
           <motion.div
             className="lg:col-span-5 flex justify-center w-full lg:-ml-4 z-20"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0, 0, 1] }}
           >
-            <div className="w-full max-w-[470px] editorial-card overflow-hidden">
-              {/* Window dots & tabs */}
-              <div className="px-4 py-3 bg-surface border-b border-border flex items-center justify-between">
-                <div className="flex items-center gap-2">
+            <div className="w-full max-w-[470px] editorial-card overflow-hidden relative">
+              {/* Corner crosshairs inside card */}
+              <span className="absolute top-2 left-2 font-mono text-[10px] text-border/60 select-none pointer-events-none" aria-hidden="true">+</span>
+              <span className="absolute top-2 right-2 font-mono text-[10px] text-border/60 select-none pointer-events-none" aria-hidden="true">+</span>
+
+              {/* Window dots & interactive tab bar */}
+              <div className="px-3 sm:px-4 py-2.5 bg-surface border-b border-border flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-border" />
                   <div className="w-2.5 h-2.5 rounded-full bg-border" />
                   <div className="w-2.5 h-2.5 rounded-full bg-border" />
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  <span className="font-mono text-xs text-muted font-medium">shubham.js</span>
+
+                {/* Tab switchers */}
+                <div className="inline-flex p-0.5 rounded-lg bg-chip/70 border border-border">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab('js')}
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono transition-colors cursor-pointer ${
+                      activeTab === 'js'
+                        ? 'bg-surface text-accent font-medium shadow-xs'
+                        : 'text-muted hover:text-text'
+                    }`}
+                  >
+                    <Code2 className="w-3 h-3" />
+                    <span>shubham.js</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab('cli')}
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono transition-colors cursor-pointer ${
+                      activeTab === 'cli'
+                        ? 'bg-surface text-accent font-medium shadow-xs'
+                        : 'text-muted hover:text-text'
+                    }`}
+                  >
+                    <Terminal className="w-3 h-3" />
+                    <span>status.sh</span>
+                  </button>
                 </div>
-                <span className="text-[10px] font-mono text-muted/60">Node.js</span>
+
+                {/* Copy button */}
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  title="Copy snippet"
+                  aria-label="Copy code snippet"
+                  className="p-1.5 rounded-md text-muted hover:text-accent hover:bg-chip/50 transition-colors cursor-pointer"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5 text-success" /> : <Copy className="w-3.5 h-3.5" />}
+                </button>
               </div>
 
-              {/* Code block with real line numbers and syntax coloring */}
-              <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-text">
-                <div className="flex flex-col gap-0.5">
-                  {codeLines.map((line) => (
-                    <div key={line.num} className="flex items-start gap-3">
-                      <span className="text-[11px] font-mono text-muted/50 select-none w-4 text-right shrink-0">
-                        {line.num}
-                      </span>
-                      <span className="truncate">{line.text}</span>
+              {/* Tab 1: JavaScript View */}
+              {activeTab === 'js' && (
+                <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-text">
+                  <div className="flex flex-col gap-0.5">
+                    {codeLines.map((line) => (
+                      <div key={line.num} className="flex items-start gap-3">
+                        <span className="text-[11px] font-mono text-muted/50 select-none w-4 text-right shrink-0">
+                          {line.num}
+                        </span>
+                        <span className="truncate">{line.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tab 2: Interactive CLI View */}
+              {activeTab === 'cli' && (
+                <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-text space-y-1.5 bg-chip/10">
+                  {cliOutput.map((item, idx) => (
+                    <div key={idx} className={`${item.color} leading-relaxed`}>
+                      {item.text}
                     </div>
                   ))}
+                  <div className="flex items-center gap-1.5 pt-1 text-accent">
+                    <span>$</span>
+                    <span className="w-2 h-4 bg-accent animate-pulse inline-block" />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </motion.div>
         </div>
+
+        <span className="absolute -bottom-3 left-4 sm:left-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
+        <span className="absolute -bottom-3 right-4 sm:right-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
       </div>
     </section>
   );

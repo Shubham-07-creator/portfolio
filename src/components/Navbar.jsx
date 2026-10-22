@@ -3,7 +3,7 @@ import { FileText } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { portfolioData } from '../data/portfolio';
 
-export default function Navbar({ activeSection, theme, toggleTheme }) {
+export default function Navbar({ activeSection, theme, toggleTheme, onOpenCommand }) {
   const { identity } = portfolioData;
 
   const navLinks = [
@@ -47,8 +47,17 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
               </span>
             </a>
 
-            {/* Mobile Actions: Theme toggle & Resume */}
+            {/* Mobile Actions: Command palette, Theme toggle & Resume */}
             <div className="flex items-center gap-2 md:hidden">
+              <button
+                type="button"
+                onClick={onOpenCommand}
+                aria-label="Open command palette"
+                title="Quick actions (Ctrl+K)"
+                className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-lg border border-border bg-surface text-accent hover:border-accent flex items-center justify-center font-mono font-bold text-xs"
+              >
+                ⌘K
+              </button>
               <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
               {identity.resumeUrl && (
                 <a
@@ -94,8 +103,20 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
             })}
           </nav>
 
-          {/* Desktop Right: Theme Toggle & Optional Resume */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* Desktop Right: Command palette, Theme Toggle & Optional Resume */}
+          <div className="hidden md:flex items-center gap-2.5">
+            <button
+              type="button"
+              onClick={onOpenCommand}
+              aria-label="Open command palette"
+              title="Quick actions (Ctrl+K)"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-surface text-muted hover:text-text hover:border-accent text-xs font-mono transition-colors cursor-pointer"
+            >
+              <span className="px-1.5 py-0.5 rounded bg-chip border border-border text-[10px] text-accent font-bold">
+                ⌘K
+              </span>
+              <span className="text-[11px]">Quick actions</span>
+            </button>
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
             {identity.resumeUrl && (
               <a

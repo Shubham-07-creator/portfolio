@@ -38,6 +38,15 @@ import { portfolioData } from '../data/portfolio';
 export default function Skills() {
   const { skills } = portfolioData;
 
+  const skillContext = {
+    'Socket.IO': 'TradeXpert',
+    'Razorpay': 'StayHub',
+    'JWT (JSON Web Tokens)': 'TradeXpert',
+    'Java (Core Java)': 'DSA & OOP',
+    'MongoDB': 'MERN Core',
+    'Tailwind CSS': 'Design System',
+  };
+
   const categoryIcons = {
     Languages: <Code2 className="w-5 h-5 text-accent" strokeWidth={1.75} />,
     Frontend: <Layout className="w-5 h-5 text-spark" strokeWidth={1.75} />,
@@ -156,10 +165,15 @@ export default function Skills() {
                   {cat.skills.map((skillName) => (
                     <div
                       key={skillName}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-chip border border-border text-xs font-mono text-text transition-colors hover:border-accent"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-chip border border-border text-xs font-mono text-text transition-colors hover:border-accent group"
                     >
                       {getSkillIcon(skillName)}
                       <span>{skillName}</span>
+                      {skillContext[skillName] && (
+                        <span className="text-[10px] text-accent/80 font-normal pl-1.5 border-l border-border/70 hidden sm:inline">
+                          {skillContext[skillName]}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>

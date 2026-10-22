@@ -172,6 +172,12 @@ export default function ProjectCard({ project, index }) {
     project.caseStudy && (project.caseStudy.problem || project.caseStudy.solution)
   );
 
+  const dataFlowSteps = project.slug === 'tradexpert'
+    ? ['NSE Feed', 'Socket.IO 2.5s Engine', 'Margin Lock & Match', 'Client Terminal']
+    : project.slug === 'stayhub'
+    ? ['Mapbox GeoJSON', 'Overlap Validation', 'Razorpay SHA256 HMAC', 'GST Invoice']
+    : [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -180,6 +186,11 @@ export default function ProjectCard({ project, index }) {
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.2, 0, 0, 1] }}
       className="relative p-5 sm:p-8 lg:p-10 rounded-[20px] editorial-card transition-all duration-200 group"
     >
+      {/* Architectural Corner Registration Marks */}
+      <span className="absolute top-2 left-2 font-mono text-[10px] text-border/60 select-none pointer-events-none" aria-hidden="true">+</span>
+      <span className="absolute bottom-2 left-2 font-mono text-[10px] text-border/60 select-none pointer-events-none" aria-hidden="true">+</span>
+      <span className="absolute bottom-2 right-2 font-mono text-[10px] text-border/60 select-none pointer-events-none" aria-hidden="true">+</span>
+
       {/* Corner Outlined Serif Number */}
       <span
         className="absolute top-4 right-5 sm:top-5 sm:right-7 font-serif text-4xl sm:text-6xl text-border select-none pointer-events-none font-normal"
@@ -321,6 +332,31 @@ export default function ProjectCard({ project, index }) {
                     countUp={Boolean(m.countUp)}
                   />
                 ))}
+              </div>
+            )}
+
+            {/* Architectural Data Pipeline Ribbon */}
+            {dataFlowSteps.length > 0 && (
+              <div className="mb-6 p-3 sm:p-3.5 rounded-xl bg-chip/40 border border-border/80">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-accent font-semibold flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                    System Data Pipeline
+                  </span>
+                  <span className="text-[10px] font-mono text-muted/60">Verified Architecture</span>
+                </div>
+                <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar text-[11px] font-mono text-muted py-0.5">
+                  {dataFlowSteps.map((step, sIdx) => (
+                    <React.Fragment key={sIdx}>
+                      <span className="px-2 py-1 rounded-md bg-surface border border-border text-text whitespace-nowrap font-medium shadow-2xs">
+                        {step}
+                      </span>
+                      {sIdx < dataFlowSteps.length - 1 && (
+                        <span className="text-accent shrink-0 select-none">→</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
               </div>
             )}
 

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -8,6 +8,7 @@ import { useActiveSection } from './hooks/useActiveSection';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import CommandPalette from './components/CommandPalette';
 
 import Home from './pages/Home';
 
@@ -16,6 +17,19 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
+  const [isCommandOpen, setIsCommandOpen] = useState(false);
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsCommandOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
   const activeSection = useActiveSection([
     'hero',
     'projects',
@@ -32,6 +46,14 @@ export default function App() {
       <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/25 selection:text-text relative">
         <Navbar
           activeSection={activeSection}
+          theme={theme}
+          toggleTheme={toggleTheme}
+          onOpenCommand={() => setIsCommandOpen(true)}
+        />
+
+        <CommandPalette
+          isOpen={isCommandOpen}
+          setIsOpen={setIsCommandOpen}
           theme={theme}
           toggleTheme={toggleTheme}
         />
