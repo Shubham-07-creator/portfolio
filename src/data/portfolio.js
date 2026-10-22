@@ -15,7 +15,7 @@ export const portfolioData = {
     github: "https://github.com/Shubham-07-creator",
     linkedin: "https://www.linkedin.com/in/shubhamkumardev",
     leetcodeUrl: "", // hidden when empty
-    resumeUrl: "", // set to "/Shubham_Kumar_Resume.pdf" when adding the PDF; hidden when empty
+    resumeUrl: `${import.meta.env.BASE_URL}Shubham_Kumar_Resume.pdf`,
     profileImage: "", // set to "/profile.webp" when adding image; otherwise shows SK monogram
     phone: "+91 8986339496",
     showPhone: false, // stored with showPhone:false and is never displayed
