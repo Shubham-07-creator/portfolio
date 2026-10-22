@@ -31,8 +31,8 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="about" className="py-16 md:py-24">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="03"
           title="About me"
@@ -40,21 +40,21 @@ export default function About() {
         />
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6">
           {/* 1. Wide Narrative Card (8 cols on lg) */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="md:col-span-7 lg:col-span-8 p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
+            className="md:col-span-7 lg:col-span-8 p-5 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
           >
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-4 sm:mb-5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Engineering Philosophy</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold font-heading text-text mb-4">
+              <h3 className="text-2xl sm:text-3xl font-serif text-text mb-4 font-normal">
                 Building reliable software with clean architecture
               </h3>
               <div className="space-y-4 text-sm sm:text-base text-muted leading-relaxed">

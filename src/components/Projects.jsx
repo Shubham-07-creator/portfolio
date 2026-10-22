@@ -7,8 +7,8 @@ export default function Projects() {
   const { projects } = portfolioData;
 
   return (
-    <section id="projects" className="pt-12 pb-20 md:pt-16 md:pb-28">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="projects" className="pt-10 pb-16 md:pt-16 md:pb-24">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="01"
           title="Projects"

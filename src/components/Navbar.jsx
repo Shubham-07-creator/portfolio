@@ -28,7 +28,7 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
 
       {/* Header: Solid bar, 1px bottom border */}
       <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-border shadow-xs">
-        <div className="max-w-[1120px] mx-auto px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div className="max-w-[1120px] mx-auto px-4 sm:px-6 py-2.5 sm:py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-2.5 sm:gap-3">
           {/* Top Row on mobile / Left column on desktop */}
           <div className="flex items-center justify-between w-full md:w-auto">
             {/* Logo: SK Monogram in Saffron rounded square */}
@@ -67,7 +67,7 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
           {/* Center Links (desktop) / Scrollable Row (mobile) */}
           <nav
             aria-label="Main Navigation"
-            className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1 -mx-2 px-2 md:mx-0 md:px-0"
+            className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1 -mx-4 px-4 md:mx-0 md:px-0"
           >
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;

@@ -4,16 +4,16 @@
 /* Dark is default */
 :root {
   --color-bg: #0A0F1F;
-  --color-surface: #121933;
-  --color-border: #222B4A;
-  --color-text: #F4F1EA;
-  --color-body: #C9CDDB;
-  --color-muted: #A3A9BD;
+  --color-surface: #111831;
+  --color-border: #202947;
+  --color-text: #F8F5EE;
+  --color-body: #CAD0E0;
+  --color-muted: #9BA3BD;
   --color-accent: #FFB020;
   --color-accent-hover: #E59E18;
   --color-secondary: #8EA2FF;
   --color-on-accent: #0A0F1F;
-  --color-chip: #121933;
+  --color-chip: #161F3D;
   --color-success: #34D399;
   --color-error: #F87171;
 
@@ -24,24 +24,24 @@
   color-scheme: dark;
 }
 
-/* Light mode overrides (Warm Paper & Amber) */
+/* Light mode overrides (Authentic Warm Editorial Paper & Rich Amber) */
 :root[data-theme="light"] {
-  --color-bg: #FBFAF7;
+  --color-bg: #F9F7F2;
   --color-surface: #FFFFFF;
-  --color-border: #E7E3DA;
-  --color-text: #14182B;
-  --color-body: #2E3350;
-  --color-muted: #5A6080;
+  --color-border: #E6E1D6;
+  --color-text: #111424;
+  --color-body: #2B314B;
+  --color-muted: #575E7E;
   --color-accent: #B45309;
   --color-accent-hover: #92400E;
-  --color-secondary: #4F68D9;
+  --color-secondary: #4354B3;
   --color-on-accent: #FFFFFF;
-  --color-chip: #F3EFE6;
+  --color-chip: #F1ECE2;
   --color-success: #15803D;
   --color-error: #DC2626;
 
-  --shadow-card: 0 4px 20px -2px rgba(20, 24, 43, 0.05);
-  --shadow-card-hover: 0 10px 30px -4px rgba(20, 24, 43, 0.1);
+  --shadow-card: 0 1px 3px rgba(27, 33, 58, 0.04), 0 10px 24px -4px rgba(27, 33, 58, 0.04);
+  --shadow-card-hover: 0 2px 6px rgba(27, 33, 58, 0.05), 0 16px 36px -4px rgba(27, 33, 58, 0.08);
   --shadow-btn-glow: 0 4px 16px rgba(180, 83, 9, 0.25);
 
   color-scheme: light;
@@ -62,8 +62,8 @@
   --color-success: var(--color-success);
   --color-error: var(--color-error);
   --font-serif: "Instrument Serif", Georgia, serif;
-  --font-sans: Inter, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-heading: "Instrument Serif", Georgia, serif;
 }
 
@@ -71,7 +71,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 84px;
+    scroll-padding-top: 80px;
     -webkit-text-size-adjust: 100%;
   }
 
@@ -84,7 +84,7 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-body);
-    font-family: Inter, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -98,7 +98,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: "Instrument Serif", Georgia, serif;
     color: var(--color-text);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     font-weight: 400;
     text-wrap: balance;
   }
@@ -114,6 +114,10 @@
 
   ::selection {
     background: rgba(255, 176, 32, 0.3);
+    color: var(--color-text);
+  }
+  :root[data-theme="light"] ::selection {
+    background: rgba(180, 83, 9, 0.22);
     color: var(--color-text);
   }
 
@@ -145,20 +149,37 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 :root[data-theme="light"] .hero-dot-grid {
-  background-image: radial-gradient(rgba(20, 24, 43, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(17, 20, 36, 0.04) 1px, transparent 1px);
 }
 
-/* Subtle 3% Grain Overlay */
+/* Subtle Grain Overlay */
 .hero-grain {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Ambient Saffron Glow behind code card (Hero desktop) */
+.hero-ambient-glow {
+  position: absolute;
+  right: -5%;
+  top: 15%;
+  width: 520px;
+  height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 176, 32, 0.06) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 1;
+}
+:root[data-theme="light"] .hero-ambient-glow {
+  background: radial-gradient(circle, rgba(180, 83, 9, 0.05) 0%, transparent 70%);
 }
 
 /* ───────────── Buttons & Links ───────────── */

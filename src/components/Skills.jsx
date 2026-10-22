@@ -117,8 +117,8 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-28 bg-surface/40 border-y border-border">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="skills" className="py-16 md:py-24 bg-surface/30 border-y border-border">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="04"
           title="Skills & technologies"
@@ -126,7 +126,7 @@ export default function Skills() {
         />
 
         {/* 6 Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {skills.map((cat, idx) => (
             <motion.div
               key={cat.category}
@@ -134,7 +134,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="p-6 rounded-[20px] editorial-card flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-[20px] editorial-card flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border">

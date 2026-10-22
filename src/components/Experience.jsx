@@ -8,8 +8,8 @@ export default function Experience() {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="py-20 md:py-28">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="experience" className="py-16 md:py-24">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="05"
           title="Work experience"
@@ -31,7 +31,7 @@ export default function Experience() {
               </div>
 
               {/* Single Experience Card */}
-              <div className="p-6 sm:p-8 rounded-[20px] editorial-card">
+              <div className="p-5 sm:p-8 rounded-[20px] editorial-card">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-border">
                   <div>
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-chip border border-border text-[11px] font-mono text-accent mb-2">

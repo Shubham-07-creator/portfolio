@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Play,
   X,
+  Lock,
 } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { useReducedMotion } from '../hooks/useReducedMotion';
@@ -177,11 +178,11 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.2, 0, 0, 1] }}
-      className="relative p-6 sm:p-8 lg:p-10 rounded-[20px] editorial-card transition-all duration-200 group"
+      className="relative p-5 sm:p-8 lg:p-10 rounded-[20px] editorial-card transition-all duration-200 group"
     >
       {/* Corner Outlined Serif Number */}
       <span
-        className="absolute top-5 right-7 font-serif text-5xl sm:text-6xl text-border select-none pointer-events-none font-normal"
+        className="absolute top-4 right-5 sm:top-5 sm:right-7 font-serif text-4xl sm:text-6xl text-border select-none pointer-events-none font-normal"
         aria-hidden="true"
       >
         0{index + 1}
@@ -195,15 +196,16 @@ export default function ProjectCard({ project, index }) {
           }`}
         >
           <div className="w-full rounded-xl bg-surface border border-border shadow-xs overflow-hidden flex flex-col">
-            {/* Browser Window Header (muted dots) */}
+            {/* Browser Window Header (muted dots & SSL lock) */}
             <div className="px-3.5 py-2.5 bg-surface border-b border-border flex items-center justify-between gap-2">
               <div className="flex items-center gap-1.5 shrink-0">
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
               </div>
-              <div className="px-3 py-0.5 rounded-md bg-surface/90 border border-border/70 text-[11px] font-mono text-muted/90 truncate max-w-[220px]">
-                {displayHost}
+              <div className="px-2.5 py-0.5 rounded-md bg-chip/60 border border-border/70 text-[11px] font-mono text-muted flex items-center gap-1.5 truncate max-w-[220px]">
+                <Lock className="w-2.5 h-2.5 text-accent shrink-0" />
+                <span className="truncate">{displayHost}</span>
               </div>
               <div className="w-3 shrink-0" />
             </div>
@@ -288,7 +290,7 @@ export default function ProjectCard({ project, index }) {
           <div>
             {/* Header row: Title + Solo project badge */}
             <div className="flex flex-wrap items-center justify-between gap-3 mb-1.5">
-              <h3 className="text-2xl sm:text-[30px] font-bold font-heading text-text tracking-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-text tracking-tight">
                 {project.title}
               </h3>
               {project.soloBadge && (
@@ -310,7 +312,7 @@ export default function ProjectCard({ project, index }) {
 
             {/* Metrics Row (mono numbers with thin divider lines instead of heavy boxes) */}
             {project.metrics && project.metrics.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-border border-y border-border py-2.5 mb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 divide-x-0 sm:divide-x divide-border border-y border-border/80 py-2.5 sm:py-3 mb-6 bg-chip/20">
                 {project.metrics.map((m, idx) => (
                   <MetricBox
                     key={idx}

@@ -18,8 +18,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-surface text-muted text-sm pt-16 pb-12">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <footer className="border-t border-border bg-surface text-muted text-sm pt-14 pb-10 sm:pt-16 sm:pb-12">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         {/* Large Editorial CTA Header: "Let's talk." */}
         <div className="pb-14 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>

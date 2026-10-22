@@ -106,8 +106,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="contact" className="py-16 md:py-24">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="07"
           title={contact.heading}
@@ -123,7 +123,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="p-6 rounded-[20px] editorial-card"
+              className="p-5 sm:p-6 rounded-[20px] editorial-card"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs font-mono text-muted uppercase tracking-wider">
@@ -164,7 +164,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="p-6 rounded-[20px] editorial-card space-y-4"
+              className="p-5 sm:p-6 rounded-[20px] editorial-card space-y-4"
             >
               <span className="text-xs font-mono text-muted uppercase tracking-wider block">
                 Profiles &amp; Location
@@ -230,7 +230,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="lg:col-span-7 p-6 sm:p-8 rounded-[20px] editorial-card"
+            className="lg:col-span-7 p-5 sm:p-8 rounded-[20px] editorial-card"
           >
             <h3 className="text-xl font-bold font-heading text-text mb-1">
               Send a message

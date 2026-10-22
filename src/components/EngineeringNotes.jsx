@@ -634,8 +634,8 @@ export default function EngineeringNotes() {
   };
 
   return (
-    <section id="engineering" className="py-20 md:py-28 bg-surface/40 border-y border-border">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="engineering" className="py-16 md:py-24 bg-surface/30 border-y border-border">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="02"
           title={engineeringData.heading || 'Engineering notes'}

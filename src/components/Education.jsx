@@ -9,8 +9,8 @@ export default function Education() {
   const { bca, classXII, classX, certification } = education;
 
   return (
-    <section id="education" className="py-20 md:py-28 bg-surface/40 border-y border-border">
-      <div className="max-w-[1120px] mx-auto px-6">
+    <section id="education" className="py-16 md:py-24 bg-surface/30 border-y border-border">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6">
         <SectionHeading
           number="06"
           title="Education & certification"
@@ -26,7 +26,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="p-6 sm:p-8 rounded-[20px] editorial-card"
+              className="p-5 sm:p-8 rounded-[20px] editorial-card"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-3 border-b border-border">
                 <div className="flex items-center gap-2.5">
@@ -97,7 +97,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.15 }}
-              className="p-6 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
+              className="p-5 sm:p-8 rounded-[20px] editorial-card flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-border">
