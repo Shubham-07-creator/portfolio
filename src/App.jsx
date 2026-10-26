@@ -9,7 +9,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CommandPalette from './components/CommandPalette';
-import ScrollRuler from './components/ScrollRuler';
 
 import Home from './pages/Home';
 
@@ -61,8 +60,6 @@ export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/30 selection:text-text relative">
-        <ScrollRuler activeSection={activeSection} />
-
         <Navbar
           activeSection={activeSection}
           theme={theme}
