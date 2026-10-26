@@ -28,10 +28,10 @@ function TradeXpertArchitectureSvg() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-accent)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent)" />
           </marker>
           <marker
-            id="cs-arrow-spark"
+            id="cs-arrow-muted"
             viewBox="0 0 10 10"
             refX="6"
             refY="5"
@@ -39,56 +39,56 @@ function TradeXpertArchitectureSvg() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-spark)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--text-muted)" />
           </marker>
         </defs>
 
         {/* 1. Client Layer */}
-        <rect x="30" y="40" width="200" height="80" rx="14" fill="var(--color-chip)" stroke="var(--color-spark)" strokeWidth="1.5" />
-        <text x="130" y="75" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Landing Site</text>
-        <text x="130" y="95" textAnchor="middle" fill="var(--color-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Marketing &amp; Auth</text>
+        <rect x="30" y="40" width="200" height="80" rx="14" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+        <text x="130" y="75" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Landing Site</text>
+        <text x="130" y="95" textAnchor="middle" fill="var(--text-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Marketing &amp; Auth</text>
 
-        <rect x="30" y="180" width="200" height="90" rx="14" fill="var(--color-chip)" stroke="var(--color-spark)" strokeWidth="1.5" />
-        <text x="130" y="215" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Trading Terminal</text>
-        <text x="130" y="235" textAnchor="middle" fill="var(--color-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Chart.js · Orders</text>
-        <text x="130" y="252" textAnchor="middle" fill="var(--color-accent)" fontSize="10">Socket.IO Client</text>
+        <rect x="30" y="180" width="200" height="90" rx="14" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+        <text x="130" y="215" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Trading Terminal</text>
+        <text x="130" y="235" textAnchor="middle" fill="var(--text-muted)" fontSize="11" fontFamily="Inter, sans-serif">React · Chart.js · Orders</text>
+        <text x="130" y="252" textAnchor="middle" fill="var(--text-muted)" fontSize="10">Socket.IO Client</text>
 
         {/* 2. Express API Layer (Core) */}
-        <rect x="330" y="30" width="280" height="260" rx="18" fill="var(--color-surface)" stroke="var(--color-accent)" strokeWidth="2" />
-        <rect x="330" y="30" width="280" height="34" rx="18" fill="var(--color-chip)" />
-        <text x="470" y="52" textAnchor="middle" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Express API Server</text>
+        <rect x="330" y="30" width="280" height="260" rx="18" fill="var(--surface-2)" stroke="var(--accent)" strokeWidth="2" />
+        <rect x="330" y="30" width="280" height="34" rx="18" fill="var(--surface)" />
+        <text x="470" y="52" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">Express API Server</text>
         
         {/* Middleware & Modules */}
-        <rect x="350" y="80" width="240" height="32" rx="8" fill="var(--color-chip)" stroke="var(--color-border)" />
-        <text x="470" y="100" textAnchor="middle" fill="var(--color-muted)" fontSize="11">Helmet · CORS · Rate Limiter</text>
+        <rect x="350" y="80" width="240" height="32" rx="8" fill="var(--surface)" stroke="var(--border)" />
+        <text x="470" y="100" textAnchor="middle" fill="var(--text-muted)" fontSize="11">Helmet · CORS · Rate Limiter</text>
 
-        <rect x="350" y="125" width="240" height="32" rx="8" fill="var(--color-chip)" stroke="var(--color-border)" />
-        <text x="470" y="145" textAnchor="middle" fill="var(--color-muted)" fontSize="11">JWT Authentication &amp; RBAC</text>
+        <rect x="350" y="125" width="240" height="32" rx="8" fill="var(--surface)" stroke="var(--border)" />
+        <text x="470" y="145" textAnchor="middle" fill="var(--text-muted)" fontSize="11">JWT Authentication &amp; RBAC</text>
 
-        <rect x="350" y="170" width="240" height="34" rx="8" fill="var(--color-chip)" stroke="var(--color-success)" strokeWidth="1" />
-        <text x="470" y="192" textAnchor="middle" fill="var(--color-success)" fontWeight="bold" fontSize="11">Order Execution Engine</text>
+        <rect x="350" y="170" width="240" height="34" rx="8" fill="var(--surface)" stroke="var(--border)" strokeWidth="1" />
+        <text x="470" y="192" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="11">Order Execution Engine</text>
 
-        <rect x="350" y="218" width="240" height="34" rx="8" fill="var(--color-chip)" stroke="var(--color-spark)" strokeWidth="1" />
-        <text x="470" y="240" textAnchor="middle" fill="var(--color-spark)" fontWeight="bold" fontSize="11">Market Engine &amp; Socket.IO</text>
+        <rect x="350" y="218" width="240" height="34" rx="8" fill="var(--surface)" stroke="var(--border)" strokeWidth="1" />
+        <text x="470" y="240" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="11">Market Engine &amp; Socket.IO</text>
 
         {/* 3. External & Database Layer */}
         {/* Yahoo Finance */}
-        <rect x="690" y="50" width="190" height="70" rx="12" fill="var(--color-chip)" stroke="var(--color-accent)" strokeWidth="1.5" />
-        <text x="785" y="80" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">Yahoo Finance</text>
-        <text x="785" y="100" textAnchor="middle" fill="var(--color-muted)" fontSize="10">Live NSE Ticks</text>
+        <rect x="690" y="50" width="190" height="70" rx="12" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+        <text x="785" y="80" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">Yahoo Finance</text>
+        <text x="785" y="100" textAnchor="middle" fill="var(--text-muted)" fontSize="10">Live NSE Ticks</text>
 
         {/* MongoDB Atlas */}
-        <rect x="690" y="180" width="190" height="85" rx="12" fill="var(--color-chip)" stroke="var(--color-success)" strokeWidth="1.5" />
-        <text x="785" y="212" textAnchor="middle" fill="var(--color-text)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">MongoDB Atlas</text>
-        <text x="785" y="232" textAnchor="middle" fill="var(--color-muted)" fontSize="10">Users · Orders · Portfolios</text>
-        <text x="785" y="248" textAnchor="middle" fill="var(--color-success)" fontSize="10">Mongoose Schemas</text>
+        <rect x="690" y="180" width="190" height="85" rx="12" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+        <text x="785" y="212" textAnchor="middle" fill="var(--text-heading)" fontWeight="bold" fontSize="12" fontFamily="Instrument Serif, Georgia, serif">MongoDB Atlas</text>
+        <text x="785" y="232" textAnchor="middle" fill="var(--text-muted)" fontSize="10">Users · Orders · Portfolios</text>
+        <text x="785" y="248" textAnchor="middle" fill="var(--text-muted)" fontSize="10">Mongoose Schemas</text>
 
         {/* Connectors / Arrows */}
-        <path d="M 230 80 L 330 80" stroke="var(--color-accent)" strokeWidth="2" markerEnd="url(#cs-arrow-accent)" />
-        <path d="M 230 215 L 330 215" stroke="var(--color-accent)" strokeWidth="2" markerEnd="url(#cs-arrow-accent)" />
-        <path d="M 350 250 L 230 250" stroke="var(--color-spark)" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#cs-arrow-spark)" />
-        <path d="M 690 90 L 590 225" stroke="var(--color-spark)" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#cs-arrow-spark)" />
-        <path d="M 590 190 L 690 210" stroke="var(--color-accent)" strokeWidth="2" markerEnd="url(#cs-arrow-accent)" />
+        <path d="M 230 80 L 330 80" stroke="var(--text-muted)" strokeWidth="1.5" markerEnd="url(#cs-arrow-muted)" />
+        <path d="M 230 215 L 330 215" stroke="var(--text-muted)" strokeWidth="1.5" markerEnd="url(#cs-arrow-muted)" />
+        <path d="M 350 250 L 230 250" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#cs-arrow-muted)" />
+        <path d="M 690 90 L 590 225" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#cs-arrow-muted)" />
+        <path d="M 590 190 L 690 210" stroke="var(--text-muted)" strokeWidth="1.5" markerEnd="url(#cs-arrow-muted)" />
       </svg>
     </div>
   );
@@ -111,7 +111,7 @@ export default function CaseStudy() {
           to="/"
           className="btn-primary"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
           <span>Back to Home</span>
         </Link>
       </div>
@@ -129,16 +129,16 @@ export default function CaseStudy() {
         <div className="mb-8">
           <Link
             to="/#projects"
-            className="inline-flex items-center gap-2 min-h-[44px] text-xs font-mono text-muted hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 min-h-[44px] text-sm font-mono text-muted hover:text-accent transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
             <span>Back to Projects</span>
           </Link>
         </div>
 
         {/* Case Study Header */}
         <div className="mb-12 pb-8 border-b border-border">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-xs font-mono text-accent mb-4">
             <span>Case Study</span>
           </div>
 
@@ -163,7 +163,7 @@ export default function CaseStudy() {
               className="btn-primary"
             >
               <span>Live Application</span>
-              <ExternalLink className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
             </a>
 
             {project.extraButton && (
@@ -174,7 +174,7 @@ export default function CaseStudy() {
                 className="btn-secondary"
               >
                 <span>{project.extraButton.label}</span>
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
               </a>
             )}
 
@@ -193,7 +193,7 @@ export default function CaseStudy() {
         {/* Overview & Metrics */}
         {project.metrics && project.metrics.length > 0 && (
           <div className="mb-14">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-accent font-semibold mb-4">
+            <h2 className="text-sm font-mono uppercase tracking-wider text-muted font-semibold mb-4">
               Key Metrics &amp; Operational Benchmarks
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -202,7 +202,7 @@ export default function CaseStudy() {
                   <div className="text-3xl sm:text-4xl font-bold font-mono text-accent mb-1">
                     {m.value}
                   </div>
-                  <div className="text-xs font-mono text-muted">
+                  <div className="text-sm font-mono text-muted">
                     {m.label}
                   </div>
                 </div>
@@ -238,10 +238,10 @@ export default function CaseStudy() {
         <div className="mb-14 p-6 sm:p-8 rounded-card bg-surface border border-border shadow-card">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-border">
             <h3 className="text-lg font-bold font-heading text-text flex items-center gap-2">
-              <Layers className="w-5 h-5 text-accent" strokeWidth={1.75} />
+              <Layers className="w-5 h-5 text-accent" strokeWidth={1.5} />
               <span>System Architecture &amp; Data Pipeline</span>
             </h3>
-            <span className="text-xs font-mono text-muted hidden sm:inline-block">
+            <span className="text-sm font-mono text-muted hidden sm:inline-block">
               Multi-app distributed topology
             </span>
           </div>
@@ -258,7 +258,7 @@ export default function CaseStudy() {
             {project.chips?.map((chip) => (
               <span
                 key={chip}
-                className="px-3 py-1.5 rounded-lg font-mono text-xs bg-chip border border-border text-text"
+                className="px-3 py-1.5 rounded-lg font-mono text-xs bg-surface-2 border border-border text-text"
               >
                 {chip}
               </span>
@@ -306,7 +306,7 @@ export default function CaseStudy() {
             to="/#projects"
             className="btn-secondary"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" strokeWidth={1.5} />
             <span>Back to All Projects</span>
           </Link>
         </div>

@@ -33,7 +33,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
         <div className="max-w-[1120px] mx-auto px-4 sm:px-6 py-2.5 sm:py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-2.5 sm:gap-3">
           {/* Top Row on mobile / Left column on desktop */}
           <div className="flex items-center justify-between w-full md:w-auto">
-            {/* Logo: SK Monogram in Saffron rounded square */}
+            {/* Logo: SK Monogram in Mono Lime rounded square */}
             <a
               href="#hero"
               className="inline-flex items-center gap-3 min-h-[44px] group focus-visible:outline-accent"
@@ -50,7 +50,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
                 </span>
                 {studioTime && (
                   <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono text-muted tracking-tight">
-                    <span className="w-1.5 h-1.5 rounded-full bg-success inline-block animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block animate-pulse" />
                     <span>NEW DELHI · {studioTime} IST</span>
                   </span>
                 )}
@@ -76,7 +76,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
                   rel="noopener noreferrer"
                   className="btn-secondary !py-2 !px-3 !text-xs min-h-[44px] inline-flex items-center"
                 >
-                  <FileText className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <FileText className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                   <span>Resume</span>
                 </a>
               )}
@@ -122,7 +122,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
               title="Quick actions (Ctrl+K)"
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border bg-surface text-muted hover:text-text hover:border-accent text-xs font-mono transition-colors cursor-pointer"
             >
-              <span className="px-1.5 py-0.5 rounded bg-chip border border-border text-[10px] text-accent font-bold">
+              <span className="px-1.5 py-0.5 rounded bg-surface-2 border border-border text-[10px] text-accent font-bold">
                 ⌘K
               </span>
               <span className="text-[11px]">Quick actions</span>
@@ -135,7 +135,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
                 rel="noopener noreferrer"
                 className="btn-secondary !py-1.5 !px-4 !text-xs min-h-[40px] inline-flex items-center gap-1.5"
               >
-                <FileText className="w-3.5 h-3.5" strokeWidth={1.75} />
+                <FileText className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                 <span>Resume</span>
               </a>
             )}

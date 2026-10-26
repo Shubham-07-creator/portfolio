@@ -37,8 +37,8 @@ export default function Experience() {
                 <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-border">
                   <div>
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-chip border border-border text-[11px] font-mono text-accent mb-2">
-                      <Briefcase className="w-3 h-3" />
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-surface-2 border border-border text-[11px] font-mono text-muted mb-2">
+                      <Briefcase className="w-3 h-3 text-muted" strokeWidth={1.5} />
                       <span>Internship</span>
                     </div>
                     <h3 className="text-xl font-bold font-heading text-text">
@@ -49,13 +49,13 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 text-xs font-mono text-muted">
+                  <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 text-sm font-mono text-muted">
                     <span className="inline-flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-accent" strokeWidth={1.75} />
+                      <Calendar className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                       {experience.period}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-spark" strokeWidth={1.75} />
+                      <MapPin className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                       {experience.type}
                     </span>
                   </div>
@@ -63,8 +63,8 @@ export default function Experience() {
 
                 <ul className="space-y-3 mb-6">
                   {experience.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-muted leading-relaxed">
-                      <CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0" strokeWidth={1.75} />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-body leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-muted mt-1 shrink-0" strokeWidth={1.5} />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -72,17 +72,17 @@ export default function Experience() {
 
                 {experience.credentialUrl && (
                   <div className="pt-4 border-t border-border flex items-center justify-between">
-                    <span className="text-xs font-mono text-muted">
+                    <span className="text-sm font-mono text-muted">
                       Verified credential available
                     </span>
                     <a
                       href={experience.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-mono font-medium text-accent hover:text-accent-hover transition-colors"
+                      className="inline-flex items-center gap-1.5 min-h-[44px] text-sm font-mono font-medium text-accent hover:text-accent-hover underline underline-offset-[3px] transition-colors"
                     >
                       <span>View Credential</span>
-                      <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.75} />
+                      <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.5} />
                     </a>
                   </div>
                 )}

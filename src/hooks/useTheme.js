@@ -21,13 +21,16 @@ export function useTheme() {
 
   useEffect(() => {
     const root = document.documentElement;
+    const meta = document.getElementById('theme-color-meta');
     if (theme === 'light') {
       root.setAttribute('data-theme', 'light');
       root.classList.remove('dark');
+      if (meta) meta.setAttribute('content', '#F7F8F5');
     } else {
       root.removeAttribute('data-theme');
       root.setAttribute('data-theme', 'dark');
       root.classList.add('dark');
+      if (meta) meta.setAttribute('content', '#0C0D0C');
     }
 
     try {

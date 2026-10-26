@@ -18,16 +18,16 @@ export default function About() {
   const { about, identity } = portfolioData;
 
   const cardIcons = [
-    <Layers key="0" className="w-5 h-5 text-accent shrink-0" strokeWidth={1.75} />,
-    <Code key="1" className="w-5 h-5 text-spark shrink-0" strokeWidth={1.75} />,
-    <Radio key="2" className="w-5 h-5 text-spark shrink-0" strokeWidth={1.75} />,
-    <ShieldCheck key="3" className="w-5 h-5 text-success shrink-0" strokeWidth={1.75} />,
+    <Layers key="0" className="w-5 h-5 text-muted shrink-0" strokeWidth={1.5} />,
+    <Code key="1" className="w-5 h-5 text-muted shrink-0" strokeWidth={1.5} />,
+    <Radio key="2" className="w-5 h-5 text-muted shrink-0" strokeWidth={1.5} />,
+    <ShieldCheck key="3" className="w-5 h-5 text-muted shrink-0" strokeWidth={1.5} />,
   ];
 
   const factIcons = [
-    <MapPin key="0" className="w-4 h-4 text-accent shrink-0" strokeWidth={1.75} />,
-    <GraduationCap key="1" className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />,
-    <Briefcase key="2" className="w-4 h-4 text-success shrink-0" strokeWidth={1.75} />,
+    <MapPin key="0" className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />,
+    <GraduationCap key="1" className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />,
+    <Briefcase key="2" className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />,
   ];
 
   return (
@@ -56,8 +56,8 @@ export default function About() {
             <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
 
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip border border-border text-xs font-mono text-accent mb-4 sm:mb-5">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-xs font-mono text-muted mb-4 sm:mb-5">
+                <Sparkles className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                 <span>Engineering Philosophy</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-serif text-text mb-4 font-normal">
@@ -89,12 +89,11 @@ export default function About() {
                 className="w-32 h-32 rounded-full object-cover border-2 border-accent mb-4 shadow-md"
               />
             ) : (
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-chip border-2 border-accent/40 flex flex-col items-center justify-center mb-5 relative group">
-                <div className="absolute inset-0 bg-accent/5 rounded-2xl transition-opacity group-hover:opacity-100" />
+              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-surface-2 border border-border flex flex-col items-center justify-center mb-5 relative group">
                 <span className="font-heading font-bold text-4xl sm:text-5xl text-accent tracking-tight">
                   SK
                 </span>
-                <span className="text-[10px] font-mono text-accent font-semibold mt-1 uppercase tracking-wider">
+                <span className="text-[10px] font-mono text-muted font-semibold mt-1 uppercase tracking-wider">
                   Developer
                 </span>
               </div>
@@ -103,16 +102,16 @@ export default function About() {
             <h4 className="text-lg font-bold font-heading text-text">
               {identity.name}
             </h4>
-            <p className="text-xs font-mono text-accent mt-0.5">
+            <p className="text-xs font-mono text-muted mt-0.5">
               {identity.role}
             </p>
             <div className="flex items-center gap-1.5 text-xs text-muted mt-2">
-              <MapPin className="w-3.5 h-3.5 text-spark" strokeWidth={1.75} />
+              <MapPin className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
               <span>{identity.location}</span>
             </div>
 
             <div className="mt-5 pt-4 border-t border-border w-full flex items-center justify-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-success" />
+              <span className="w-2 h-2 rounded-full bg-accent" />
               <span className="text-xs font-mono text-muted">
                 Available for internships
               </span>
@@ -130,7 +129,7 @@ export default function About() {
               className="md:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-[20px] editorial-card hover:border-accent transition-colors flex flex-col justify-between"
             >
               <div>
-                <div className="p-2.5 rounded-xl bg-chip border border-border inline-flex items-center justify-center mb-3.5">
+                <div className="p-2.5 rounded-xl bg-surface-2 border border-border inline-flex items-center justify-center mb-3.5">
                   {cardIcons[idx]}
                 </div>
                 <h4 className="text-base font-bold font-heading text-text mb-1.5">
@@ -153,7 +152,7 @@ export default function About() {
           >
             <div>
               <div className="flex items-center gap-2.5 mb-3">
-                <BookOpen className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                <BookOpen className="w-5 h-5 text-muted" strokeWidth={1.5} />
                 <h4 className="text-base font-bold font-heading text-text">
                   Currently learning
                 </h4>
@@ -165,7 +164,7 @@ export default function About() {
                 {about.currentlyLearning.map((topic) => (
                   <span
                     key={topic}
-                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-chip border border-border text-xs font-mono text-accent font-medium"
+                    className="inline-flex items-center px-3 py-1.5 rounded-lg bg-surface-2 border border-border text-xs font-mono text-muted font-medium"
                   >
                     {topic}
                   </span>
@@ -189,8 +188,8 @@ export default function About() {
               <ul className="space-y-3">
                 {about.facts.map((fact, idx) => (
                   <li key={fact} className="flex items-center gap-3 text-xs sm:text-sm text-muted">
-                    <div className="p-1.5 rounded-md bg-chip border border-border">
-                      {factIcons[idx] || <Sparkles className="w-4 h-4 text-accent" />}
+                    <div className="p-1.5 rounded-md bg-surface-2 border border-border">
+                      {factIcons[idx] || <Sparkles className="w-4 h-4 text-muted" strokeWidth={1.5} />}
                     </div>
                     <span>{fact}</span>
                   </li>

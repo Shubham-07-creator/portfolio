@@ -48,12 +48,12 @@ export default function Skills() {
   };
 
   const categoryIcons = {
-    Languages: <Code2 className="w-5 h-5 text-accent" strokeWidth={1.75} />,
-    Frontend: <Layout className="w-5 h-5 text-spark" strokeWidth={1.75} />,
-    Backend: <Server className="w-5 h-5 text-accent" strokeWidth={1.75} />,
-    Databases: <Database className="w-5 h-5 text-success" strokeWidth={1.75} />,
-    Tools: <Wrench className="w-5 h-5 text-spark" strokeWidth={1.75} />,
-    'Core CS': <BookMarked className="w-5 h-5 text-accent" strokeWidth={1.75} />,
+    Languages: <Code2 className="w-5 h-5 text-muted" strokeWidth={1.5} />,
+    Frontend: <Layout className="w-5 h-5 text-muted" strokeWidth={1.5} />,
+    Backend: <Server className="w-5 h-5 text-muted" strokeWidth={1.5} />,
+    Databases: <Database className="w-5 h-5 text-muted" strokeWidth={1.5} />,
+    Tools: <Wrench className="w-5 h-5 text-muted" strokeWidth={1.5} />,
+    'Core CS': <BookMarked className="w-5 h-5 text-muted" strokeWidth={1.5} />,
   };
 
   const getSkillIcon = (skill) => {
@@ -64,7 +64,7 @@ export default function Skills() {
       case 'JavaScript':
         return <SiJavascript className="w-4 h-4 text-[#F7DF1E]" aria-hidden="true" />;
       case 'SQL':
-        return <Database className="w-4 h-4 text-spark" strokeWidth={1.75} aria-hidden="true" />;
+        return <Database className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
 
       // Frontend
       case 'React.js':
@@ -86,11 +86,11 @@ export default function Skills() {
       case 'Express.js':
         return <SiExpress className="w-4 h-4 text-text" aria-hidden="true" />;
       case 'REST APIs':
-        return <Server className="w-4 h-4 text-accent" strokeWidth={1.75} aria-hidden="true" />;
+        return <Server className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'Middleware':
-        return <Layers className="w-4 h-4 text-spark" strokeWidth={1.75} aria-hidden="true" />;
+        return <Layers className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'JWT Authentication':
-        return <SiJsonwebtokens className="w-4 h-4 text-accent" aria-hidden="true" />;
+        return <SiJsonwebtokens className="w-4 h-4 text-muted" aria-hidden="true" />;
 
       // Databases
       case 'MongoDB':
@@ -110,18 +110,18 @@ export default function Skills() {
 
       // Core CS
       case 'Data Structures':
-        return <Binary className="w-4 h-4 text-accent" strokeWidth={1.75} aria-hidden="true" />;
+        return <Binary className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'DBMS':
-        return <Database className="w-4 h-4 text-spark" strokeWidth={1.75} aria-hidden="true" />;
+        return <Database className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'Operating Systems':
-        return <Terminal className="w-4 h-4 text-success" strokeWidth={1.75} aria-hidden="true" />;
+        return <Terminal className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'OOP':
-        return <Boxes className="w-4 h-4 text-accent" strokeWidth={1.75} aria-hidden="true" />;
+        return <Boxes className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
       case 'Computer Networks':
-        return <Network className="w-4 h-4 text-spark" strokeWidth={1.75} aria-hidden="true" />;
+        return <Network className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
 
       default:
-        return <Code2 className="w-4 h-4 text-accent" strokeWidth={1.75} aria-hidden="true" />;
+        return <Code2 className="w-4 h-4 text-muted" strokeWidth={1.5} aria-hidden="true" />;
     }
   };
 
@@ -150,8 +150,8 @@ export default function Skills() {
               <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border">
-                  <div className="p-2 rounded-lg bg-chip border border-border">
-                    {categoryIcons[cat.category] || <Code2 className="w-5 h-5 text-accent" />}
+                  <div className="p-2 rounded-lg bg-surface-2 border border-border">
+                    {categoryIcons[cat.category] || <Code2 className="w-5 h-5 text-muted" strokeWidth={1.5} />}
                   </div>
                   <div>
                     <h3 className="text-base font-bold font-heading text-text">
@@ -168,12 +168,12 @@ export default function Skills() {
                   {cat.skills.map((skillName) => (
                     <div
                       key={skillName}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-chip border border-border text-xs font-mono text-text transition-colors hover:border-accent group"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-2 border border-border text-xs font-mono text-text transition-colors hover:border-accent group"
                     >
                       {getSkillIcon(skillName)}
                       <span>{skillName}</span>
                       {skillContext[skillName] && (
-                        <span className="text-[10px] text-accent/80 font-normal pl-1.5 border-l border-border/70 hidden sm:inline">
+                        <span className="text-[10px] text-muted font-normal pl-1.5 border-l border-border/70 hidden sm:inline">
                           {skillContext[skillName]}
                         </span>
                       )}

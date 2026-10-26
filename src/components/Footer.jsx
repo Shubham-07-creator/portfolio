@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Large Editorial CTA Header: "Let's talk." */}
         <div className="pb-14 border-b border-border flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-accent block mb-3 font-medium">
+            <span className="font-mono text-sm uppercase tracking-wider text-muted block mb-3 font-medium">
               Start a conversation
             </span>
             <h2 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-normal text-text tracking-tight mb-4">
@@ -31,10 +31,10 @@ export default function Footer() {
             </h2>
             <a
               href={`mailto:${identity.email}`}
-              className="inline-flex items-center gap-2 font-mono text-lg sm:text-xl text-accent hover:text-accent-hover underline underline-offset-8 transition-colors group"
+              className="inline-flex items-center gap-2 font-mono text-lg sm:text-xl text-accent hover:text-accent-hover underline underline-offset-[3px] transition-colors group"
             >
               <span>{identity.email}</span>
-              <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.5} />
             </a>
           </div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-surface-2 text-text hover:text-accent hover:border-accent transition-colors"
             >
               <SiGithub className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -53,7 +53,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-chip text-text hover:text-accent hover:border-accent transition-colors"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-surface-2 text-text hover:text-accent hover:border-accent transition-colors"
             >
               <FaLinkedin className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Lower Row: Logo, Links & Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-mono text-muted">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-sm font-mono text-muted">
           <div className="flex items-center gap-3">
             <div
               aria-hidden="true"

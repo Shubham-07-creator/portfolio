@@ -13,19 +13,19 @@ export default function Hero() {
   const [copied, setCopied] = useState(false);
 
   const codeLines = [
-    { num: 1, text: <><span className="text-accent font-medium">const</span> <span className="text-text font-medium">shubham</span> = {'{'}</> },
-    { num: 2, text: <>  <span className="text-muted">role:</span> <span className="text-secondary">"Full Stack Developer"</span>,</> },
-    { num: 3, text: <>  <span className="text-muted">stack:</span> [<span className="text-secondary">"React"</span>, <span className="text-secondary">"Node.js"</span>,</> },
-    { num: 4, text: <>           <span className="text-secondary">"Express"</span>, <span className="text-secondary">"MongoDB"</span>],</> },
-    { num: 5, text: <>  <span className="text-muted">foundations:</span> [<span className="text-secondary">"Java"</span>, <span className="text-secondary">"DSA"</span>],</> },
-    { num: 6, text: <>  <span className="text-muted">status:</span> <span className="text-secondary">"open to internships"</span>,</> },
-    { num: 7, text: <>  <span className="text-muted">location:</span> <span className="text-secondary">"India"</span></> },
-    { num: 8, text: <>{'}'};</> },
+    { num: 1, text: <><span className="text-accent font-medium">const</span> <span className="text-text font-medium">shubham</span> <span className="text-muted">=</span> <span className="text-muted">{'{'}</span></> },
+    { num: 2, text: <>  <span className="text-muted">role:</span> <span className="text-[var(--code-string)]">"Full Stack Developer"</span><span className="text-muted">,</span></> },
+    { num: 3, text: <>  <span className="text-muted">stack:</span> <span className="text-muted">[</span><span className="text-[var(--code-string)]">"React"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"Node.js"</span><span className="text-muted">,</span></> },
+    { num: 4, text: <>           <span className="text-[var(--code-string)]">"Express"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"MongoDB"</span><span className="text-muted">],</span></> },
+    { num: 5, text: <>  <span className="text-muted">foundations:</span> <span className="text-muted">[</span><span className="text-[var(--code-string)]">"Java"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"DSA"</span><span className="text-muted">],</span></> },
+    { num: 6, text: <>  <span className="text-muted">status:</span> <span className="text-[var(--code-string)]">"open to internships"</span><span className="text-muted">,</span></> },
+    { num: 7, text: <>  <span className="text-muted">location:</span> <span className="text-[var(--code-string)]">"India"</span></> },
+    { num: 8, text: <><span className="text-muted">{'};'}</span></> },
   ];
 
   const cliOutput = [
     { text: '$ node check-availability.js', color: 'text-muted' },
-    { text: '✔ SDE Intern / Full Stack: AVAILABLE', color: 'text-success' },
+    { text: '✔ SDE Intern / Full Stack: AVAILABLE', color: 'text-accent' },
     { text: '✔ Primary Stack: MERN + Java & DSA', color: 'text-text' },
     { text: '✔ Location: India · Remote / On-site', color: 'text-text' },
     { text: `✔ Direct: ${identity.email}`, color: 'text-accent' },
@@ -48,10 +48,9 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[calc(100svh-68px)] md:min-h-[calc(100svh-72px)] flex flex-col justify-center pt-6 pb-10 sm:py-12 md:py-20 overflow-hidden"
     >
-      {/* Subtle Dot Grid and Grain */}
+      {/* Subtle Dot Grid fading down and soft top-left glow */}
       <div className="hero-dot-grid" aria-hidden="true" />
-      <div className="hero-grain" aria-hidden="true" />
-      <div className="hero-ambient-glow hidden lg:block" aria-hidden="true" />
+      <div className="hero-glow-topleft" aria-hidden="true" />
 
       {/* Architectural Corner Registration Marks (+) */}
       <div className="max-w-[1120px] mx-auto px-4 sm:px-6 w-full relative z-10">
@@ -70,14 +69,14 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-3.5 sm:mb-5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
                 </span>
                 <span className="text-accent font-medium">{identity.status}</span>
               </div>
 
               {studioTime && (
-                <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-chip/70 border border-border text-muted text-[11px]">
+                <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-muted text-[11px]">
                   <span className="text-text font-medium">NEW DELHI, IN</span>
                   <span className="text-border">·</span>
                   <span className="text-accent font-semibold">{studioTime} IST</span>
@@ -87,9 +86,9 @@ export default function Hero() {
               )}
             </div>
 
-            {/* Hero Name: Instrument Serif, "Shubham" straight, "Kumar" italic saffron */}
+            {/* Hero Name: "Shubham" in --text-heading and "Kumar" in --accent */}
             <h1 className="text-5xl xs:text-6xl sm:text-7xl lg:text-[108px] font-serif font-normal tracking-[-0.02em] leading-[0.95] mb-3 sm:mb-4 text-text">
-              Shubham <span className="italic text-accent">Kumar</span>
+              Shubham <span className="text-accent">Kumar</span>
             </h1>
 
             {/* Role line */}
@@ -97,20 +96,20 @@ export default function Hero() {
               {identity.role}
             </div>
 
-            {/* Lede (max ~65 characters, 17px) */}
-            <p className="text-base sm:text-[17px] text-body max-w-[58ch] leading-relaxed mb-6 sm:mb-8">
+            {/* Lede (max ~65 characters, 17px, --text-muted, never below 14px) */}
+            <p className="text-base sm:text-[17px] text-muted max-w-[58ch] leading-relaxed mb-6 sm:mb-8">
               {identity.lede}
             </p>
 
-            {/* Action Buttons: Saffron pill primary, Ghost secondary */}
+            {/* Action Buttons: Solid primary (8px radius) + Transparent secondary */}
             <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8 w-full sm:w-auto">
               <a href="#projects" className="btn-primary group">
                 <span>View projects</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={1.75} />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={1.5} />
               </a>
 
               <a href={`mailto:${identity.email}`} className="btn-secondary">
-                <Mail className="w-4 h-4" strokeWidth={1.75} />
+                <Mail className="w-4 h-4 text-muted" strokeWidth={1.5} />
                 <span>Email me</span>
               </a>
 
@@ -121,21 +120,21 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="btn-secondary"
                 >
-                  <FileText className="w-4 h-4" strokeWidth={1.75} />
+                  <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />
                   <span>Resume</span>
                 </a>
               )}
             </div>
 
             {/* Links and Location */}
-            <div className="flex flex-wrap items-center gap-4 pt-3.5 sm:pt-4 border-t border-border/70 w-full sm:w-auto text-xs font-mono text-muted">
+            <div className="flex flex-wrap items-center gap-4 pt-3.5 sm:pt-4 border-t border-border/70 w-full sm:w-auto text-sm font-mono text-muted">
               <div className="flex items-center gap-2.5">
                 <a
                   href={identity.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
-                  className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-surface text-text hover:border-accent hover:text-accent transition-colors"
+                  className="w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-border bg-surface text-muted hover:border-accent hover:text-accent transition-colors"
                 >
                   <SiGithub className="w-4 h-4" aria-hidden="true" />
                 </a>
@@ -173,13 +172,13 @@ export default function Hero() {
               {/* Window dots & interactive tab bar */}
               <div className="px-3 sm:px-4 py-2.5 bg-surface border-b border-border flex items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-border" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-border" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-border" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-border-strong" />
                 </div>
 
                 {/* Tab switchers */}
-                <div className="inline-flex p-0.5 rounded-lg bg-chip/70 border border-border">
+                <div className="inline-flex p-0.5 rounded-lg bg-surface-2 border border-border">
                   <button
                     type="button"
                     onClick={() => setActiveTab('js')}
@@ -189,7 +188,7 @@ export default function Hero() {
                         : 'text-muted hover:text-text'
                     }`}
                   >
-                    <Code2 className="w-3 h-3" />
+                    <Code2 className="w-3 h-3" strokeWidth={1.5} />
                     <span>shubham.js</span>
                   </button>
 
@@ -202,7 +201,7 @@ export default function Hero() {
                         : 'text-muted hover:text-text'
                     }`}
                   >
-                    <Terminal className="w-3 h-3" />
+                    <Terminal className="w-3 h-3" strokeWidth={1.5} />
                     <span>status.sh</span>
                   </button>
                 </div>
@@ -213,9 +212,9 @@ export default function Hero() {
                   onClick={handleCopy}
                   title="Copy snippet"
                   aria-label="Copy code snippet"
-                  className="p-1.5 rounded-md text-muted hover:text-accent hover:bg-chip/50 transition-colors cursor-pointer"
+                  className="p-1.5 rounded-md text-muted hover:text-accent hover:bg-surface-2 transition-colors cursor-pointer"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-success" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-success" strokeWidth={1.5} /> : <Copy className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />}
                 </button>
               </div>
 
@@ -237,7 +236,7 @@ export default function Hero() {
 
               {/* Tab 2: Interactive CLI View */}
               {activeTab === 'cli' && (
-                <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-text space-y-1.5 bg-chip/10">
+                <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-text space-y-1.5 bg-surface-2/20">
                   {cliOutput.map((item, idx) => (
                     <div key={idx} className={`${item.color} leading-relaxed`}>
                       {item.text}

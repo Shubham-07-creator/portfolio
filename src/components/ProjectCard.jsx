@@ -95,23 +95,23 @@ export default function ProjectCard({ project, index }) {
   const renderIcon = (iconName) => {
     switch (iconName) {
       case 'Radio':
-        return <Radio className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />;
+        return <Radio className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'Zap':
-        return <Zap className="w-4 h-4 text-accent shrink-0" strokeWidth={1.75} />;
+        return <Zap className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'Shield':
-        return <Shield className="w-4 h-4 text-success shrink-0" strokeWidth={1.75} />;
+        return <Shield className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'LineChart':
-        return <LineChart className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />;
+        return <LineChart className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'MapPin':
-        return <MapPin className="w-4 h-4 text-accent shrink-0" strokeWidth={1.75} />;
+        return <MapPin className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'CreditCard':
-        return <CreditCard className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />;
+        return <CreditCard className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'CalendarCheck':
-        return <CalendarCheck className="w-4 h-4 text-success shrink-0" strokeWidth={1.75} />;
+        return <CalendarCheck className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       case 'Database':
-        return <Database className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />;
+        return <Database className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
       default:
-        return <Layers className="w-4 h-4 text-accent shrink-0" strokeWidth={1.75} />;
+        return <Layers className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />;
     }
   };
 
@@ -214,7 +214,7 @@ export default function ProjectCard({ project, index }) {
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
                 <div className="w-2.5 h-2.5 rounded-full bg-border" />
               </div>
-              <div className="px-2.5 py-0.5 rounded-md bg-chip/60 border border-border/70 text-[11px] font-mono text-muted flex items-center gap-1.5 truncate max-w-[220px]">
+              <div className="px-2.5 py-0.5 rounded-md bg-surface-2/60 border border-border/70 text-[11px] font-mono text-muted flex items-center gap-1.5 truncate max-w-[220px]">
                 <Lock className="w-2.5 h-2.5 text-accent shrink-0" />
                 <span className="truncate">{displayHost}</span>
               </div>
@@ -235,7 +235,7 @@ export default function ProjectCard({ project, index }) {
                 />
               ) : (
                 /* Clean browser-frame placeholder with project name and chips (never stock/AI art) */
-                <div className="w-full h-full p-6 flex flex-col items-center justify-center text-center bg-chip/30">
+                <div className="w-full h-full p-6 flex flex-col items-center justify-center text-center bg-surface-2/30">
                   <span className="font-heading font-bold text-xl sm:text-2xl text-text mb-1">
                     {project.title}
                   </span>
@@ -267,7 +267,7 @@ export default function ProjectCard({ project, index }) {
               <div
                 role="tablist"
                 aria-label={`${project.title} gallery views`}
-                className="px-3 py-2 bg-chip/60 border-t border-border flex items-center justify-center gap-1.5 overflow-x-auto no-scrollbar"
+                className="px-3 py-2 bg-surface-2/60 border-t border-border flex items-center justify-center gap-1.5 overflow-x-auto no-scrollbar"
               >
                 {galleryImages.map((gItem, gIdx) => (
                   <button
@@ -305,7 +305,7 @@ export default function ProjectCard({ project, index }) {
                 {project.title}
               </h3>
               {project.soloBadge && (
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-chip text-accent border border-border">
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-surface-2 text-accent border border-border">
                   {project.soloBadge}
                 </span>
               )}
@@ -323,7 +323,7 @@ export default function ProjectCard({ project, index }) {
 
             {/* Metrics Row (mono numbers with thin divider lines instead of heavy boxes) */}
             {project.metrics && project.metrics.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 divide-x-0 sm:divide-x divide-border border-y border-border/80 py-2.5 sm:py-3 mb-6 bg-chip/20">
+              <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 divide-x-0 sm:divide-x divide-border border-y border-border/80 py-2.5 sm:py-3 mb-6 bg-surface-2/20">
                 {project.metrics.map((m, idx) => (
                   <MetricBox
                     key={idx}
@@ -337,7 +337,7 @@ export default function ProjectCard({ project, index }) {
 
             {/* Architectural Data Pipeline Ribbon */}
             {dataFlowSteps.length > 0 && (
-              <div className="mb-6 p-3 sm:p-3.5 rounded-xl bg-chip/40 border border-border/80">
+              <div className="mb-6 p-3 sm:p-3.5 rounded-xl bg-surface-2/40 border border-border/80">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-accent font-semibold flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -442,7 +442,7 @@ export default function ProjectCard({ project, index }) {
                   className="btn-primary"
                 >
                   <span>Live demo</span>
-                  <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.5} />
                 </a>
               )}
 
@@ -451,10 +451,10 @@ export default function ProjectCard({ project, index }) {
                   href={extraButton.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary !border-accent/40 text-accent hover:bg-accent/5"
+                  className="btn-secondary"
                 >
                   <span>{extraButton.label}</span>
-                  <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <ExternalLink className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                 </a>
               )}
 
@@ -478,7 +478,7 @@ export default function ProjectCard({ project, index }) {
                   className="btn-secondary inline-flex items-center gap-1.5 cursor-pointer"
                   aria-label={`Play demo video for ${project.title}`}
                 >
-                  <Play className="w-3.5 h-3.5 text-spark fill-spark" />
+                  <Play className="w-3.5 h-3.5 text-muted fill-muted" strokeWidth={1.5} />
                   <span>Demo video</span>
                 </button>
               )}
@@ -487,18 +487,18 @@ export default function ProjectCard({ project, index }) {
               {hasCaseStudy && (
                 <Link
                   to={`/projects/${project.slug}`}
-                  className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-mono font-medium text-accent hover:text-accent-hover ml-auto transition-colors"
+                  className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-mono font-medium text-accent hover:text-accent-hover underline underline-offset-[3px] ml-auto transition-colors"
                 >
                   <span>Case study</span>
-                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.5} />
                 </Link>
               )}
             </div>
 
-            {/* Cold start hint with Clock icon (rendered ONLY when non-empty) */}
+            {/* Cold start hint with Clock icon (rendered ONLY when non-empty, never below 14px) */}
             {coldStartHint && (
-              <p className="text-[13px] font-mono text-muted flex items-center gap-1.5 mt-3">
-                <Clock className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.75} />
+              <p className="text-sm font-mono text-muted flex items-center gap-1.5 mt-3">
+                <Clock className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />
                 <span>{coldStartHint}</span>
               </p>
             )}
@@ -520,17 +520,17 @@ export default function ProjectCard({ project, index }) {
             className="relative w-full max-w-3xl rounded-2xl bg-surface border border-border shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-4 border-b border-border bg-chip/60">
+            <div className="flex items-center justify-between p-4 border-b border-border bg-surface-2/60">
               <span className="font-heading font-bold text-sm text-text">
                 {project.title} — Demo Video
               </span>
               <button
                 type="button"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-chip text-muted hover:text-text cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-surface-2 text-muted hover:text-text cursor-pointer"
                 aria-label="Close video modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" strokeWidth={1.5} />
               </button>
             </div>
             <div className="aspect-video w-full">

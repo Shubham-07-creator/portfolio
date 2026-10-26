@@ -50,7 +50,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'View Resume (PDF)',
       shortcut: 'PDF',
       category: 'Credentials',
-      icon: <FileText className="w-4 h-4 text-accent" />,
+      icon: <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => {
         setIsOpen(false);
         window.open(identity.resumeUrl, '_blank');
@@ -61,7 +61,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Launch TradeXpert Demo',
       shortcut: 'LIVE',
       category: 'Featured Project',
-      icon: <ExternalLink className="w-4 h-4 text-accent" />,
+      icon: <ExternalLink className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => {
         setIsOpen(false);
         window.open(tradexpert?.links?.live || 'https://tradexpert-vq6s.onrender.com', '_blank');
@@ -72,7 +72,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Launch StayHub Demo',
       shortcut: 'LIVE',
       category: 'Featured Project',
-      icon: <ExternalLink className="w-4 h-4 text-accent" />,
+      icon: <ExternalLink className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => {
         setIsOpen(false);
         window.open(stayhub?.links?.live || 'https://stayhub-kxme.onrender.com/listings', '_blank');
@@ -83,15 +83,15 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: copied ? 'Email Copied!' : `Copy Email (${identity.email})`,
       shortcut: 'COPY',
       category: 'Contact',
-      icon: copied ? <Check className="w-4 h-4 text-success" /> : <Copy className="w-4 h-4 text-accent" />,
+      icon: copied ? <Check className="w-4 h-4 text-success" strokeWidth={1.5} /> : <Copy className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: copyEmail,
     },
     {
       id: 'theme',
-      label: `Switch to ${theme === 'dark' ? 'Warm Paper (Light)' : 'Dark Navy'} Mode`,
+      label: `Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`,
       shortcut: 'THEME',
       category: 'Preferences',
-      icon: theme === 'dark' ? <Sun className="w-4 h-4 text-accent" /> : <Moon className="w-4 h-4 text-accent" />,
+      icon: theme === 'dark' ? <Sun className="w-4 h-4 text-muted" strokeWidth={1.5} /> : <Moon className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => {
         toggleTheme();
         setIsOpen(false);
@@ -102,7 +102,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Go to Featured Projects',
       shortcut: '01',
       category: 'Navigation',
-      icon: <Layers className="w-4 h-4 text-muted" />,
+      icon: <Layers className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => scrollTo('#projects'),
     },
     {
@@ -110,7 +110,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Go to Engineering Notes',
       shortcut: '02',
       category: 'Navigation',
-      icon: <Code className="w-4 h-4 text-muted" />,
+      icon: <Code className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => scrollTo('#engineering'),
     },
     {
@@ -118,7 +118,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Go to Skills & Technologies',
       shortcut: '04',
       category: 'Navigation',
-      icon: <Wrench className="w-4 h-4 text-muted" />,
+      icon: <Wrench className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => scrollTo('#skills'),
     },
     {
@@ -126,7 +126,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
       label: 'Go to Direct Contact Form',
       shortcut: '07',
       category: 'Navigation',
-      icon: <Mail className="w-4 h-4 text-muted" />,
+      icon: <Mail className="w-4 h-4 text-muted" strokeWidth={1.5} />,
       perform: () => scrollTo('#contact'),
     },
   ];
@@ -191,8 +191,8 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 px-4 sm:px-5 py-3.5 border-b border-border bg-chip/30">
-          <Search className="w-4 h-4 text-accent shrink-0" />
+        <div className="flex items-center gap-3 px-4 sm:px-5 py-3.5 border-b border-border bg-surface-2/30">
+          <Search className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />
           <input
             ref={inputRef}
             type="text"
@@ -208,9 +208,9 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
             type="button"
             onClick={() => setIsOpen(false)}
             aria-label="Close command palette"
-            className="p-1 rounded-md text-muted hover:text-text hover:bg-chip transition-colors cursor-pointer"
+            className="p-1 rounded-md text-muted hover:text-text hover:bg-surface-2 transition-colors cursor-pointer"
           >
-            <X className="w-4 h-4" />
+            <X className="w-4 h-4" strokeWidth={1.5} />
           </button>
         </div>
 
@@ -231,12 +231,12 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left text-xs sm:text-sm transition-colors cursor-pointer ${
                     isSelected
-                      ? 'bg-chip text-text border border-border/80'
-                      : 'text-body hover:bg-chip/50 border border-transparent'
+                      ? 'bg-surface-2 text-text border border-border/80'
+                      : 'text-body hover:bg-surface-2/50 border border-transparent'
                   }`}
                 >
                   <div className="flex items-center gap-3 truncate">
-                    <span className="shrink-0">{action.icon}</span>
+                    <span className={`shrink-0 ${isSelected ? 'text-accent' : 'text-muted'}`}>{action.icon}</span>
                     <span className="truncate font-medium">{action.label}</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0 ml-3">
@@ -256,7 +256,7 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
         </div>
 
         {/* Keyboard hints footer */}
-        <div className="px-4 py-2.5 bg-chip/40 border-t border-border flex items-center justify-between text-[11px] font-mono text-muted">
+        <div className="px-4 py-2.5 bg-surface-2/40 border-t border-border flex items-center justify-between text-[11px] font-mono text-muted">
           <div className="flex items-center gap-3">
             <span>
               <kbd className="px-1.5 py-0.5 rounded bg-surface border border-border text-[10px]">↑</kbd>{' '}

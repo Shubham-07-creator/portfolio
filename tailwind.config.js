@@ -10,16 +10,19 @@ export default {
       colors: {
         bg: 'var(--color-bg)',
         surface: 'var(--color-surface)',
+        'surface-2': 'var(--color-surface-2)',
         border: 'var(--color-border)',
+        'border-strong': 'var(--color-border-strong)',
         text: 'var(--color-text)',
+        'text-heading': 'var(--color-text-heading)',
+        'text-body': 'var(--color-text-body)',
+        'text-muted': 'var(--color-text-muted)',
         body: 'var(--color-body)',
         muted: 'var(--color-muted)',
         accent: {
           DEFAULT: 'var(--color-accent)',
           hover: 'var(--color-accent-hover)',
         },
-        secondary: 'var(--color-secondary)',
-        spark: 'var(--color-accent)',
         'on-accent': 'var(--color-on-accent)',
         chip: 'var(--color-chip)',
         success: 'var(--color-success)',
@@ -35,8 +38,8 @@ export default {
         container: '1120px',
       },
       borderRadius: {
-        card: '20px',
-        btn: '9999px',
+        card: '14px',
+        btn: '8px',
       },
       boxShadow: {
         card: 'var(--shadow-card)',

@@ -51,9 +51,11 @@ export default function TechMarquee() {
           {marquee.map((item, idx) => (
             <div
               key={idx}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-chip border border-border text-xs font-mono text-text"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-2 border border-border text-xs font-mono text-text"
             >
-              {getLogo(item.icon)}
+              <span className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all text-muted">
+                {getLogo(item.icon)}
+              </span>
               <span>{item.name}</span>
             </div>
           ))}
@@ -72,12 +74,12 @@ export default function TechMarquee() {
             {marqueeItems.map((item, idx) => (
               <div
                 key={idx}
-                className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-chip border border-border text-xs font-mono text-muted hover:text-text hover:border-accent transition-colors shrink-0 cursor-default"
+                className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-surface-2 border border-border text-xs font-mono text-muted hover:text-text hover:border-accent transition-colors shrink-0 cursor-default"
               >
-                <span className="grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+                <span className="grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all text-muted">
                   {getLogo(item.icon)}
                 </span>
-                <span className="font-medium">{item.name}</span>
+                <span className="font-medium text-body group-hover:text-text transition-colors">{item.name}</span>
               </div>
             ))}
           </div>

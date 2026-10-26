@@ -35,7 +35,7 @@ export default function BackToTop() {
       title="Back to top"
       className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-accent text-on-accent shadow-btn-glow hover:brightness-110 active:scale-95 transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
-      <ArrowUp className="w-5 h-5" strokeWidth={2} />
+      <ArrowUp className="w-5 h-5" strokeWidth={1.5} />
     </button>
   );
 }

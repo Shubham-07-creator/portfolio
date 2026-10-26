@@ -33,11 +33,11 @@ export default function Education() {
               <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-3 border-b border-border">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-chip border border-border">
-                    <GraduationCap className="w-5 h-5 text-accent" strokeWidth={1.75} />
+                  <div className="p-2 rounded-lg bg-surface-2 border border-border">
+                    <GraduationCap className="w-5 h-5 text-muted" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono text-accent uppercase tracking-wider block">
+                    <span className="text-[11px] font-mono text-muted uppercase tracking-wider block">
                       Undergraduate Degree
                     </span>
                     <h3 className="text-lg sm:text-xl font-bold font-heading text-text">
@@ -46,25 +46,25 @@ export default function Education() {
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-muted">
-                  <Calendar className="w-3.5 h-3.5 text-spark" strokeWidth={1.75} />
+                <div className="inline-flex items-center gap-1.5 text-sm font-mono text-muted">
+                  <Calendar className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                   <span>{bca.period}</span>
                 </div>
               </div>
 
-              <p className="text-sm text-muted font-medium mb-5">
+              <p className="text-sm text-body font-medium mb-5">
                 {bca.institution}
               </p>
 
               <div>
-                <span className="text-xs font-mono text-text block mb-2 font-semibold">
+                <span className="text-sm font-mono text-text block mb-2 font-semibold">
                   Key Academic Coursework:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {bca.coursework.map((course) => (
                     <span
                       key={course}
-                      className="px-3 py-1 rounded-lg bg-chip border border-border text-xs font-mono text-muted"
+                      className="px-3 py-1 rounded-lg bg-surface-2 border border-border text-xs font-mono text-muted"
                     >
                       {course}
                     </span>
@@ -81,13 +81,13 @@ export default function Education() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="space-y-3"
             >
-              <div className="p-4 rounded-xl bg-surface border border-border flex items-center gap-3 text-xs sm:text-sm text-muted">
-                <School className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />
+              <div className="p-4 rounded-xl bg-surface border border-border flex items-center gap-3 text-sm text-muted">
+                <School className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />
                 <span>{classXII.text}</span>
               </div>
 
-              <div className="p-4 rounded-xl bg-surface border border-border flex items-center gap-3 text-xs sm:text-sm text-muted">
-                <School className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />
+              <div className="p-4 rounded-xl bg-surface border border-border flex items-center gap-3 text-sm text-muted">
+                <School className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />
                 <span>{classX.text}</span>
               </div>
             </motion.div>
@@ -108,11 +108,11 @@ export default function Education() {
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-border">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-chip border border-border">
-                      <Award className="w-5 h-5 text-spark" strokeWidth={1.75} />
+                    <div className="p-2 rounded-lg bg-surface-2 border border-border">
+                      <Award className="w-5 h-5 text-muted" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono text-accent font-semibold uppercase tracking-wider block">
+                      <span className="text-[11px] font-mono text-muted font-semibold uppercase tracking-wider block">
                         Professional Certification
                       </span>
                       <h3 className="text-lg font-bold font-heading text-text">
@@ -121,16 +121,16 @@ export default function Education() {
                     </div>
                   </div>
 
-                  <span className="text-xs font-mono text-muted">
+                  <span className="text-sm font-mono text-muted">
                     {certification.year}
                   </span>
                 </div>
 
-                <div className="text-xs font-mono text-accent mb-3 font-semibold">
+                <div className="text-sm font-mono text-muted mb-3 font-semibold">
                   Issued by {certification.issuer}
                 </div>
 
-                <p className="text-sm text-muted leading-relaxed mb-6">
+                <p className="text-sm text-body leading-relaxed mb-6">
                   {certification.description}
                 </p>
               </div>
@@ -141,10 +141,10 @@ export default function Education() {
                     href={certification.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 min-h-[44px] text-xs font-mono font-medium text-accent hover:text-accent-hover transition-colors"
+                    className="inline-flex items-center gap-1.5 min-h-[44px] text-sm font-mono font-medium text-accent hover:text-accent-hover underline underline-offset-[3px] transition-colors"
                   >
                     <span>View Certificate</span>
-                    <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.75} />
+                    <ExternalLink className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                   </a>
                 </div>
               )}

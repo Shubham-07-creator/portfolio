@@ -128,24 +128,24 @@ export default function Contact() {
               {/* Architectural registration marks */}
               <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-mono text-muted uppercase tracking-wider">
+                <span className="text-sm font-mono text-muted uppercase tracking-wider">
                   Direct Email
                 </span>
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-chip border border-border text-xs font-mono text-text hover:text-accent hover:border-accent transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 min-h-[44px] rounded-md bg-surface-2 border border-border text-xs font-mono text-text hover:text-accent hover:border-accent transition-colors cursor-pointer"
                   title="Copy email address"
                   aria-label="Copy email"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-success" />
+                      <Check className="w-3.5 h-3.5 text-success" strokeWidth={1.5} />
                       <span className="text-success">Copied</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                       <span>Copy</span>
                     </>
                   )}
@@ -168,7 +168,7 @@ export default function Contact() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="p-5 sm:p-6 rounded-[20px] editorial-card space-y-4"
             >
-              <span className="text-xs font-mono text-muted uppercase tracking-wider block">
+              <span className="text-sm font-mono text-muted uppercase tracking-wider block">
                 Profiles &amp; Location
               </span>
 
@@ -177,13 +177,13 @@ export default function Contact() {
                 href={identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-chip/60 border border-border hover:border-accent text-text group transition-colors"
+                className="flex items-center justify-between p-3 rounded-xl bg-surface-2/60 border border-border hover:border-accent text-text group transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <FaLinkedin className="w-4 h-4 text-accent" aria-hidden="true" />
                   <span className="text-sm font-medium font-sans">LinkedIn</span>
                 </div>
-                <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" />
+                <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" strokeWidth={1.5} />
               </a>
 
               {/* GitHub */}
@@ -191,13 +191,13 @@ export default function Contact() {
                 href={identity.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-chip/60 border border-border hover:border-accent text-text group transition-colors"
+                className="flex items-center justify-between p-3 rounded-xl bg-surface-2/60 border border-border hover:border-accent text-text group transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <SiGithub className="w-4 h-4 text-text" aria-hidden="true" />
                   <span className="text-sm font-medium font-sans">GitHub</span>
                 </div>
-                <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" />
+                <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" strokeWidth={1.5} />
               </a>
 
               {/* LeetCode - only rendered if identity.leetcodeUrl is non-empty */}
@@ -206,7 +206,7 @@ export default function Contact() {
                   href={identity.leetcodeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-chip/60 border border-border hover:border-accent text-text group transition-colors"
+                  className="flex items-center justify-between p-3 rounded-xl bg-surface-2/60 border border-border hover:border-accent text-text group transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <span className="w-4 h-4 text-accent font-bold text-xs flex items-center justify-center font-mono">
@@ -214,13 +214,13 @@ export default function Contact() {
                     </span>
                     <span className="text-sm font-medium font-sans">LeetCode</span>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" />
+                  <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent transition-colors" strokeWidth={1.5} />
                 </a>
               )}
 
               {/* Location */}
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-chip/40 border border-border text-muted text-sm">
-                <MapPin className="w-4 h-4 text-spark shrink-0" strokeWidth={1.75} />
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-surface-2/40 border border-border text-muted text-sm">
+                <MapPin className="w-4 h-4 text-muted shrink-0" strokeWidth={1.5} />
                 <span>{identity.location}</span>
               </div>
             </motion.div>
@@ -241,7 +241,7 @@ export default function Contact() {
             <h3 className="text-xl font-bold font-heading text-text mb-1">
               Send a message
             </h3>
-            <p className="text-xs text-muted font-mono mb-6">
+            <p className="text-sm text-muted font-mono mb-6">
               Drop a note regarding opportunities or projects.
             </p>
 
@@ -249,7 +249,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs font-mono text-text mb-1.5 font-medium"
+                  className="block text-sm font-mono text-text mb-1.5 font-medium"
                 >
                   Your Name
                 </label>
@@ -261,14 +261,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Shubham Kumar"
-                  className="w-full px-4 py-2.5 min-h-[44px] rounded-lg bg-chip border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans"
+                  className="w-full px-4 py-2.5 min-h-[44px] rounded-lg bg-surface-2 border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-mono text-text mb-1.5 font-medium"
+                  className="block text-sm font-mono text-text mb-1.5 font-medium"
                 >
                   Your Email
                 </label>
@@ -280,14 +280,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="name@example.com"
-                  className="w-full px-4 py-2.5 min-h-[44px] rounded-lg bg-chip border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans"
+                  className="w-full px-4 py-2.5 min-h-[44px] rounded-lg bg-surface-2 border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-xs font-mono text-text mb-1.5 font-medium"
+                  className="block text-sm font-mono text-text mb-1.5 font-medium"
                 >
                   Message
                 </label>
@@ -299,13 +299,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Write your message here..."
-                  className="w-full px-4 py-2.5 rounded-lg bg-chip border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans resize-y"
+                  className="w-full px-4 py-2.5 rounded-lg bg-surface-2 border border-border text-text placeholder:text-muted/60 text-sm focus:outline-none focus:border-accent transition-colors font-sans resize-y"
                 />
               </div>
 
               {formStatus.message && (
                 <div
-                  className={`p-3 rounded-lg text-xs font-mono ${
+                  className={`p-3 rounded-lg text-sm font-mono ${
                     formStatus.type === 'error'
                       ? 'bg-error/10 border border-error/30 text-error'
                       : 'bg-success/10 border border-success/30 text-success'
@@ -325,7 +325,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <span>Send message</span>
-                    <Send className="w-4 h-4" strokeWidth={1.75} />
+                    <Send className="w-4 h-4" strokeWidth={1.5} />
                   </>
                 )}
               </button>

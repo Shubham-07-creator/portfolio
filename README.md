@@ -1,13 +1,13 @@
 # Shubham Kumar — Developer Portfolio
 
-A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Indigo Night** design system (deep navy, electric indigo, and cyan sparks). Built with Vite, React, and Tailwind CSS.
+A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Mono Lime Editorial** design system (deep neutral canvas with vibrant electric lime accent #A3E635 in dark mode and warm editorial paper in light mode). Built with Vite, React, and Tailwind CSS.
 
 ## Stack
 - **Framework:** React + Vite
 - **Routing:** React Router v7
 - **Styling:** Tailwind CSS with CSS Variables design tokens (Dark mode default, Light mode supported)
 - **Animations:** Framer Motion (hover, layout, and scroll reveals with reduced motion support)
-- **Icons:** React Icons (`Si` set + `FaJava` + `FaLinkedin`) and Lucide React (stroke 1.75)
+- **Icons:** React Icons (`Si` set + `FaJava` + `FaLinkedin`) and Lucide React (stroke 1.5)
 - **Contact:** EmailJS with automatic mailto fallback
 - **Analytics:** @vercel/analytics
 

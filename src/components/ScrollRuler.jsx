@@ -50,11 +50,11 @@ export default function ScrollRuler({ activeSection }) {
       <div className="w-full h-1.5 opacity-30 bg-repeat-x flex items-end overflow-hidden"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(to right, var(--color-border) 0px, var(--color-border) 1px, transparent 1px, transparent 16px)',
+            'repeating-linear-gradient(to right, var(--border) 0px, var(--border) 1px, transparent 1px, transparent 16px)',
         }}
       />
 
-      {/* 2. Precision Saffron Progress Hairline */}
+      {/* 2. Precision Accent Progress Hairline */}
       <div className="relative w-full h-[2px] bg-border/40">
         <div
           className="h-full bg-accent relative transition-[width] duration-75 ease-out"
@@ -62,7 +62,7 @@ export default function ScrollRuler({ activeSection }) {
         >
           {/* Glowing cursor bead at tip */}
           <span
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--color-accent)] -mr-1"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_var(--accent)] -mr-1"
           />
         </div>
       </div>

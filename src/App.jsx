@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/25 selection:text-text relative">
+      <div className="min-h-screen bg-bg text-text font-sans selection:bg-accent/30 selection:text-text relative">
         <ScrollRuler activeSection={activeSection} />
 
         <Navbar

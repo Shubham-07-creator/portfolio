@@ -35,10 +35,10 @@ function TradeXpertDiagram() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-accent)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent)" />
           </marker>
           <marker
-            id="tx-arrow-spark"
+            id="tx-arrow-muted"
             viewBox="0 0 10 10"
             refX="6"
             refY="5"
@@ -46,7 +46,7 @@ function TradeXpertDiagram() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-spark)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--text-muted)" />
           </marker>
         </defs>
 
@@ -56,23 +56,23 @@ function TradeXpertDiagram() {
             width="220"
             height="135"
             rx="12"
-            fill="var(--color-surface)"
-            stroke="var(--color-border)"
+            fill="var(--surface)"
+            stroke="var(--border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="28" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="16" y="28" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Client Applications
           </text>
-          <text x="16" y="54" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="54" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Landing site (React)
           </text>
-          <text x="16" y="76" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="76" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Trading terminal (React, Chart.js)
           </text>
-          <text x="16" y="98" fill="var(--color-muted)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="98" fill="var(--text-muted)" fontSize="11" fontFamily="Inter, sans-serif">
             • Admin command center (RBAC)
           </text>
-          <text x="16" y="118" fill="var(--color-spark)" fontSize="10" fontFamily="JetBrains Mono, monospace">
+          <text x="16" y="118" fill="var(--text-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
             Socket.IO client listener
           </text>
         </g>
@@ -83,20 +83,20 @@ function TradeXpertDiagram() {
             width="220"
             height="115"
             rx="12"
-            fill="var(--color-surface)"
-            stroke="var(--color-border)"
+            fill="var(--surface)"
+            stroke="var(--border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-spark)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="16" y="30" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Yahoo Finance Feed
           </text>
-          <text x="16" y="56" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="56" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • 100 NSE stock quotes
           </text>
-          <text x="16" y="78" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="78" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • NIFTY 50 &amp; SENSEX indices
           </text>
-          <text x="16" y="98" fill="var(--color-muted)" fontSize="10.5" fontFamily="JetBrains Mono, monospace">
+          <text x="16" y="98" fill="var(--text-muted)" fontSize="10.5" fontFamily="JetBrains Mono, monospace">
             2.5s tick cycle engine
           </text>
         </g>
@@ -105,12 +105,12 @@ function TradeXpertDiagram() {
         <path
           d="M 250 95 L 350 95"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
-          markerEnd="url(#tx-arrow-accent)"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
+          markerEnd="url(#tx-arrow-muted)"
         />
-        <rect x="264" y="66" width="72" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="270" y="80" fill="var(--color-accent)" fontSize="9" fontWeight="600">
+        <rect x="264" y="66" width="72" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="270" y="80" fill="var(--text-muted)" fontSize="9" fontWeight="600">
           REST auth
         </text>
 
@@ -118,13 +118,13 @@ function TradeXpertDiagram() {
         <path
           d="M 350 125 L 250 125"
           fill="none"
-          stroke="var(--color-spark)"
-          strokeWidth="1.75"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
           strokeDasharray="4 3"
-          markerEnd="url(#tx-arrow-spark)"
+          markerEnd="url(#tx-arrow-muted)"
         />
-        <rect x="254" y="132" width="92" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="258" y="146" fill="var(--color-spark)" fontSize="8.5" fontWeight="600">
+        <rect x="254" y="132" width="92" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="258" y="146" fill="var(--text-muted)" fontSize="8.5" fontWeight="600">
           REST + WebSocket
         </text>
 
@@ -132,24 +132,24 @@ function TradeXpertDiagram() {
         <path
           d="M 250 280 L 350 280"
           fill="none"
-          stroke="var(--color-spark)"
-          strokeWidth="1.75"
-          markerEnd="url(#tx-arrow-spark)"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
+          markerEnd="url(#tx-arrow-muted)"
         />
-        <rect x="262" y="252" width="76" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="268" y="266" fill="var(--color-spark)" fontSize="9" fontWeight="600">
+        <rect x="262" y="252" width="76" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="268" y="266" fill="var(--text-muted)" fontSize="9" fontWeight="600">
           Live Ticks
         </text>
 
         {/* 3. Express API Server (Center Key Node) */}
         <g transform="translate(355, 25)">
-          {/* Key node with chip fill and accent stroke */}
+          {/* Key node with surface-2 fill and accent stroke */}
           <rect
             width="280"
             height="325"
             rx="14"
-            fill="var(--color-chip)"
-            stroke="var(--color-accent)"
+            fill="var(--surface-2)"
+            stroke="var(--accent)"
             strokeWidth="2"
           />
           <rect
@@ -158,65 +158,65 @@ function TradeXpertDiagram() {
             width="280"
             height="38"
             rx="14"
-            fill="var(--color-surface)"
-            stroke="var(--color-accent)"
+            fill="var(--surface)"
+            stroke="var(--accent)"
             strokeWidth="1"
           />
-          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="18" y="24" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Express API Server
           </text>
 
           {/* Module 1: Security Layer */}
           <g transform="translate(14, 48)">
-            <rect width="252" height="46" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="46" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Security Layer
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Helmet · Rate limit · JWT + RBAC
             </text>
           </g>
 
           {/* Module 2: Market Engine */}
           <g transform="translate(14, 102)">
-            <rect width="252" height="46" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="46" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Market Engine
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Live quotes &lt;-&gt; Mean-reverting sim
             </text>
           </g>
 
           {/* Module 3: Order Engine */}
           <g transform="translate(14, 156)">
-            <rect width="252" height="48" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Order Engine (Limit, GTT)
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Margin lock · Tick match · Auto-exec
             </text>
           </g>
 
           {/* Module 4: Socket.IO Server */}
           <g transform="translate(14, 212)">
-            <rect width="252" height="46" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="46" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Socket.IO Server
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               3-6 stocks update delta stream
             </text>
           </g>
 
           {/* Module 5: Wallet & Balances */}
           <g transform="translate(14, 266)">
-            <rect width="252" height="46" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="46" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Wallet &amp; Margin Ledger
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Atomic locks · Cancellation refunds
             </text>
           </g>
@@ -226,20 +226,20 @@ function TradeXpertDiagram() {
         <path
           d="M 635 180 L 715 180"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
-          markerEnd="url(#tx-arrow-accent)"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
+          markerEnd="url(#tx-arrow-muted)"
         />
         <path
           d="M 715 200 L 635 200"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
           strokeDasharray="4 3"
-          markerEnd="url(#tx-arrow-accent)"
+          markerEnd="url(#tx-arrow-muted)"
         />
-        <rect x="646" y="148" width="60" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="651" y="162" fill="var(--color-accent)" fontSize="8.5" fontWeight="600">
+        <rect x="646" y="148" width="60" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="651" y="162" fill="var(--text-muted)" fontSize="8.5" fontWeight="600">
           Mongoose
         </text>
 
@@ -249,26 +249,26 @@ function TradeXpertDiagram() {
             width="190"
             height="185"
             rx="12"
-            fill="var(--color-surface)"
-            stroke="var(--color-border)"
+            fill="var(--surface)"
+            stroke="var(--border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="32" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="16" y="32" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             MongoDB Atlas
           </text>
-          <text x="16" y="62" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="62" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Users &amp; Auth (bcrypt)
           </text>
-          <text x="16" y="88" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="88" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Open Limit &amp; GTT orders
           </text>
-          <text x="16" y="114" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="114" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Holdings &amp; Positions
           </text>
-          <text x="16" y="140" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="140" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Wallets &amp; Transactions
           </text>
-          <text x="16" y="164" fill="var(--color-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
+          <text x="16" y="164" fill="var(--text-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
             Indexed by userId &amp; status
           </text>
         </g>
@@ -301,10 +301,10 @@ function StayHubDiagram() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-accent)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent)" />
           </marker>
           <marker
-            id="sh-arrow-spark"
+            id="sh-arrow-muted"
             viewBox="0 0 10 10"
             refX="6"
             refY="5"
@@ -312,28 +312,28 @@ function StayHubDiagram() {
             markerHeight="6"
             orient="auto-start-reverse"
           >
-            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-spark)" />
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--text-muted)" />
           </marker>
         </defs>
 
         {/* External Satellite: Razorpay (Top Left) */}
         <g transform="translate(40, 20)">
-          <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
+          <rect width="180" height="65" rx="10" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+          <text x="14" y="26" fill="var(--text-heading)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Razorpay (test mode)
           </text>
-          <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
+          <text x="14" y="46" fill="var(--text-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
             SHA256 HMAC verification
           </text>
         </g>
 
         {/* External Satellite: Mapbox (Top Right) */}
         <g transform="translate(720, 20)">
-          <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
+          <rect width="180" height="65" rx="10" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+          <text x="14" y="26" fill="var(--text-heading)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Mapbox Geocoding
           </text>
-          <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
+          <text x="14" y="46" fill="var(--text-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
             Forward geocoding &amp; maps
           </text>
         </g>
@@ -344,45 +344,45 @@ function StayHubDiagram() {
             width="220"
             height="150"
             rx="12"
-            fill="var(--color-surface)"
-            stroke="var(--color-border)"
+            fill="var(--surface)"
+            stroke="var(--border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="16" y="30" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Browser Client
           </text>
-          <text x="16" y="58" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="58" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • EJS server-rendered views
           </text>
-          <text x="16" y="80" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="80" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Bootstrap 5 responsive UI
           </text>
-          <text x="16" y="102" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="102" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Mapbox GL JS interactive map
           </text>
-          <text x="16" y="126" fill="var(--color-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
+          <text x="16" y="126" fill="var(--text-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
             AJAX wishlist &amp; tariffs
           </text>
         </g>
 
         {/* External Satellite: Cloudinary (Bottom Left) */}
         <g transform="translate(40, 315)">
-          <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
+          <rect width="180" height="65" rx="10" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+          <text x="14" y="26" fill="var(--text-heading)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Cloudinary CDN
           </text>
-          <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
+          <text x="14" y="46" fill="var(--text-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
             Listing image uploads &amp; transform
           </text>
         </g>
 
         {/* External Satellite: Brevo / Nodemailer (Bottom Right) */}
         <g transform="translate(720, 315)">
-          <rect width="180" height="65" rx="10" fill="var(--color-surface)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text x="14" y="26" fill="var(--color-spark)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
+          <rect width="180" height="65" rx="10" fill="var(--surface)" stroke="var(--border)" strokeWidth="1.5" />
+          <text x="14" y="26" fill="var(--text-heading)" fontWeight="bold" fontSize="11" fontFamily="Instrument Serif, Georgia, serif">
             Brevo &amp; Nodemailer
           </text>
-          <text x="14" y="46" fill="var(--color-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
+          <text x="14" y="46" fill="var(--text-muted)" fontSize="9.5" fontFamily="Inter, sans-serif">
             Email OTP authentication
           </text>
         </g>
@@ -391,32 +391,32 @@ function StayHubDiagram() {
         <path
           d="M 250 195 L 350 195"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
-          markerEnd="url(#sh-arrow-accent)"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
+          markerEnd="url(#sh-arrow-muted)"
         />
         <path
           d="M 350 215 L 250 215"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
           strokeDasharray="4 3"
-          markerEnd="url(#sh-arrow-accent)"
+          markerEnd="url(#sh-arrow-muted)"
         />
-        <rect x="264" y="170" width="72" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="270" y="184" fill="var(--color-accent)" fontSize="9" fontWeight="600">
+        <rect x="264" y="170" width="72" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="270" y="184" fill="var(--text-muted)" fontSize="9" fontWeight="600">
           HTTPS req
         </text>
 
         {/* 2. Express App Server (Center Key Node) */}
         <g transform="translate(355, 30)">
-          {/* Key node with chip fill and accent stroke */}
+          {/* Key node with surface-2 fill and accent stroke */}
           <rect
             width="280"
             height="340"
             rx="14"
-            fill="var(--color-chip)"
-            stroke="var(--color-accent)"
+            fill="var(--surface-2)"
+            stroke="var(--accent)"
             strokeWidth="2"
           />
           <rect
@@ -425,68 +425,68 @@ function StayHubDiagram() {
             width="280"
             height="38"
             rx="14"
-            fill="var(--color-surface)"
-            stroke="var(--color-accent)"
+            fill="var(--surface)"
+            stroke="var(--accent)"
             strokeWidth="1"
           />
-          <text x="18" y="24" fill="var(--color-accent)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="18" y="24" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             Express.js App Server
           </text>
 
           {/* Module 1: Auth */}
           <g transform="translate(14, 48)">
-            <rect width="252" height="48" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Passport (local + Google OAuth)
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Rate limit · Email OTP · RBAC
             </text>
           </g>
 
           {/* Module 2: Validation */}
           <g transform="translate(14, 104)">
-            <rect width="252" height="48" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Joi Schema Validation
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Sanitization · Date overlap checks
             </text>
           </g>
 
           {/* Module 3: Controllers & GST */}
           <g transform="translate(14, 160)">
-            <rect width="252" height="52" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="52" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Listing &amp; Booking Controllers
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               GST billing (12%/18%) · 5% fee
             </text>
-            <text x="12" y="46" fill="var(--color-spark)" fontSize="8.5">
+            <text x="12" y="46" fill="var(--text-muted)" fontSize="8.5">
               SH-INV-YYYYMMDD-XXXX invoice generator
             </text>
           </g>
 
           {/* Module 4: Payment Controller */}
           <g transform="translate(14, 220)">
-            <rect width="252" height="48" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               Payment Controller
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Razorpay order init · HMAC verify
             </text>
           </g>
 
           {/* Module 5: Session Store */}
           <g transform="translate(14, 276)">
-            <rect width="252" height="48" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" />
-            <text x="12" y="19" fill="var(--color-text)" fontWeight="600" fontSize="10.5">
+            <rect width="252" height="48" rx="8" fill="var(--surface)" stroke="var(--border)" />
+            <text x="12" y="19" fill="var(--text-heading)" fontWeight="600" fontSize="10.5">
               MongoStore Sessions
             </text>
-            <text x="12" y="34" fill="var(--color-muted)" fontSize="9">
+            <text x="12" y="34" fill="var(--text-muted)" fontSize="9">
               Persistent guest &amp; host sessions
             </text>
           </g>
@@ -494,32 +494,32 @@ function StayHubDiagram() {
 
         {/* Satellite Connectors */}
         {/* Razorpay <-> Express */}
-        <path d="M 220 52 L 355 70" fill="none" stroke="var(--color-spark)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-spark)" />
+        <path d="M 220 52 L 355 70" fill="none" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-muted)" />
         {/* Mapbox <-> Express */}
-        <path d="M 720 52 L 635 80" fill="none" stroke="var(--color-spark)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-spark)" />
+        <path d="M 720 52 L 635 80" fill="none" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-muted)" />
         {/* Cloudinary <-> Express */}
-        <path d="M 220 348 L 355 310" fill="none" stroke="var(--color-spark)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-spark)" />
+        <path d="M 220 348 L 355 310" fill="none" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-muted)" />
         {/* Brevo <-> Express */}
-        <path d="M 720 348 L 635 310" fill="none" stroke="var(--color-spark)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-spark)" />
+        <path d="M 720 348 L 635 310" fill="none" stroke="var(--text-muted)" strokeWidth="1.5" strokeDasharray="4 3" markerEnd="url(#sh-arrow-muted)" />
 
         {/* Connectors: Express -> MongoDB */}
         <path
           d="M 635 195 L 715 195"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
-          markerEnd="url(#sh-arrow-accent)"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
+          markerEnd="url(#sh-arrow-muted)"
         />
         <path
           d="M 715 215 L 635 215"
           fill="none"
-          stroke="var(--color-accent)"
-          strokeWidth="1.75"
+          stroke="var(--text-muted)"
+          strokeWidth="1.5"
           strokeDasharray="4 3"
-          markerEnd="url(#sh-arrow-accent)"
+          markerEnd="url(#sh-arrow-muted)"
         />
-        <rect x="646" y="165" width="60" height="20" rx="4" fill="var(--color-chip)" stroke="var(--color-border)" strokeWidth="1" />
-        <text x="651" y="179" fill="var(--color-accent)" fontSize="8.5" fontWeight="600">
+        <rect x="646" y="165" width="60" height="20" rx="4" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="1" />
+        <text x="651" y="179" fill="var(--text-muted)" fontSize="8.5" fontWeight="600">
           Mongoose
         </text>
 
@@ -529,26 +529,26 @@ function StayHubDiagram() {
             width="190"
             height="175"
             rx="12"
-            fill="var(--color-surface)"
-            stroke="var(--color-border)"
+            fill="var(--surface)"
+            stroke="var(--border)"
             strokeWidth="1.5"
           />
-          <text x="16" y="30" fill="var(--color-success)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
+          <text x="16" y="30" fill="var(--text-heading)" fontWeight="bold" fontSize="13" fontFamily="Instrument Serif, Georgia, serif">
             MongoDB Atlas
           </text>
-          <text x="16" y="58" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="58" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Listings (GeoJSON points)
           </text>
-          <text x="16" y="82" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="82" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Bookings &amp; Invoices
           </text>
-          <text x="16" y="106" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="106" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Users (guest, host, admin)
           </text>
-          <text x="16" y="130" fill="var(--color-text)" fontSize="11" fontFamily="Inter, sans-serif">
+          <text x="16" y="130" fill="var(--text-body)" fontSize="11" fontFamily="Inter, sans-serif">
             • Reviews with star ratings
           </text>
-          <text x="16" y="154" fill="var(--color-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
+          <text x="16" y="154" fill="var(--text-muted)" fontSize="10" fontFamily="JetBrains Mono, monospace">
             Sessions &amp; Wishlists
           </text>
         </g>
@@ -652,7 +652,7 @@ export default function EngineeringNotes() {
               ref={tabListRef}
               role="tablist"
               aria-label="Engineering notes project selection"
-              className="inline-flex p-1 rounded-full bg-chip border border-border gap-1"
+              className="inline-flex p-1 rounded-full bg-surface-2 border border-border gap-1"
             >
               {projectTabs.map((tab, idx) => {
                 const isActive = tab.slug === activeTabSlug;
@@ -702,8 +702,8 @@ export default function EngineeringNotes() {
                     Component distribution, service boundaries and data flow pipeline
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-chip border border-border text-[11px] font-mono text-accent font-medium self-start sm:self-auto">
-                  <span className="w-1.5 h-1.5 rounded-full bg-spark" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-2 border border-border text-[11px] font-mono text-muted font-medium self-start sm:self-auto">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                   Live topology
                 </span>
               </div>
@@ -729,7 +729,7 @@ export default function EngineeringNotes() {
                       className="p-5 rounded-[16px] bg-surface border border-border editorial-card hover:border-accent transition-colors flex flex-col justify-between"
                     >
                       <div>
-                        <div className="inline-block px-2.5 py-0.5 rounded-md bg-chip border border-border font-mono text-xs font-bold text-accent mb-3">
+                        <div className="inline-block px-2.5 py-0.5 rounded-md bg-surface-2 border border-border font-mono text-xs font-bold text-accent mb-3">
                           0{stepItem.step || sIdx + 1}
                         </div>
                         <h4 className="text-base font-bold font-serif text-text mb-1.5">
@@ -768,7 +768,7 @@ export default function EngineeringNotes() {
                             setOpenDecisionIndex(isOpen ? null : dIdx)
                           }
                           onKeyDown={(e) => handleAccordionKeyDown(e, dIdx)}
-                          className="w-full p-4 sm:p-5 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-chip/40 transition-colors focus-visible:outline-accent"
+                          className="w-full p-4 sm:p-5 flex items-center justify-between gap-4 text-left cursor-pointer hover:bg-surface-2/40 transition-colors focus-visible:outline-accent"
                         >
                           <div className="flex items-center gap-3">
                             <span className="font-mono text-xs text-accent font-semibold shrink-0">
@@ -814,7 +814,7 @@ export default function EngineeringNotes() {
             {activeTab.challenges && activeTab.challenges.length > 0 && (
               <div className="p-6 rounded-xl bg-surface border border-border">
                 <h4 className="text-base font-bold font-heading text-text mb-3 flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4 text-spark" />
+                  <AlertTriangle className="w-4 h-4 text-muted" strokeWidth={1.5} />
                   <span>Engineering Challenges</span>
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-sm text-muted">
@@ -830,7 +830,7 @@ export default function EngineeringNotes() {
             {activeTab.learnings && activeTab.learnings.length > 0 && (
               <div className="p-6 rounded-xl bg-surface border border-border">
                 <h4 className="text-base font-bold font-heading text-text mb-3 flex items-center gap-2">
-                  <Lightbulb className="w-4 h-4 text-accent" />
+                  <Lightbulb className="w-4 h-4 text-muted" strokeWidth={1.5} />
                   <span>Key Learnings</span>
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-sm text-muted">
@@ -846,7 +846,7 @@ export default function EngineeringNotes() {
             {activeTab.futureWork && activeTab.futureWork.length > 0 && (
               <div className="p-6 rounded-xl bg-surface border border-border">
                 <h4 className="text-base font-bold font-heading text-text mb-3 flex items-center gap-2">
-                  <Compass className="w-4 h-4 text-success" />
+                  <Compass className="w-4 h-4 text-muted" strokeWidth={1.5} />
                   <span>Future Work</span>
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-sm text-muted">
@@ -872,7 +872,7 @@ export default function EngineeringNotes() {
                   <span>Read the full README on GitHub</span>
                   <ArrowRight
                     className="w-4 h-4 text-muted group-hover:text-accent group-hover:translate-x-0.5 transition-all"
-                    strokeWidth={1.75}
+                    strokeWidth={1.5}
                   />
                 </a>
               </div>
