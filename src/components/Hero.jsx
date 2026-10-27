@@ -4,38 +4,36 @@ import { Mail, MapPin, FileText, ArrowRight, Copy, Check, Terminal, Code2 } from
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
-import { useStudioClock } from '../hooks/useStudioClock';
 
 export default function Hero() {
   const { identity } = portfolioData;
-  const studioTime = useStudioClock();
   const [activeTab, setActiveTab] = useState('js');
   const [copied, setCopied] = useState(false);
 
   const codeLines = [
     { num: 1, text: <><span className="text-accent font-medium">const</span> <span className="text-text font-medium">shubham</span> <span className="text-muted">=</span> <span className="text-muted">{'{'}</span></> },
-    { num: 2, text: <>  <span className="text-muted">role:</span> <span className="text-[var(--code-string)]">"Full Stack Developer"</span><span className="text-muted">,</span></> },
+    { num: 2, text: <>  <span className="text-muted">role:</span> <span className="text-[var(--code-string)]">"{identity.codeCard.role}"</span><span className="text-muted">,</span></> },
     { num: 3, text: <>  <span className="text-muted">stack:</span> <span className="text-muted">[</span><span className="text-[var(--code-string)]">"React"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"Node.js"</span><span className="text-muted">,</span></> },
     { num: 4, text: <>           <span className="text-[var(--code-string)]">"Express"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"MongoDB"</span><span className="text-muted">],</span></> },
-    { num: 5, text: <>  <span className="text-muted">foundations:</span> <span className="text-muted">[</span><span className="text-[var(--code-string)]">"Java"</span><span className="text-muted">, </span><span className="text-[var(--code-string)]">"DSA"</span><span className="text-muted">],</span></> },
-    { num: 6, text: <>  <span className="text-muted">status:</span> <span className="text-[var(--code-string)]">"open to internships"</span><span className="text-muted">,</span></> },
-    { num: 7, text: <>  <span className="text-muted">location:</span> <span className="text-[var(--code-string)]">"India"</span></> },
+    { num: 5, text: <>  <span className="text-muted">availability:</span> <span className="text-[var(--code-string)]">"{identity.codeCard.status}"</span><span className="text-muted">,</span></> },
+    { num: 6, text: <>  <span className="text-muted">location:</span> <span className="text-[var(--code-string)]">"{identity.location}"</span><span className="text-muted">,</span></> },
+    { num: 7, text: <>  <span className="text-muted">email:</span> <span className="text-[var(--code-string)]">"{identity.email}"</span></> },
     { num: 8, text: <><span className="text-muted">{'};'}</span></> },
   ];
 
   const cliOutput = [
     { text: '$ node check-availability.js', color: 'text-muted' },
-    { text: '✔ SDE Intern / Full Stack: AVAILABLE', color: 'text-accent' },
-    { text: '✔ Primary Stack: MERN + Java & DSA', color: 'text-text' },
-    { text: '✔ Location: India · Remote / On-site', color: 'text-text' },
-    { text: `✔ Direct: ${identity.email}`, color: 'text-accent' },
-    { text: '$ echo "Ready to engineer production software."', color: 'text-muted' },
+    { text: `✔ Role: ${identity.codeCard.role}`, color: 'text-text' },
+    { text: `✔ Stack: ${identity.codeCard.stack.join(', ')}`, color: 'text-text' },
+    { text: `✔ Availability: ${identity.status}`, color: 'text-accent' },
+    { text: `✔ Location: ${identity.location}`, color: 'text-text' },
+    { text: `✔ Email: ${identity.email}`, color: 'text-accent' },
   ];
 
   const handleCopy = () => {
-    const rawJs = `const shubham = {\n  role: "Full Stack Developer",\n  stack: ["React", "Node.js", "Express", "MongoDB"],\n  foundations: ["Java", "DSA"],\n  status: "open to internships",\n  location: "India"\n};`;
-    const rawCli = `$ node check-availability.js\n✔ SDE Intern / Full Stack: AVAILABLE\n✔ Primary Stack: MERN + Java & DSA\n✔ Location: India · Remote / On-site\n✔ Direct: ${identity.email}\n$ echo "Ready to engineer production software."`;
-    
+    const rawJs = `const shubham = {\n  role: "${identity.codeCard.role}",\n  stack: ["React", "Node.js", "Express", "MongoDB"],\n  availability: "${identity.codeCard.status}",\n  location: "${identity.location}",\n  email: "${identity.email}"\n};`;
+    const rawCli = `$ node check-availability.js\n✔ Role: ${identity.codeCard.role}\n✔ Stack: ${identity.codeCard.stack.join(', ')}\n✔ Availability: ${identity.status}\n✔ Location: ${identity.location}\n✔ Email: ${identity.email}`;
+
     if (navigator?.clipboard) {
       navigator.clipboard.writeText(activeTab === 'js' ? rawJs : rawCli);
       setCopied(true);
@@ -46,7 +44,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[calc(100svh-68px)] md:min-h-[calc(100svh-72px)] flex flex-col justify-center pt-6 pb-10 sm:py-12 md:py-20 overflow-hidden"
+      className="relative min-h-[calc(100svh-64px)] max-[719px]:min-h-[calc(100svh-96px)] flex flex-col justify-center py-6 sm:py-8 lg:py-12 overflow-hidden"
     >
       {/* Subtle Dot Grid fading down and soft top-left glow */}
       <div className="hero-dot-grid" aria-hidden="true" />
@@ -57,52 +55,40 @@ export default function Hero() {
         <span className="absolute -top-3 left-4 sm:left-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
         <span className="absolute -top-3 right-4 sm:right-6 font-mono text-xs text-border select-none pointer-events-none" aria-hidden="true">+</span>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          {/* Left Column (Asymmetric: 7 cols on desktop) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] gap-8 lg:gap-12 items-center w-full">
+          {/* Left Column (minmax(0, 1.25fr)) */}
           <motion.div
-            className="lg:col-span-7 flex flex-col items-start"
+            className="flex flex-col items-start min-w-0 w-full"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
           >
-            {/* Telemetry & Status Bar */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-mono mb-3.5 sm:mb-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                </span>
-                <span className="text-accent font-medium">{identity.status}</span>
-              </div>
-
-              {studioTime && (
-                <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-muted text-[11px]">
-                  <span className="text-text font-medium">NEW DELHI, IN</span>
-                  <span className="text-border">·</span>
-                  <span className="text-accent font-semibold">{studioTime} IST</span>
-                  <span className="text-border">·</span>
-                  <span>LAT 28.61° N</span>
-                </div>
-              )}
+            {/* Status Pill (NO live clock, NO city, NO coordinates) */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs mb-3 sm:mb-4">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
+              <span className="text-accent font-medium text-xs font-mono">{identity.status}</span>
             </div>
 
-            {/* Hero Name: "Shubham" in --text-heading and "Kumar" in --accent */}
-            <h1 className="text-5xl xs:text-6xl sm:text-7xl lg:text-[108px] font-serif font-normal tracking-[-0.02em] leading-[0.95] mb-3 sm:mb-4 text-text">
+            {/* Hero Name: clamp(44px, 6.5vw, 96px), text-wrap: balance, wraps to 2 lines on narrower screens */}
+            <h1 className="font-serif font-normal tracking-[-0.02em] leading-[0.95] mb-2 sm:mb-3 text-text [text-wrap:balance] text-[clamp(44px,6.5vw,96px)]">
               Shubham <span className="text-accent">Kumar</span>
             </h1>
 
-            {/* Role line */}
-            <div className="font-mono text-xs sm:text-sm text-accent uppercase tracking-wider mb-3 sm:mb-4 font-medium">
+            {/* Role line: sentence case, no uppercase transform, no wide letter-spacing, Inter 500 at clamp(18px, 2vw, 22px), colour --text-body */}
+            <div className="font-sans font-medium text-[clamp(18px,2vw,22px)] text-body leading-snug mb-3 sm:mb-4">
               {identity.role}
             </div>
 
             {/* Lede (max ~65 characters, 17px, --text-muted, never below 14px) */}
-            <p className="text-base sm:text-[17px] text-muted max-w-[58ch] leading-relaxed mb-6 sm:mb-8">
+            <p className="text-base sm:text-[17px] text-muted max-w-[58ch] leading-relaxed mb-5 sm:mb-6">
               {identity.lede}
             </p>
 
             {/* Action Buttons: Solid primary (8px radius) + Transparent secondary */}
-            <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-3 mb-5 sm:mb-6 w-full sm:w-auto">
               <a href="#projects" className="btn-primary group">
                 <span>View projects</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={1.5} />
@@ -126,8 +112,8 @@ export default function Hero() {
               )}
             </div>
 
-            {/* Links and Location */}
-            <div className="flex flex-wrap items-center gap-4 pt-3.5 sm:pt-4 border-t border-border/70 w-full sm:w-auto text-sm font-mono text-muted">
+            {/* Links and Location ("Muzaffarpur, Bihar, India" only) */}
+            <div className="flex flex-wrap items-center gap-4 pt-3 sm:pt-3.5 border-t border-border/70 w-full sm:w-auto text-sm font-mono text-muted">
               <div className="flex items-center gap-2.5">
                 <a
                   href={identity.github}
@@ -151,15 +137,15 @@ export default function Hero() {
               </div>
 
               <div className="flex items-center gap-1.5 text-muted">
-                <MapPin className="w-3.5 h-3.5 text-accent" strokeWidth={1.75} />
+                <MapPin className="w-3.5 h-3.5 text-accent" strokeWidth={1.5} />
                 <span>{identity.location}</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Editorial Code Card with Interactive Tabs & Registration Marks */}
+          {/* Right Column: Code Card sits fully inside its column, stacked below on < 1024px */}
           <motion.div
-            className="lg:col-span-5 flex justify-center w-full lg:-ml-4 z-20"
+            className="flex justify-center lg:justify-end w-full min-w-0 z-20"
             initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.2, 0, 0, 1] }}
