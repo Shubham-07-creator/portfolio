@@ -238,7 +238,7 @@ export default function Contact() {
             <span className="absolute top-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
             <span className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-border/60 group-hover:text-accent/60 select-none pointer-events-none transition-colors" aria-hidden="true">+</span>
 
-            <h3 className="text-xl font-bold font-heading text-text mb-1">
+            <h3 className="text-2xl font-serif font-normal text-text mb-1">
               Send a message
             </h3>
             <p className="text-sm text-muted font-mono mb-6">

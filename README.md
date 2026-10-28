@@ -1,6 +1,6 @@
 # Shubham Kumar — Developer Portfolio
 
-A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Slate Sky Editorial** design system (deep neutral canvas with sky blue accent `#38BDF8` in dark mode and `#0369A1` in light mode). Built with Vite, React, and Tailwind CSS.
+A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Slate Sky Editorial** design system (deep neutral canvas with sky blue accent `#38BDF8` in dark mode and `#0274B6` in light mode). Built with Vite, React, and Tailwind CSS.
 
 ## Stack
 - **Framework:** React + Vite

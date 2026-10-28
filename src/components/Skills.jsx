@@ -154,7 +154,7 @@ export default function Skills() {
                     {categoryIcons[cat.category] || <Code2 className="w-5 h-5 text-muted" strokeWidth={1.5} />}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold font-heading text-text">
+                    <h3 className="text-lg font-serif font-normal text-text">
                       {cat.category}
                     </h3>
                     <span className="text-[11px] font-mono text-muted">

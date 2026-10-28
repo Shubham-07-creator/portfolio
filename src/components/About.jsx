@@ -90,7 +90,7 @@ export default function About() {
               />
             ) : (
               <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-surface-2 border border-border flex flex-col items-center justify-center mb-5 relative group">
-                <span className="font-heading font-bold text-4xl sm:text-5xl text-accent tracking-tight">
+                <span className="font-serif font-normal text-4xl sm:text-5xl text-accent tracking-tight">
                   SK
                 </span>
                 <span className="text-[10px] font-mono text-muted font-semibold mt-1 uppercase tracking-wider">
@@ -99,7 +99,7 @@ export default function About() {
               </div>
             )}
 
-            <h4 className="text-lg font-bold font-heading text-text">
+            <h4 className="text-xl font-serif font-normal text-text">
               {identity.name}
             </h4>
             <p className="text-xs font-mono text-muted mt-0.5">
@@ -132,7 +132,7 @@ export default function About() {
                 <div className="p-2.5 rounded-xl bg-surface-2 border border-border inline-flex items-center justify-center mb-3.5">
                   {cardIcons[idx]}
                 </div>
-                <h4 className="text-base font-bold font-heading text-text mb-1.5">
+                <h4 className="text-lg font-serif font-normal text-text mb-1">
                   {card.title}
                 </h4>
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
@@ -153,7 +153,7 @@ export default function About() {
             <div>
               <div className="flex items-center gap-2.5 mb-3">
                 <BookOpen className="w-5 h-5 text-muted" strokeWidth={1.5} />
-                <h4 className="text-base font-bold font-heading text-text">
+                <h4 className="text-lg font-serif font-normal text-text">
                   Currently learning
                 </h4>
               </div>
@@ -182,7 +182,7 @@ export default function About() {
             className="md:col-span-6 p-6 rounded-[20px] editorial-card flex flex-col justify-between"
           >
             <div>
-              <h4 className="text-base font-bold font-heading text-text mb-3.5">
+              <h4 className="text-lg font-serif font-normal text-text mb-3.5">
                 Quick Facts
               </h4>
               <ul className="space-y-3">

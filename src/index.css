@@ -26,7 +26,7 @@
   color-scheme: dark;
 }
 
-/* Light mode overrides (Slate Sky Editorial) */
+/* Light mode overrides (Slate Sky Editorial - Harmonized & Balanced) */
 :root[data-theme="light"] {
   --bg: #F8FAFC;
   --surface: #FFFFFF;
@@ -36,13 +36,13 @@
   --text-heading: #0F172A;
   --text-body: #2A3650;
   --text-muted: #52627A;
-  --accent: #0369A1;
-  --accent-hover: #075985;
+  --accent: #0274B6; /* Vibrant Cerulean Sky with 4.81:1 WCAG AA contrast */
+  --accent-hover: #0369A1;
   --on-accent: #FFFFFF;
   --success: #15803D;
   --error: #DC2626;
-  --glow: rgba(3, 105, 161, 0.06);
-  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 28px rgba(15, 23, 42, 0.07);
+  --glow: rgba(56, 189, 248, 0.12); /* Clean sky ambient wash, no dark smudges */
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 28px rgba(15, 23, 42, 0.06);
 
   /* Code card syntax tokens */
   --code-string: #15803D;
@@ -113,6 +113,12 @@
     letter-spacing: -0.015em;
     font-weight: 400;
     text-wrap: balance;
+  }
+
+  /* Prevent synthetic faux-bold on Instrument Serif */
+  .font-heading,
+  .font-serif {
+    font-weight: 400;
   }
 
   p {
@@ -246,6 +252,7 @@ a.link-editorial:hover {
   border-radius: 14px;
   box-shadow: none;
   transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1),
+              background-color 0.25s ease,
               border-color 0.25s ease,
               box-shadow 0.25s ease;
   overflow: hidden;
