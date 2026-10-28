@@ -31,11 +31,11 @@
     <meta name="twitter:image" content="/og-image.png" />
 
     <!-- Theme Colors -->
-    <meta name="theme-color" content="#0C0D0C" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#F7F8F5" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0C0D0C" id="theme-color-meta" />
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B1220" id="theme-color-meta" />
 
-    <!-- Favicon (SVG SK Monogram in Mono Lime) -->
+    <!-- Favicon (SVG SK Monogram in Slate Sky) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Google Fonts: Instrument Serif (editorial), Inter (body), JetBrains Mono (display=swap) -->
@@ -77,12 +77,12 @@
             document.documentElement.setAttribute('data-theme', 'light');
             document.documentElement.classList.remove('dark');
             var meta = document.getElementById('theme-color-meta');
-            if (meta) meta.setAttribute('content', '#F7F8F5');
+            if (meta) meta.setAttribute('content', '#F8FAFC');
           } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             document.documentElement.classList.add('dark');
             var metaDark = document.getElementById('theme-color-meta');
-            if (metaDark) metaDark.setAttribute('content', '#0C0D0C');
+            if (metaDark) metaDark.setAttribute('content', '#0B1220');
           }
         } catch (e) {}
       })();

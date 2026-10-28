@@ -1,6 +1,6 @@
 # Shubham Kumar — Developer Portfolio
 
-A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Mono Lime Editorial** design system (deep neutral canvas with vibrant electric lime accent #A3E635 in dark mode and warm editorial paper in light mode). Built with Vite, React, and Tailwind CSS.
+A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Slate Sky Editorial** design system (deep neutral canvas with sky blue accent `#38BDF8` in dark mode and `#0369A1` in light mode). Built with Vite, React, and Tailwind CSS.
 
 ## Stack
 - **Framework:** React + Vite

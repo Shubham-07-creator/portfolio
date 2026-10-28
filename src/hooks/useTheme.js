@@ -25,12 +25,12 @@ export function useTheme() {
     if (theme === 'light') {
       root.setAttribute('data-theme', 'light');
       root.classList.remove('dark');
-      if (meta) meta.setAttribute('content', '#F7F8F5');
+      if (meta) meta.setAttribute('content', '#F8FAFC');
     } else {
       root.removeAttribute('data-theme');
       root.setAttribute('data-theme', 'dark');
       root.classList.add('dark');
-      if (meta) meta.setAttribute('content', '#0C0D0C');
+      if (meta) meta.setAttribute('content', '#0B1220');
     }
 
     try {

@@ -1,51 +1,51 @@
 @import "tailwindcss";
 
-/* ───────────── Mono Lime Editorial Design Tokens ───────────── */
+/* ───────────── Slate Sky Editorial Design Tokens ───────────── */
 /* Dark is default */
 :root {
-  --bg: #0C0D0C;
-  --surface: #151715;
-  --surface-2: #1B1E1A; /* chips, inputs */
-  --border: #262A25;
-  --border-strong: #3A4038;
-  --text-heading: #F2F4F0;
-  --text-body: #D5D9D1;
-  --text-muted: #A1A89E;
-  --accent: #A3E635;
-  --accent-hover: #BEF264;
-  --on-accent: #0C0D0C;
+  --bg: #0B1220;
+  --surface: #111B2E;
+  --surface-2: #16223A; /* chips, inputs */
+  --border: #1E2B42;
+  --border-strong: #31415F;
+  --text-heading: #EEF3FA;
+  --text-body: #CFD8E6;
+  --text-muted: #9AA9C0;
+  --accent: #38BDF8;
+  --accent-hover: #7DD3FC;
+  --on-accent: #0B1220;
   --success: #4ADE80;
   --error: #F87171;
-  --glow: rgba(163, 230, 53, 0.08);
+  --glow: rgba(56, 189, 248, 0.08);
   --shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
 
-  /* Code card syntax tokens */
-  --code-string: #7DD3FC;
+  /* Code card syntax tokens: distinct green string, amber value */
+  --code-string: #86EFAC;
   --code-value: #FBBF24;
 
   color-scheme: dark;
 }
 
-/* Light mode overrides (Authentic Warm Editorial Paper & Architectural Moss) */
+/* Light mode overrides (Slate Sky Editorial) */
 :root[data-theme="light"] {
-  --bg: #F7F8F5;
+  --bg: #F8FAFC;
   --surface: #FFFFFF;
-  --surface-2: #EEF1E8;
-  --border: #E1E4DC;
-  --border-strong: #C9CFC0;
-  --text-heading: #111410;
-  --text-body: #2B3027;
-  --text-muted: #555C50;
-  --accent: #3F6212;
-  --accent-hover: #365314;
+  --surface-2: #EEF2F7;
+  --border: #E1E7F0;
+  --border-strong: #C5CFDD;
+  --text-heading: #0F172A;
+  --text-body: #2A3650;
+  --text-muted: #52627A;
+  --accent: #0369A1;
+  --accent-hover: #075985;
   --on-accent: #FFFFFF;
   --success: #15803D;
   --error: #DC2626;
-  --glow: rgba(63, 98, 18, 0.06);
-  --shadow: 0 1px 2px rgba(17, 20, 16, 0.04), 0 10px 28px rgba(17, 20, 16, 0.07);
+  --glow: rgba(3, 105, 161, 0.06);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 28px rgba(15, 23, 42, 0.07);
 
   /* Code card syntax tokens */
-  --code-string: #0369A1;
+  --code-string: #15803D;
   --code-value: #92400E;
 
   color-scheme: light;
