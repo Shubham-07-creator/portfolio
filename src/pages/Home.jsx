@@ -9,10 +9,10 @@ import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Contact from '../components/Contact';
 
-export default function Home() {
+export default function Home({ onOpenRecruiter }) {
   return (
     <main id="main-content">
-      <Hero />
+      <Hero onOpenRecruiter={onOpenRecruiter} />
       <TechMarquee />
       <Projects />
       <EngineeringNotes />

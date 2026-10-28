@@ -12,10 +12,11 @@ import {
   Wrench,
   Mail,
   X,
+  Zap,
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
-export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }) {
+export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme, onOpenRecruiter }) {
   const { identity, projects } = portfolioData;
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -45,6 +46,17 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme }
   };
 
   const actions = [
+    {
+      id: 'recruiter',
+      label: 'Open 30-Second Recruiter Summary (Fast-Track)',
+      shortcut: 'FAST',
+      category: 'Recruiter',
+      icon: <Zap className="w-4 h-4 text-accent" strokeWidth={1.5} />,
+      perform: () => {
+        setIsOpen(false);
+        onOpenRecruiter?.();
+      },
+    },
     {
       id: 'resume',
       label: 'View Resume (PDF)',

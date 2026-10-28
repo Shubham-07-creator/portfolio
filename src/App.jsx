@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CommandPalette from './components/CommandPalette';
+import RecruiterDrawer from './components/RecruiterDrawer';
 
 import Home from './pages/Home';
 
@@ -18,6 +19,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 export default function App() {
   const { theme, toggleTheme } = useTheme();
   const [isCommandOpen, setIsCommandOpen] = useState(false);
+  const [isRecruiterOpen, setIsRecruiterOpen] = useState(false);
 
   useEffect(() => {
     const handleGlobalKeyDown = (e) => {
@@ -65,6 +67,7 @@ export default function App() {
           theme={theme}
           toggleTheme={toggleTheme}
           onOpenCommand={() => setIsCommandOpen(true)}
+          onOpenRecruiter={() => setIsRecruiterOpen(true)}
         />
 
         <CommandPalette
@@ -72,11 +75,17 @@ export default function App() {
           setIsOpen={setIsCommandOpen}
           theme={theme}
           toggleTheme={toggleTheme}
+          onOpenRecruiter={() => setIsRecruiterOpen(true)}
+        />
+
+        <RecruiterDrawer
+          isOpen={isRecruiterOpen}
+          onClose={() => setIsRecruiterOpen(false)}
         />
 
         <Suspense fallback={<div className="min-h-screen bg-bg" aria-hidden="true" />}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home onOpenRecruiter={() => setIsRecruiterOpen(true)} />} />
             <Route path="/projects/:slug" element={<CaseStudy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

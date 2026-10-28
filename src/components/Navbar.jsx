@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Search } from 'lucide-react';
+import { FileText, Search, Zap } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { portfolioData } from '../data/portfolio';
 
-export default function Navbar({ activeSection, theme, toggleTheme, onOpenCommand }) {
+export default function Navbar({ activeSection, theme, toggleTheme, onOpenCommand, onOpenRecruiter }) {
   const { identity } = portfolioData;
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -106,6 +106,18 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
 
           {/* 3. Right Side Controls */}
           <div className="flex items-center gap-2 min-[1100px]:gap-2.5 shrink-0 whitespace-nowrap">
+            {/* 30s Fast-Track Brief */}
+            <button
+              type="button"
+              onClick={onOpenRecruiter}
+              className="inline-flex items-center gap-1.5 h-9 px-2.5 min-[1100px]:px-3 rounded-lg border border-accent/40 bg-accent/10 hover:bg-accent hover:text-on-accent text-accent font-mono text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              title="Open 30-Second Candidate Brief"
+              aria-label="30-Second Recruiter Brief"
+            >
+              <Zap className="w-3.5 h-3.5" />
+              <span>30s Brief</span>
+            </button>
+
             {/* Quick Actions: compact 36px icon button, shown from 1100px and up, hidden below 1100px */}
             <button
               type="button"
@@ -179,8 +191,16 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
           {/* Row 2: Horizontally scrollable row of nav links, never hidden */}
           <nav
             aria-label="Mobile Navigation"
-            className="flex items-center gap-4 overflow-x-auto no-scrollbar px-3 sm:px-4 h-10 border-t border-border/40 whitespace-nowrap select-none w-full max-w-full min-w-0"
+            className="flex items-center gap-3 overflow-x-auto no-scrollbar px-3 sm:px-4 h-10 border-t border-border/40 whitespace-nowrap select-none w-full max-w-full min-w-0"
           >
+            <button
+              type="button"
+              onClick={onOpenRecruiter}
+              className="inline-flex items-center gap-1 py-0.5 px-2.5 rounded-full bg-accent/15 border border-accent/40 text-accent text-xs font-mono font-semibold whitespace-nowrap shrink-0 transition-colors"
+            >
+              <Zap className="w-3 h-3" />
+              <span>30s Brief</span>
+            </button>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (

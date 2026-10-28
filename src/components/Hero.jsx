@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, FileText, ArrowRight, Copy, Check, Terminal, Code2 } from 'lucide-react';
+import { Mail, MapPin, FileText, ArrowRight, Copy, Check, Terminal, Code2, Zap } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolio';
 
-export default function Hero() {
+export default function Hero({ onOpenRecruiter }) {
   const { identity } = portfolioData;
   const [activeTab, setActiveTab] = useState('js');
   const [copied, setCopied] = useState(false);
@@ -63,13 +63,27 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
           >
-            {/* Status Pill (NO live clock, NO city, NO coordinates) */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs mb-3 sm:mb-4">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              <span className="text-accent font-medium text-xs font-mono">{identity.status}</span>
+            {/* Status Pill & Fast-Track Recruiter Button */}
+            <div className="flex flex-wrap items-center gap-2.5 mb-3 sm:mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-text shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span className="text-accent font-medium text-xs font-mono">{identity.status}</span>
+              </div>
+
+              {onOpenRecruiter && (
+                <button
+                  type="button"
+                  onClick={onOpenRecruiter}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/15 border border-accent/40 text-accent hover:bg-accent hover:text-on-accent text-xs font-mono font-semibold transition-all cursor-pointer shadow-xs"
+                  title="Open 30-Second Candidate Brief"
+                >
+                  <Zap className="w-3 h-3" />
+                  <span>30s Recruiter Brief</span>
+                </button>
+              )}
             </div>
 
             {/* Hero Name: clamp(44px, 6.5vw, 96px), text-wrap: balance, wraps to 2 lines on narrower screens */}
