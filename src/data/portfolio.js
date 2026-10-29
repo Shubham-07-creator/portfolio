@@ -17,8 +17,8 @@ export const portfolioData = {
     leetcodeUrl: "", // hidden when empty
     resumeUrl: `${import.meta.env.BASE_URL}Shubham_Kumar_Resume.pdf`,
     profileImage: "", // set to "/profile.webp" when adding image; otherwise shows SK monogram
-    phone: "+91 8986339496",
-    showPhone: false, // stored with showPhone:false and is never displayed
+    phone: "",
+    showPhone: false, // phone number removed
     codeCard: {
       role: "Full Stack Developer",
       stack: ["React", "Node.js", "Express", "MongoDB"],

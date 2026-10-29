@@ -41,10 +41,9 @@ export default function Skills() {
   const skillContext = {
     'Socket.IO': 'TradeXpert',
     'Razorpay': 'StayHub',
+    'JWT Authentication': 'TradeXpert',
     'JWT (JSON Web Tokens)': 'TradeXpert',
-    'Java (Core Java)': 'DSA & OOP',
-    'MongoDB': 'MERN Core',
-    'Tailwind CSS': 'Design System',
+    'Bootstrap': 'StayHub',
   };
 
   const categoryIcons = {

@@ -48,8 +48,8 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme, 
   const actions = [
     {
       id: 'recruiter',
-      label: 'Open 30-Second Recruiter Summary (Fast-Track)',
-      shortcut: 'FAST',
+      label: 'Open 30-second candidate brief',
+      shortcut: 'BRIEF',
       category: 'Recruiter',
       icon: <Zap className="w-4 h-4 text-accent" strokeWidth={1.5} />,
       perform: () => {
@@ -57,17 +57,21 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme, 
         onOpenRecruiter?.();
       },
     },
-    {
-      id: 'resume',
-      label: 'View Resume (PDF)',
-      shortcut: 'PDF',
-      category: 'Credentials',
-      icon: <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />,
-      perform: () => {
-        setIsOpen(false);
-        window.open(identity.resumeUrl, '_blank');
-      },
-    },
+    ...(identity.resumeUrl
+      ? [
+          {
+            id: 'resume',
+            label: 'View Resume (PDF)',
+            shortcut: 'PDF',
+            category: 'Credentials',
+            icon: <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />,
+            perform: () => {
+              setIsOpen(false);
+              window.open(identity.resumeUrl, '_blank');
+            },
+          },
+        ]
+      : []),
     {
       id: 'tradexpert',
       label: 'Launch TradeXpert Demo',

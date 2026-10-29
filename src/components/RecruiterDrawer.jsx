@@ -80,11 +80,11 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
                     </h2>
                     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/15 border border-accent/30 text-accent font-mono text-[10px] font-semibold">
                       <Zap className="w-3 h-3" />
-                      30s Fast-Track
+                      30s Brief
                     </span>
                   </div>
                   <p className="text-xs font-mono text-muted">
-                    Engineered for Engineering Managers &amp; Technical Recruiters
+                    Verified technical summary &amp; direct links
                   </p>
                 </div>
               </div>
@@ -124,31 +124,31 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
                 </div>
               </div>
 
-              {/* 30-Second Executive Pitch */}
+              {/* 30-Second Brief: 3 Verified Proof Points */}
               <div>
                 <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-3 flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-accent" />
-                  <span>Why Consider Shubham for Your Team</span>
+                  <span>Verified Engineering Highlights</span>
                 </h4>
                 <div className="space-y-2.5">
                   <div className="p-3.5 rounded-xl bg-surface border border-border flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-xs sm:text-sm text-text leading-relaxed">
-                      <strong className="text-text font-semibold">Real-Time Systems &amp; Concurrency:</strong> Engineered TradeXpert with 2.5s live NSE tick cycles, sub-30ms Socket.IO broadcasts, and atomic MongoDB margin locks that eliminate double-spend race conditions.
+                      <strong className="text-text font-semibold">TradeXpert (Live NSE Feed &amp; Order Engine):</strong> Live NSE quotes for 100 stocks plus NIFTY 50 and SENSEX via Yahoo Finance, Socket.IO streaming, hybrid engine (real quotes 9:15 AM to 3:30 PM IST, mean-reverting simulator when closed), and an order engine with Market, Limit (margin locking) and GTT orders.
                     </p>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-surface border border-border flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-xs sm:text-sm text-text leading-relaxed">
-                      <strong className="text-text font-semibold">Production Security &amp; Gateways:</strong> Shipped StayHub with Razorpay SHA-256 HMAC cryptographic webhook verification, Mapbox GL geospatial clusters, and OWASP Top 10 security standards (Helmet CSP, JWT, RBAC).
+                      <strong className="text-text font-semibold">StayHub (Payments &amp; Booking Integrity):</strong> Test-mode Razorpay payments with SHA256 HMAC verification, dynamic GST billing (12%/18%) with 5% platform fee, date-overlap double-booking prevention, and serialized invoice generation.
                     </p>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-surface border border-border flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-xs sm:text-sm text-text leading-relaxed">
-                      <strong className="text-text font-semibold">Computer Science &amp; DSA Foundations:</strong> Rigorous Java background with object-oriented system design and continuous DSA problem solving (Trees, Graphs, DP, Two Pointers).
+                      <strong className="text-text font-semibold">Security &amp; Data Controls:</strong> JWT authentication (7-day expiry), bcrypt (10 salt rounds), Helmet headers, rate limiting on auth (10 requests per 15 minutes), and user-scoped queries against IDOR.
                     </p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
               <div>
                 <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-3 flex items-center gap-2">
                   <Layers className="w-3.5 h-3.5 text-accent" />
-                  <span>Production Architectures Ready to Inspect</span>
+                  <span>Projects</span>
                 </h4>
                 <div className="grid grid-cols-1 gap-3">
                   {projects.map((proj) => (
@@ -203,36 +203,22 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
                   ))}
                 </div>
               </div>
-
-              {/* Engineering Standards */}
-              <div className="p-4 rounded-xl bg-surface-2/40 border border-border text-xs font-mono text-muted space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span>Code Quality:</span>
-                  <span className="text-text font-semibold">Oxlint 0 Errors · 0 Warnings</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Accessibility:</span>
-                  <span className="text-text font-semibold">WCAG AAA / AA Contrast Certified</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Responsive Support:</span>
-                  <span className="text-text font-semibold">Verified 375px to 1920px (CLS 0.00)</span>
-                </div>
-              </div>
             </div>
 
-            {/* Fixed Drawer Footer with High-Priority 1-Click Actions */}
+            {/* Fixed Drawer Footer with Direct Actions */}
             <div className="p-5 border-t border-border bg-surface shrink-0 space-y-2.5">
-              <div className="grid grid-cols-2 gap-2.5">
-                <a
-                  href={identity.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full text-center py-2.5 text-xs font-mono font-semibold justify-center shadow-sm"
-                >
-                  <FileText className="w-4 h-4" />
-                  <span>Resume PDF</span>
-                </a>
+              <div className={`grid ${identity.resumeUrl ? 'grid-cols-2' : 'grid-cols-1'} gap-2.5`}>
+                {identity.resumeUrl && (
+                  <a
+                    href={identity.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary w-full text-center py-2.5 text-xs font-mono font-semibold justify-center shadow-sm"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>Resume PDF</span>
+                  </a>
+                )}
 
                 <button
                   type="button"
