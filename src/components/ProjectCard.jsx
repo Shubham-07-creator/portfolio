@@ -81,6 +81,217 @@ function MetricBox({ value, label, countUp }) {
   );
 }
 
+function TradeXpertMockup() {
+  return (
+    <div className="w-full h-full p-3 sm:p-4 bg-surface text-text font-sans flex flex-col justify-between select-none overflow-hidden relative">
+      {/* Top Header / Live Ticker Bar */}
+      <div className="flex items-center justify-between border-b border-border/80 pb-2 mb-1.5 text-[10px] sm:text-xs font-mono">
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-text">NIFTY 50</span>
+          <span className="text-accent font-semibold">24,180.50</span>
+          <span className="text-emerald-500 bg-emerald-500/10 px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-semibold">
+            +142.30 (+0.59%)
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-[10px] text-muted hidden sm:inline">2.5s Stream</span>
+        </div>
+      </div>
+
+      {/* Main Candlestick Chart Area (SVG) */}
+      <div className="relative flex-1 w-full min-h-0 flex items-center justify-center my-1">
+        <svg viewBox="0 0 400 130" className="w-full h-full overflow-visible" preserveAspectRatio="none">
+          {/* Subtle horizontal grid lines */}
+          <line x1="0" y1="20" x2="400" y2="20" stroke="var(--border)" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="55" x2="400" y2="55" stroke="var(--border)" strokeDasharray="3 3" strokeWidth="0.8" />
+          <line x1="0" y1="90" x2="400" y2="90" stroke="var(--border)" strokeDasharray="3 3" strokeWidth="0.8" />
+
+          {/* Price labels on right */}
+          <text x="395" y="24" textAnchor="end" fill="var(--text-muted)" fontSize="8" fontFamily="JetBrains Mono, monospace">24,220</text>
+          <text x="395" y="59" textAnchor="end" fill="var(--text-muted)" fontSize="8" fontFamily="JetBrains Mono, monospace">24,180</text>
+          <text x="395" y="94" textAnchor="end" fill="var(--text-muted)" fontSize="8" fontFamily="JetBrains Mono, monospace">24,140</text>
+
+          {/* Trendline (EMA 9) */}
+          <path
+            d="M 15 80 Q 75 70, 135 60 T 255 45 T 375 32"
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth="1.2"
+            strokeDasharray="4 2"
+            opacity="0.7"
+          />
+
+          {/* 13 Candlesticks */}
+          {/* Candle 1 (Green) */}
+          <line x1="25" y1="65" x2="25" y2="90" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="20" y="70" width="10" height="15" rx="1" fill="#4ADE80" />
+
+          {/* Candle 2 (Green) */}
+          <line x1="50" y1="55" x2="50" y2="82" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="45" y="60" width="10" height="18" rx="1" fill="#4ADE80" />
+
+          {/* Candle 3 (Red) */}
+          <line x1="75" y1="58" x2="75" y2="85" stroke="#F87171" strokeWidth="1" />
+          <rect x="70" y="62" width="10" height="14" rx="1" fill="#F87171" />
+
+          {/* Candle 4 (Green) */}
+          <line x1="100" y1="48" x2="100" y2="76" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="95" y="52" width="10" height="20" rx="1" fill="#4ADE80" />
+
+          {/* Candle 5 (Red) */}
+          <line x1="125" y1="50" x2="125" y2="72" stroke="#F87171" strokeWidth="1" />
+          <rect x="120" y="54" width="10" height="12" rx="1" fill="#F87171" />
+
+          {/* Candle 6 (Green) */}
+          <line x1="150" y1="40" x2="150" y2="68" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="145" y="44" width="10" height="18" rx="1" fill="#4ADE80" />
+
+          {/* Candle 7 (Green) */}
+          <line x1="175" y1="36" x2="175" y2="62" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="170" y="40" width="10" height="16" rx="1" fill="#4ADE80" />
+
+          {/* Candle 8 (Red) */}
+          <line x1="200" y1="38" x2="200" y2="64" stroke="#F87171" strokeWidth="1" />
+          <rect x="195" y="42" width="10" height="15" rx="1" fill="#F87171" />
+
+          {/* Candle 9 (Green) */}
+          <line x1="225" y1="32" x2="225" y2="58" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="220" y="36" width="10" height="16" rx="1" fill="#4ADE80" />
+
+          {/* Candle 10 (Green) */}
+          <line x1="250" y1="28" x2="250" y2="52" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="245" y="32" width="10" height="16" rx="1" fill="#4ADE80" />
+
+          {/* Candle 11 (Red) */}
+          <line x1="275" y1="30" x2="275" y2="56" stroke="#F87171" strokeWidth="1" />
+          <rect x="270" y="34" width="10" height="14" rx="1" fill="#F87171" />
+
+          {/* Candle 12 (Green) */}
+          <line x1="300" y1="22" x2="300" y2="48" stroke="#4ADE80" strokeWidth="1" />
+          <rect x="295" y="26" width="10" height="16" rx="1" fill="#4ADE80" />
+
+          {/* Candle 13 (Green - Latest Active Tick with Pulse) */}
+          <line x1="325" y1="18" x2="325" y2="44" stroke="#4ADE80" strokeWidth="1.5" />
+          <rect x="320" y="22" width="10" height="18" rx="1" fill="#4ADE80" />
+          <circle cx="325" cy="22" r="3" fill="var(--accent)" />
+
+          {/* Volume histogram bars at bottom */}
+          <rect x="20" y="105" width="10" height="14" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="45" y="101" width="10" height="18" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="70" y="108" width="10" height="11" rx="0.5" fill="#F87171" opacity="0.3" />
+          <rect x="95" y="99" width="10" height="20" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="120" y="107" width="10" height="12" rx="0.5" fill="#F87171" opacity="0.3" />
+          <rect x="145" y="103" width="10" height="16" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="170" y="102" width="10" height="17" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="195" y="109" width="10" height="10" rx="0.5" fill="#F87171" opacity="0.3" />
+          <rect x="220" y="100" width="10" height="19" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="245" y="98" width="10" height="21" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="270" y="106" width="10" height="13" rx="0.5" fill="#F87171" opacity="0.3" />
+          <rect x="295" y="97" width="10" height="22" rx="0.5" fill="#4ADE80" opacity="0.3" />
+          <rect x="320" y="94" width="10" height="25" rx="0.5" fill="var(--accent)" opacity="0.5" />
+        </svg>
+      </div>
+
+      {/* Bottom Bar: Mini Order Ticket / Margin Status */}
+      <div className="pt-2 border-t border-border/80 flex items-center justify-between text-[9px] sm:text-[11px] font-mono text-muted">
+        <div className="flex items-center gap-1.5 truncate">
+          <span className="px-1.5 py-0.5 rounded bg-surface-2 text-accent border border-border font-semibold">
+            LIMIT ORDER
+          </span>
+          <span className="truncate">Margin Locked · Open in DB</span>
+        </div>
+        <span className="text-emerald-500 shrink-0 font-medium">Socket.IO Stream</span>
+      </div>
+    </div>
+  );
+}
+
+function StayHubMockup() {
+  return (
+    <div className="w-full h-full p-3 sm:p-4 bg-surface text-text font-sans flex flex-col justify-between select-none overflow-hidden relative">
+      {/* Top Search / Header Pill */}
+      <div className="flex items-center justify-between border-b border-border/80 pb-2 mb-1.5 text-[10px] sm:text-xs font-mono">
+        <div className="flex items-center gap-1.5 text-text truncate">
+          <MapPin className="w-3.5 h-3.5 text-accent shrink-0" />
+          <span className="font-semibold text-text">Manali Sanctuary Villa</span>
+          <span className="text-muted hidden sm:inline">· GeoJSON Point</span>
+        </div>
+        <span className="px-1.5 py-0.5 rounded bg-surface-2 border border-border text-accent text-[9px] sm:text-[10px] font-semibold">
+          ★ 4.96 (84 reviews)
+        </span>
+      </div>
+
+      {/* Middle Grid: Mini Architectural Villa Illustration + Live Tariff Breakdown */}
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 flex-1 min-h-0 items-center my-1">
+        {/* Left: Minimalist Vector Architectural Alpine Cabin */}
+        <div className="h-full rounded-lg bg-surface-2/60 border border-border overflow-hidden relative flex items-center justify-center p-2">
+          <svg viewBox="0 0 160 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            {/* Background Mountains */}
+            <polygon points="10,85 55,25 95,85" fill="var(--border)" opacity="0.4" />
+            <polygon points="65,85 110,15 155,85" fill="var(--border)" opacity="0.6" />
+            <polygon points="110,15 118,28 102,28" fill="var(--surface)" />
+
+            {/* Cabin House Body */}
+            <rect x="35" y="48" width="85" height="37" fill="var(--surface)" stroke="var(--border-strong)" strokeWidth="1" />
+            {/* Triangular Roof with Accent overhang */}
+            <polygon points="25,48 77,18 130,48" fill="var(--surface-2)" stroke="var(--accent)" strokeWidth="1.2" />
+            {/* Glass windows */}
+            <rect x="45" y="55" width="22" height="22" rx="2" fill="var(--accent)" opacity="0.15" stroke="var(--border)" strokeWidth="0.8" />
+            <line x1="56" y1="55" x2="56" y2="77" stroke="var(--border)" strokeWidth="0.8" />
+            <line x1="45" y1="66" x2="67" y2="66" stroke="var(--border)" strokeWidth="0.8" />
+            {/* Door */}
+            <rect x="75" y="58" width="14" height="27" rx="1" fill="var(--surface-2)" stroke="var(--border)" strokeWidth="0.8" />
+            {/* Deck / Pool line */}
+            <line x1="15" y1="85" x2="145" y2="85" stroke="var(--border-strong)" strokeWidth="1.5" />
+            {/* Pine Trees */}
+            <polygon points="135,85 142,65 149,85" fill="#4ADE80" opacity="0.4" />
+            <polygon points="144,85 150,70 156,85" fill="#4ADE80" opacity="0.3" />
+          </svg>
+          <div className="absolute bottom-1.5 left-2 text-[8px] sm:text-[9px] font-mono text-muted">
+            Mapbox Geocoded
+          </div>
+        </div>
+
+        {/* Right: Tariff & Booking breakdown */}
+        <div className="p-2 sm:p-2.5 rounded-lg bg-surface-2/60 border border-border flex flex-col justify-between h-full text-[10px] sm:text-xs">
+          <div className="space-y-1 font-mono">
+            <div className="flex justify-between text-muted text-[10px]">
+              <span>Tariff (2 nights):</span>
+              <span className="text-text font-medium">₹13,000</span>
+            </div>
+            <div className="flex justify-between text-muted text-[10px]">
+              <span>GST (12% slab):</span>
+              <span className="text-text font-medium">₹1,560</span>
+            </div>
+            <div className="flex justify-between text-muted text-[10px]">
+              <span>Platform fee (5%):</span>
+              <span className="text-text font-medium">₹650</span>
+            </div>
+            <div className="flex justify-between pt-1 border-t border-border font-bold text-accent text-[11px]">
+              <span>Total Payable:</span>
+              <span>₹15,210</span>
+            </div>
+          </div>
+          <div className="mt-1.5 pt-1.5 border-t border-border/60 flex items-center justify-between text-[9px] font-mono">
+            <span className="text-emerald-500 font-semibold">✔ No date overlap</span>
+            <span className="text-muted">SHA256 HMAC</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar: Serialized Invoice & Status */}
+      <div className="pt-2 border-t border-border/80 flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-muted">
+        <span className="truncate">Invoice: SH-INV-20261029-4821</span>
+        <span className="text-accent font-semibold shrink-0">Razorpay Test Mode</span>
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectCard({ project, index }) {
   const [imgError, setImgError] = useState(false);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
@@ -233,6 +444,10 @@ export default function ProjectCard({ project, index }) {
                   className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]"
                   onError={() => setImgError(true)}
                 />
+              ) : project.slug === 'tradexpert' ? (
+                <TradeXpertMockup />
+              ) : project.slug === 'stayhub' ? (
+                <StayHubMockup />
               ) : (
                 /* Clean browser-frame placeholder with project name and chips (never stock/AI art) */
                 <div className="w-full h-full p-6 flex flex-col items-center justify-center text-center bg-surface-2/30">
@@ -252,12 +467,6 @@ export default function ProjectCard({ project, index }) {
                       </span>
                     ))}
                   </div>
-                  {/* Shown only in development environment */}
-                  {import.meta.env.DEV && (
-                    <span className="text-[10px] font-mono text-muted/60 mt-1 italic">
-                      Screenshots coming soon
-                    </span>
-                  )}
                 </div>
               )}
             </div>

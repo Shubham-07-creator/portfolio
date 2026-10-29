@@ -35,7 +35,7 @@ export default function SectionHeading({
 
       <div className="flex items-center gap-3 mb-2 flex-wrap">
         {number && (
-          <span className="font-mono text-xs sm:text-sm text-muted font-medium tracking-wider uppercase py-0.5 px-2 rounded-md bg-surface-2 border border-border select-none">
+          <span className="font-mono text-xs sm:text-sm text-accent font-semibold tracking-wider uppercase py-0.5 px-2.5 rounded-md bg-surface-2 border border-border select-none shadow-xs">
             {number}
           </span>
         )}
