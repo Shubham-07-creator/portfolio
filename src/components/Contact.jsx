@@ -174,7 +174,7 @@ export default function Contact() {
 
               {/* LinkedIn */}
               <a
-                href={identity.linkedin}
+                href={identity.linkedinUrl || identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-3 rounded-xl bg-surface-2/60 border border-border hover:border-accent text-text group transition-colors"

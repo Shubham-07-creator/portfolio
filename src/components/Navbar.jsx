@@ -141,6 +141,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
                 href={identity.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Shubham_Kumar_Resume.pdf"
                 className="h-9 px-2.5 min-[1100px]:px-3 rounded-lg border border-border-strong bg-transparent text-text hover:border-accent text-xs font-sans font-medium whitespace-nowrap inline-flex items-center gap-1.5 shrink-0 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <FileText className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />
@@ -179,6 +180,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenComman
                   href={identity.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Shubham_Kumar_Resume.pdf"
                   className="h-9 px-2.5 rounded-lg border border-border-strong bg-transparent text-text hover:border-accent text-xs font-sans font-medium whitespace-nowrap inline-flex items-center gap-1 shrink-0 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <FileText className="w-3.5 h-3.5 text-muted shrink-0" strokeWidth={1.5} />

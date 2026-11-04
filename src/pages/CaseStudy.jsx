@@ -122,6 +122,10 @@ export default function CaseStudy() {
   const hasChallenges = caseStudy.challenges && caseStudy.challenges.length > 0;
   const hasLearnings = caseStudy.learnings && caseStudy.learnings.length > 0;
 
+  const liveUrl = project.links?.live || project.liveUrl;
+  const githubUrl = project.links?.github || project.githubUrl;
+  const extraButton = project.links?.extra || project.extraButton;
+
   return (
     <div className="min-h-screen py-16 sm:py-24">
       <div className="max-w-[1120px] mx-auto px-6">
@@ -156,37 +160,41 @@ export default function CaseStudy() {
 
           {/* Action links */}
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <span>Live Application</span>
-              <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
-            </a>
-
-            {project.extraButton && (
+            {liveUrl && (
               <a
-                href={project.extraButton.url}
+                href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary"
+                className="btn-primary"
               >
-                <span>{project.extraButton.label}</span>
+                <span>Live Application</span>
                 <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
               </a>
             )}
 
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              <SiGithub className="w-4 h-4" aria-hidden="true" />
-              <span>GitHub Repository</span>
-            </a>
+            {extraButton && (
+              <a
+                href={extraButton.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <span>{extraButton.label}</span>
+                <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
+              </a>
+            )}
+
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <SiGithub className="w-4 h-4" aria-hidden="true" />
+                <span>GitHub Repository</span>
+              </a>
+            )}
           </div>
         </div>
 

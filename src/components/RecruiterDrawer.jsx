@@ -213,6 +213,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
                     href={identity.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    download="Shubham_Kumar_Resume.pdf"
                     className="btn-primary w-full text-center py-2.5 text-xs font-mono font-semibold justify-center shadow-sm"
                   >
                     <FileText className="w-4 h-4" />
@@ -249,7 +250,7 @@ export default function RecruiterDrawer({ isOpen, onClose }) {
 
                 <div className="flex items-center gap-2">
                   <a
-                    href={identity.linkedin}
+                    href={identity.linkedinUrl || identity.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"

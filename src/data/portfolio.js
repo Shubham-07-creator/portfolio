@@ -13,12 +13,13 @@ export const portfolioData = {
     status: "Open to SDE Intern / Full Stack Developer roles",
     email: "shubhamkumar979883@gmail.com",
     github: "https://github.com/Shubham-07-creator",
+    linkedinUrl: "https://www.linkedin.com/in/shubhamkumardev",
     linkedin: "https://www.linkedin.com/in/shubhamkumardev",
-    leetcodeUrl: "", // hidden when empty
-    resumeUrl: `${import.meta.env.BASE_URL}Shubham_Kumar_Resume.pdf`,
+    leetcodeUrl: "", // hidden when empty; when set, shows link in contact, footer, command palette, and card in about
+    resumeUrl: "", // hidden when empty; set to `${import.meta.env.BASE_URL}Shubham_Kumar_Resume.pdf` to enable
     profileImage: "", // set to "/profile.webp" when adding image; otherwise shows SK monogram
     phone: "",
-    showPhone: false, // phone number removed
+    showPhone: false, // phone stays empty and is never rendered
     codeCard: {
       role: "Full Stack Developer",
       stack: ["React", "Node.js", "Express", "MongoDB"],
@@ -89,8 +90,26 @@ export const portfolioData = {
         },
       },
       coldStartHint: "Hosted on a free tier. The first load may take about 30 seconds.",
-      image: "",
-      gallery: [],
+      image: "", // Uncomment and set to `${import.meta.env.BASE_URL}projects/tradexpert-1.webp` when real screenshot is ready
+      gallery: [
+        /*
+        {
+          src: `${import.meta.env.BASE_URL}projects/tradexpert-1.webp`,
+          alt: "TradeXpert live trading terminal and watchlist",
+          label: "Terminal",
+        },
+        {
+          src: `${import.meta.env.BASE_URL}projects/tradexpert-2.webp`,
+          alt: "TradeXpert order placement and margin lock interface",
+          label: "Order Engine",
+        },
+        {
+          src: `${import.meta.env.BASE_URL}projects/tradexpert-3.webp`,
+          alt: "TradeXpert admin command center and market controls",
+          label: "Admin Controls",
+        },
+        */
+      ],
       demoVideoUrl: "",
       caseStudy: {
         problem:
@@ -147,35 +166,32 @@ export const portfolioData = {
         extra: null,
       },
       coldStartHint: "",
-      image: "/projects/stayhub-1.webp",
+      image: "", // Uncomment and set to `${import.meta.env.BASE_URL}projects/stayhub-1.webp` when real screenshot is ready
       gallery: [
+        /*
         {
-          src: "/projects/stayhub-1.webp",
+          src: `${import.meta.env.BASE_URL}projects/stayhub-1.webp`,
           alt: "StayHub listing catalog and categories",
           label: "Listings",
         },
         {
-          src: "/projects/stayhub-2.webp",
+          src: `${import.meta.env.BASE_URL}projects/stayhub-2.webp`,
           alt: "StayHub booking system and reservation modal",
           label: "Booking System",
         },
         {
-          src: "/projects/stayhub-3.webp",
-          alt: "StayHub 1-click quick demo access and Google OAuth",
-          label: "Demo Auth",
+          src: `${import.meta.env.BASE_URL}projects/stayhub-3.webp`,
+          alt: "StayHub payment verification and invoice display",
+          label: "Payments",
         },
-        {
-          src: "/projects/stayhub-4.webp",
-          alt: "StayHub registration and location details",
-          label: "Register",
-        },
+        */
       ],
       demoVideoUrl: "",
       caseStudy: null,
       futureWork: [],
     },
     /*
-    // Template for Third Project (renders only when filled):
+    // Template for Third Project (renders automatically when uncommented and filled):
     {
       slug: "project-three",
       title: "Project Three Title",
@@ -193,7 +209,7 @@ export const portfolioData = {
         { icon: "Database", text: "Feature item four description." },
       ],
       moreDetails: [],
-      chips: ["React.js", "Node.js", "MongoDB"],
+      chips: ["React.js", "Node.js", "Express.js", "MongoDB"],
       links: {
         live: "https://example.com",
         github: "https://github.com/Shubham-07-creator/project-three",
@@ -201,7 +217,13 @@ export const portfolioData = {
       },
       coldStartHint: "",
       image: "",
-      gallery: [],
+      gallery: [
+        {
+          src: `${import.meta.env.BASE_URL}projects/project-three-1.webp`,
+          alt: "Project Three main view",
+          label: "Overview",
+        },
+      ],
       demoVideoUrl: "",
       caseStudy: null,
       futureWork: [],

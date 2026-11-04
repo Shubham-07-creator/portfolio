@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shubham Kumar · Full Stack Developer (MERN + Java)</title>
+    <meta
+      name="description"
+      content="Portfolio of Shubham Kumar — Full Stack Developer building real-time, data-driven web applications with MERN stack and strong foundations in Java and DSA."
+    />
+    <meta name="author" content="Shubham Kumar" />
+    <link rel="canonical" href="https://shubham-07-creator.github.io/portfolio/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shubham-07-creator.github.io/portfolio/" />
+    <meta property="og:title" content="Shubham Kumar · Full Stack Developer (MERN + Java)" />
+    <meta
+      property="og:description"
+      content="Portfolio of Shubham Kumar — Full Stack Developer building real-time, data-driven web applications with MERN stack and strong foundations in Java and DSA."
+    />
+    <meta property="og:image" content="https://shubham-07-creator.github.io/portfolio/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://shubham-07-creator.github.io/portfolio/" />
+    <meta name="twitter:title" content="Shubham Kumar · Full Stack Developer (MERN + Java)" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Shubham Kumar — Full Stack Developer building real-time, data-driven web applications with MERN stack and strong foundations in Java and DSA."
+    />
+    <meta name="twitter:image" content="https://shubham-07-creator.github.io/portfolio/og-image.png" />
+
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B1220" id="theme-color-meta" />
+
+    <!-- Favicon (SVG SK Monogram in Slate Sky, respecting BASE_URL) -->
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+
+    <!-- Google Fonts: Instrument Serif (editorial), Inter (body), JetBrains Mono (display=swap) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD Person Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shubham Kumar",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://www.linkedin.com/in/shubhamkumardev",
+        "sameAs": [
+          "https://github.com/Shubham-07-creator",
+          "https://www.linkedin.com/in/shubhamkumardev"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Muzaffarpur",
+          "addressRegion": "Bihar",
+          "addressCountry": "India"
+        }
+      }
+    </script>
+
+    <!-- Theme initialization: dark default, prefers-color-scheme fallback, localStorage save -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var isLight = saved === 'light' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches);
+          if (isLight) {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+            var meta = document.getElementById('theme-color-meta');
+            if (meta) meta.setAttribute('content', '#F8FAFC');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark');
+            var metaDark = document.getElementById('theme-color-meta');
+            if (metaDark) metaDark.setAttribute('content', '#0B1220');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-bg text-text font-sans antialiased min-h-screen relative overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

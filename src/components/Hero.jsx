@@ -118,6 +118,7 @@ export default function Hero({ onOpenRecruiter }) {
                   href={identity.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Shubham_Kumar_Resume.pdf"
                   className="btn-secondary"
                 >
                   <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />
@@ -140,7 +141,7 @@ export default function Hero({ onOpenRecruiter }) {
                 </a>
 
                 <a
-                  href={identity.linkedin}
+                  href={identity.linkedinUrl || identity.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"

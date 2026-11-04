@@ -1,15 +1,58 @@
 # Shubham Kumar — Developer Portfolio
 
-A recruiter-focused, responsive developer portfolio for **Shubham Kumar** featuring the **Slate Sky Editorial** design system (deep neutral canvas with sky blue accent `#38BDF8` in dark mode and `#0274B6` in light mode). Built with Vite, React, and Tailwind CSS.
+A responsive developer portfolio for **Shubham Kumar** (Full Stack Developer · MERN + Java) built with Vite, React 19, and Tailwind CSS v4 using the "Slate Sky" design token system.
 
-## Stack
-- **Framework:** React + Vite
-- **Routing:** React Router v7
-- **Styling:** Tailwind CSS with CSS Variables design tokens (Dark mode default, Light mode supported)
-- **Animations:** Framer Motion (hover, layout, and scroll reveals with reduced motion support)
-- **Icons:** React Icons (`Si` set + `FaJava` + `FaLinkedin`) and Lucide React (stroke 1.5)
-- **Contact:** EmailJS with automatic mailto fallback
-- **Analytics:** @vercel/analytics
+- **Production URL:** [https://shubham-07-creator.github.io/portfolio/](https://shubham-07-creator.github.io/portfolio/)
+- **GitHub:** [https://github.com/Shubham-07-creator](https://github.com/Shubham-07-creator)
+- **LinkedIn:** [https://www.linkedin.com/in/shubhamkumardev](https://www.linkedin.com/in/shubhamkumardev)
+
+---
+
+## Technical Stack & Dependencies
+
+The versions below are defined in [`package.json`](file:///package.json):
+
+| Package | Version | Purpose |
+| :--- | :--- | :--- |
+| **react** | `^19.2.8` | Core UI library |
+| **react-dom** | `^19.2.8` | React DOM renderer |
+| **react-router-dom** | `^7.18.4` | Client-side routing with `BrowserRouter` |
+| **tailwindcss** | `^4.3.3` | Utility-first styling with CSS variables |
+| **@tailwindcss/vite** | `^4.3.3` | Vite plugin for Tailwind CSS v4 |
+| **vite** | `^8.3.0` | Development server and build bundler |
+| **framer-motion** | `^14.0.0` | UI animations with reduced motion support |
+| **lucide-react** | `^1.52.0` | SVG icons |
+| **react-icons** | `^5.7.0` | Brand and technology icons (`Si`, `Fa`) |
+| **@emailjs/browser** | `^5.0.2` | Contact form delivery with mailto fallback |
+| **@vercel/analytics** | `^2.0.1` | Web analytics |
+| **oxlint** | `^1.81.0` | Code linter |
+
+---
+
+## Design System: Slate Sky Tokens
+
+The design uses a neutral base palette with a single sky blue accent token:
+
+- **Dark Theme (Default):**
+  - Background: `--bg: #0B1220`
+  - Surface: `--surface: #111B2E`
+  - Secondary Surface: `--surface-2: #16223A`
+  - Border: `--border: #1E2B42`
+  - Accent: `--accent: #38BDF8`
+  - Text: `--text-heading: #EEF3FA`, `--text-body: #CFD8E6`, `--text-muted: #9AA9C0`
+- **Light Theme:**
+  - Background: `--bg: #F8FAFC`
+  - Surface: `--surface: #FFFFFF`
+  - Secondary Surface: `--surface-2: #EEF2F7`
+  - Border: `--border: #E1E7F0`
+  - Accent: `--accent: #0274B6`
+  - Text: `--text-heading: #0F172A`, `--text-body: #2A3650`, `--text-muted: #52627A`
+- **Typography:**
+  - Headings: `Instrument Serif`, Georgia, serif
+  - Body & UI: `Inter`, system-ui, sans-serif
+  - Code & Metadata: `JetBrains Mono`, monospace
+
+---
 
 ## Getting Started
 
@@ -24,48 +67,45 @@ cd Portfolio
 npm install
 ```
 
-### Environment Configuration
-Create a `.env` file from `.env.example`:
+### Development Server
 ```bash
-cp .env.example .env
-```
-Fill in your optional EmailJS credentials:
-```env
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
-```
-*(If keys are not provided, the contact form opens the user's default email client via mailto.)*
-
-### Development & Build
-```bash
-# Start local development server
 npm run dev
+```
 
-# Run Oxlint checks (0 errors, 0 warnings)
+### Linting
+```bash
 npm run lint
+```
 
-# Build production bundle
+### Production Build & Preview
+```bash
 npm run build
-
-# Preview production build locally
 npm run preview
 ```
 
-## Deployment on Vercel
-1. Push repository to GitHub.
-2. Import repository into Vercel.
-3. Framework Preset: **Vite**.
-4. Configure environment variables (`VITE_EMAILJS_*` if used).
-5. Deploy.
+---
+
+## Deployment
+
+### GitHub Pages
+1. Pushes to `main` trigger `.github/workflows/deploy.yml`.
+2. Vite builds using `base: '/portfolio/'`.
+3. SPA fallback: `dist/404.html` is automatically copied from `dist/index.html` during the build so `/projects/:slug` works on refresh.
+
+### Vercel
+1. Framework Preset: **Vite**.
+2. Root directory: `./`.
+3. Build command: `npm run build`.
+4. Output directory: `dist`.
 
 ---
 
-## Things to Replace
-Customize the portfolio with your personal assets by updating `src/data/portfolio.js` and the `public/` directory:
-1. **Screenshots:** Add project screenshots to `public/projects/tradexpert.webp` and `public/projects/stayhub.webp` (or configure `gallery[]` in `src/data/portfolio.js`).
-2. **Resume:** Place your resume PDF at `public/Shubham_Kumar_Resume.pdf` and set `identity.resumeUrl = "/Shubham_Kumar_Resume.pdf"`.
-3. **LeetCode URL:** Set `identity.leetcodeUrl` in `src/data/portfolio.js` to show the LeetCode profile card.
-4. **Third Project:** Uncomment and fill in the third project template in `src/data/portfolio.js` under `projects`.
-5. **Profile Photo:** Place a portrait at `public/profile.webp` and set `identity.profileImage = "/profile.webp"` (defaults to the clean "SK" monogram tile).
-6. **EmailJS Keys:** Add your EmailJS Service ID, Template ID, and Public Key to `.env`.
+## Configuration & Asset Slots
+
+All customizable fields are located in [`src/data/portfolio.js`](file:///src/data/portfolio.js):
+
+1. **Resume:** Set `identity.resumeUrl = "/Shubham_Kumar_Resume.pdf"` (or URL) to render Resume buttons in the navbar, hero, command palette, and recruiter drawer. When empty (`""`), all resume buttons remain hidden.
+2. **LeetCode:** Set `identity.leetcodeUrl` to show LeetCode links in Contact, Footer, Command Palette, and About.
+3. **Project Screenshots:** When real screenshots are available in `public/projects/`, uncomment the corresponding entries in `projects[].gallery` in `src/data/portfolio.js`. When empty, a neutral wireframe skeleton is rendered.
+4. **Third Project:** A commented-out template is available under `projects[]` in `src/data/portfolio.js`.
+5. **Contact Form:** Set `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY` in `.env`. If unconfigured, the form falls back to opening the visitor's mail client.

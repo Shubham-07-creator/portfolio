@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Briefcase,
   Sparkles,
+  ArrowUpRight,
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { portfolioData } from '../data/portfolio';
@@ -141,6 +142,38 @@ export default function About() {
               </div>
             </motion.div>
           ))}
+
+          {/* Optional Problem Solving Card (rendered only when identity.leetcodeUrl is set) */}
+          {identity.leetcodeUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="md:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-[20px] editorial-card hover:border-accent transition-colors flex flex-col justify-between"
+            >
+              <div>
+                <div className="p-2.5 rounded-xl bg-surface-2 border border-border inline-flex items-center justify-center mb-3.5">
+                  <Code className="w-5 h-5 text-accent shrink-0" strokeWidth={1.5} />
+                </div>
+                <h4 className="text-lg font-serif font-normal text-text mb-1">
+                  Problem solving
+                </h4>
+                <p className="text-xs sm:text-sm text-muted leading-relaxed mb-4">
+                  Practicing data structures and algorithms in Java and building core problem-solving speed.
+                </p>
+                <a
+                  href={identity.leetcodeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:underline"
+                >
+                  <span>LeetCode</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </motion.div>
+          )}
 
           {/* 4. Currently Learning Card (6 cols on md/lg) */}
           <motion.div

@@ -143,7 +143,7 @@ export default function Education() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 min-h-[44px] text-sm font-mono font-medium text-accent hover:text-accent-hover underline underline-offset-[3px] transition-colors"
                   >
-                    <span>View Certificate</span>
+                    <span>View Credential</span>
                     <ExternalLink className="w-3.5 h-3.5 text-muted" strokeWidth={1.5} />
                   </a>
                 </div>

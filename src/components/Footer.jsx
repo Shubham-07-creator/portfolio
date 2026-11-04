@@ -49,7 +49,7 @@ export default function Footer() {
               <SiGithub className="w-4 h-4" aria-hidden="true" />
             </a>
             <a
-              href={identity.linkedin}
+              href={identity.linkedinUrl || identity.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
@@ -57,6 +57,17 @@ export default function Footer() {
             >
               <FaLinkedin className="w-4 h-4" aria-hidden="true" />
             </a>
+            {identity.leetcodeUrl && (
+              <a
+                href={identity.leetcodeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LeetCode profile"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full border border-border bg-surface-2 text-text hover:text-accent hover:border-accent transition-colors font-mono font-bold text-xs"
+              >
+                LC
+              </a>
+            )}
           </div>
         </div>
 

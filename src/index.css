@@ -369,6 +369,9 @@ html {
   html {
     scroll-behavior: auto;
   }
+  body::before {
+    display: none !important;
+  }
   .animate-marquee {
     animation: none !important;
   }

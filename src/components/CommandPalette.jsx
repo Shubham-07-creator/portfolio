@@ -67,7 +67,44 @@ export default function CommandPalette({ isOpen, setIsOpen, theme, toggleTheme, 
             icon: <FileText className="w-4 h-4 text-muted" strokeWidth={1.5} />,
             perform: () => {
               setIsOpen(false);
-              window.open(identity.resumeUrl, '_blank');
+              const a = document.createElement('a');
+              a.href = identity.resumeUrl;
+              a.target = '_blank';
+              a.rel = 'noopener noreferrer';
+              a.download = 'Shubham_Kumar_Resume.pdf';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            },
+          },
+        ]
+      : []),
+    ...(identity.linkedinUrl || identity.linkedin
+      ? [
+          {
+            id: 'linkedin',
+            label: 'View LinkedIn Profile',
+            shortcut: 'LINK',
+            category: 'Social',
+            icon: <ExternalLink className="w-4 h-4 text-muted" strokeWidth={1.5} />,
+            perform: () => {
+              setIsOpen(false);
+              window.open(identity.linkedinUrl || identity.linkedin, '_blank', 'noopener,noreferrer');
+            },
+          },
+        ]
+      : []),
+    ...(identity.leetcodeUrl
+      ? [
+          {
+            id: 'leetcode',
+            label: 'View LeetCode Profile',
+            shortcut: 'CODE',
+            category: 'Credentials',
+            icon: <ExternalLink className="w-4 h-4 text-muted" strokeWidth={1.5} />,
+            perform: () => {
+              setIsOpen(false);
+              window.open(identity.leetcodeUrl, '_blank', 'noopener,noreferrer');
             },
           },
         ]

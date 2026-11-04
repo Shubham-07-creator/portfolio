@@ -987,7 +987,7 @@ export default function EngineeringNotes() {
                   })}
                 </div>
 
-                {/* Active Step Card: verified facts only, no latency, no packet viewer */}
+                {/* Active Step Card: verified facts only */}
                 {currentStepData && (
                   <div className="p-4 sm:p-5 rounded-xl bg-surface-2/70 border border-border">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2 pb-2 border-b border-border/50">
